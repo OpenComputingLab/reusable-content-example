@@ -10,15 +10,15 @@ A common production route for the software guides required for three separate mo
 
 - [*M348 Applied statistical modelling*](https://www.open.ac.uk/courses/modules/m348), which provides a classic Jupyter notebook environment running an R kernel;
 - [*TM129 Technologies in practice (Robotics block)*](https://www.open.ac.uk/courses/modules/tm129), which provides a classic Jupyter notebook environment running an Python kernel and a simple notebook based robot simulation environment;
-- [*TM351 Data management and analysis*](https://www.open.ac.uk/courses/modules/tm351), which provides a JupyterLab environment running a Pythion kernel, PostgreSQL and MongoDB database services, and the OpenRefine data-cleaning application.
+- [*TM351 Data management and analysis*](https://www.open.ac.uk/courses/modules/tm351), which provides a JupyterLab environment running a Python kernel, PostgreSQL and MongoDB database services, and the OpenRefine data-cleaning application.
 
 The main aims were:
 
-- to maximise the amnount of directly reusable content;
+- to maximise the amount of directly reusable content;
 - to explore the use of reusable customisable content;
 - to explore ways of integrating module specific content.
 
-In addition, the work demonstrated a markdown-based authoring route with an automated conversion process capable of producing output assets in various formats (OU-XML (for use in OU production workflows: VLE rendering, PDF creation); HTML book format; simple PDF preview). The use of several tools to support quality processes (markown linting, spellchecking, OU-XML validation) were also explored.
+In addition, the work demonstrated a markdown-based authoring route with an automated conversion process capable of producing output assets in various formats (OU-XML (for use in OU production workflows: VLE rendering, PDF creation); HTML book format; simple PDF preview). The use of several tools to support quality processes (markdown linting, spellchecking, OU-XML validation) were also explored.
 
 The source repository for the source content can be found here: [innovationOUtside/vce-generic-guide](https://github.com/innovationOUtside/vce-generic-guide).
 
