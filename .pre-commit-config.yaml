@@ -1,0 +1,15 @@
+repos:
+  - repo: https://github.com/markdownlint/markdownlint
+    rev: v0.12.0
+    hooks:
+      - id: markdownlint
+        name: Markdownlint
+        files: \.(md|mdown|markdown)$
+
+  - repo: https://github.com/tbroadley/spellchecker-cli
+    rev: e4879b5
+    hooks:
+      - id: spellchecker-cli
+        name: spellchecker
+        files: \.(md|mdown|markdown)$
+        args: ['--no-suggestions']
