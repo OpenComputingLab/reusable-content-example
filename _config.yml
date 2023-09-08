@@ -1,0 +1,20 @@
+title: Reusable Content Demonstration
+author: Tony Hirst
+
+lang: en
+
+only_build_toc_files: true
+
+sphinx:
+  extra_extensions:
+    - ou_book_theme
+    - sphinxcontrib.mermaid
+  config:
+    myst_heading_anchors: 3
+    numfig: true
+    numfig_format: {'figure':'Figure %s'}
+    numfig_secnum_depth: 1 #eg 0:1 1:2.1 2:3.2.1
+
+parse:
+  myst_enable_extensions:
+    - colon_fence
