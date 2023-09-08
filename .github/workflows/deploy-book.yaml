@@ -25,7 +25,6 @@ jobs:
     # Build the book
     - name: Build the book
       run: |
-        cd resources
         jupyter-book build .
         touch ./_build/html/.nojekyll
     # Push the book's HTML to github-pages
