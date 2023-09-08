@@ -1,0 +1,14 @@
+{
+    "name": "Reusable content demo",
+    "image": "ouvocl/obt-th",
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ExecutableBookProject.myst-highlight",
+                "tomoki1207.pdf"
+            ]
+        }
+    }
+    
+}
