@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>1. Introduction &#8212; Reusable Content Demonstration</title>
+    <title>5. Maths &#8212; Reusable Content Demonstration</title>
   
   
   
@@ -62,11 +62,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'introduction';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'maths';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2. Markdown authoring route" href="markdown_authoring.html" />
-    <link rel="prev" title="Dummy" href="preface.html" />
+    <link rel="next" title="6. Code" href="code.html" />
+    <link rel="prev" title="4. Markdown format" href="md_format.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -162,11 +164,11 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reusable workflow</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown_authoring.html">2. Markdown authoring route</a></li>
 <li class="toctree-l1"><a class="reference internal" href="authoring_reusable_content.html">3. Authoring reusable content</a></li>
 <li class="toctree-l1"><a class="reference internal" href="md_format.html">4. Markdown format</a></li>
-<li class="toctree-l1"><a class="reference internal" href="maths.html">5. Maths</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Maths</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code.html">6. Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quotations.html">7. Quotations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sandbox.html">8. Trying out the environment</a></li>
@@ -224,7 +226,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/introduction.md" target="_blank"
+      <li><a href="_sources/maths.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -304,7 +306,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introduction</h1>
+    <h1>Maths</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -318,26 +320,42 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="introduction">
-<h1><span class="section-number">1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
-<p>Writing software guides to support educational modules adds authoring, editing and testing overheads to module production. If multiple modules use similar environments or software applications, reusing generic or customisable materials provides a way or reducing those overheads.</p>
-<p>This informal report describes the production route for a customisable software guide to support the use of virtual computing environments (VCEs) across several modules.</p>
-<p>The VCEs are accessed as a remotely hosted environment provided by the Open University <em>Compute Home</em> service, or as a locally run Docker container. <em>The same Docker image should ideally be used to support both the hosted and locally run environment.</em></p>
-<p>A common production route for the software guides required for three separate modules was explored:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.open.ac.uk/courses/modules/m348"><em>M348 Applied statistical modelling</em></a>, which provides a classic Jupyter notebook environment running an R kernel;</p></li>
-<li><p><a class="reference external" href="https://www.open.ac.uk/courses/modules/tm129"><em>TM129 Technologies in practice (Robotics block)</em></a>, which provides a classic Jupyter notebook environment running an Python kernel and a simple notebook based robot simulation environment;</p></li>
-<li><p><a class="reference external" href="https://www.open.ac.uk/courses/modules/tm351"><em>TM351 Data management and analysis</em></a>, which provides a JupyterLab environment running a Python kernel, PostgreSQL and MongoDB database services, and the OpenRefine data-cleaning application.</p></li>
-</ul>
-<p>The main aims were:</p>
-<ul class="simple">
-<li><p>to maximise the amount of directly reusable content;</p></li>
-<li><p>to explore the use of reusable customisable content;</p></li>
-<li><p>to explore ways of integrating module specific content.</p></li>
-</ul>
-<p>In addition, the work demonstrated a markdown-based authoring route with an automated conversion process capable of producing output assets in various formats (OU-XML (for use in OU production workflows: VLE rendering, PDF creation); HTML book format; simple PDF preview). The use of several tools to support quality processes (markdown linting, spellchecking, OU-XML validation) were also explored.</p>
-<p>The source repository for the source content can be found here: <a class="reference external" href="https://github.com/innovationOUtside/vce-generic-guide">innovationOUtside/vce-generic-guide</a>.</p>
-<p><em><strong>Acknowledgements</strong>: thanks to Karen Vines for helping iterate the text, Edith Francis for helping iterate the OU-XML, and Mark Hall for the original markdown2ou-xml converter.</em></p>
+  <section id="maths">
+<h1><span class="section-number">5. </span>Maths<a class="headerlink" href="#maths" title="Permalink to this heading">#</a></h1>
+<p>Mathematical equations written using LaTeX syntac can be specified inline or as a block level equation.</p>
+<p>For example, the inline equation <span class="math notranslate nohighlight">\(e=mc^2\)</span> is specified in mardown using the <code class="docutils literal notranslate"><span class="pre">{math}</span></code> role: <code class="docutils literal notranslate"><span class="pre">{math}`e=mc^2`</span></code></p>
+<p>We can also use a <code class="docutils literal notranslate"><span class="pre">{math}</span></code> directive to define an equation block:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{math}
+:label: my-equation-identifier
+w_{t+1} = (1 + r_{t+1})
+s(w_t) + y_{t+1}
+```
+</pre></div>
+</div>
+<div class="math notranslate nohighlight" id="equation-my-equation">
+<span class="eqno">(5.1)<a class="headerlink" href="#equation-my-equation" title="Permalink to this equation">#</a></span>\[w_{t+1} = (1 + r_{t+1})
+s(w_t) + y_{t+1}\]</div>
+<p>Dollar math syntax may also be used to define block equations:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$$
+\label{maxwell}
+\begin{aligned}
+\nabla \times \vec{e}+\frac{\partial \vec{b}}{\partial t}&amp;=0 \\
+\nabla \times \vec{h}-\vec{j}&amp;=\vec{s}\_{e}
+\end{aligned}
+$$
+</pre></div>
+</div>
+<p>$$
+\label{maxwell}
+\begin{aligned}
+\nabla \times \vec{e}+\frac{\partial \vec{b}}{\partial t}&amp;=0 \
+\nabla \times \vec{h}-\vec{j}&amp;=\vec{s}_{e}
+\end{aligned}
+$$</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">$$</span></code> syntax also works as a one-liner. For example, the single line:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$$</span> <span class="pre">\label{one-liner}</span> <span class="pre">Ax=b</span> <span class="pre">$$</span></code></p>
+<p>will ultimately render as the formatted equation:</p>
+<p>$$ \label{one-liner} Ax=b $$</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -371,20 +389,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="preface.html"
+       href="md_format.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Dummy</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Markdown format</p>
       </div>
     </a>
     <a class="right-next"
-       href="markdown_authoring.html"
+       href="code.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Markdown authoring route</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Code</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

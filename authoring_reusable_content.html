@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>1. Introduction &#8212; Reusable Content Demonstration</title>
+    <title>3. Authoring reusable content &#8212; Reusable Content Demonstration</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'introduction';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'authoring_reusable_content';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2. Markdown authoring route" href="markdown_authoring.html" />
-    <link rel="prev" title="Dummy" href="preface.html" />
+    <link rel="next" title="4. Markdown format" href="md_format.html" />
+    <link rel="prev" title="2. Markdown authoring route" href="markdown_authoring.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -162,9 +162,9 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reusable workflow</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown_authoring.html">2. Markdown authoring route</a></li>
-<li class="toctree-l1"><a class="reference internal" href="authoring_reusable_content.html">3. Authoring reusable content</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Authoring reusable content</a></li>
 <li class="toctree-l1"><a class="reference internal" href="md_format.html">4. Markdown format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="maths.html">5. Maths</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code.html">6. Code</a></li>
@@ -224,7 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/introduction.md" target="_blank"
+      <li><a href="_sources/authoring_reusable_content.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -293,7 +293,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -304,11 +306,21 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introduction</h1>
+    <h1>Authoring reusable content</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents-conifiguration-files">3.1. Table of Contents Conifiguration Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transcluding-embedding-content">3.2. Transcluding / Embedding content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterised-customisable-content">3.3. Parameterised Customisable Content</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -318,26 +330,75 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="introduction">
-<h1><span class="section-number">1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
-<p>Writing software guides to support educational modules adds authoring, editing and testing overheads to module production. If multiple modules use similar environments or software applications, reusing generic or customisable materials provides a way or reducing those overheads.</p>
-<p>This informal report describes the production route for a customisable software guide to support the use of virtual computing environments (VCEs) across several modules.</p>
-<p>The VCEs are accessed as a remotely hosted environment provided by the Open University <em>Compute Home</em> service, or as a locally run Docker container. <em>The same Docker image should ideally be used to support both the hosted and locally run environment.</em></p>
-<p>A common production route for the software guides required for three separate modules was explored:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.open.ac.uk/courses/modules/m348"><em>M348 Applied statistical modelling</em></a>, which provides a classic Jupyter notebook environment running an R kernel;</p></li>
-<li><p><a class="reference external" href="https://www.open.ac.uk/courses/modules/tm129"><em>TM129 Technologies in practice (Robotics block)</em></a>, which provides a classic Jupyter notebook environment running an Python kernel and a simple notebook based robot simulation environment;</p></li>
-<li><p><a class="reference external" href="https://www.open.ac.uk/courses/modules/tm351"><em>TM351 Data management and analysis</em></a>, which provides a JupyterLab environment running a Python kernel, PostgreSQL and MongoDB database services, and the OpenRefine data-cleaning application.</p></li>
-</ul>
-<p>The main aims were:</p>
-<ul class="simple">
-<li><p>to maximise the amount of directly reusable content;</p></li>
-<li><p>to explore the use of reusable customisable content;</p></li>
-<li><p>to explore ways of integrating module specific content.</p></li>
-</ul>
-<p>In addition, the work demonstrated a markdown-based authoring route with an automated conversion process capable of producing output assets in various formats (OU-XML (for use in OU production workflows: VLE rendering, PDF creation); HTML book format; simple PDF preview). The use of several tools to support quality processes (markdown linting, spellchecking, OU-XML validation) were also explored.</p>
-<p>The source repository for the source content can be found here: <a class="reference external" href="https://github.com/innovationOUtside/vce-generic-guide">innovationOUtside/vce-generic-guide</a>.</p>
-<p><em><strong>Acknowledgements</strong>: thanks to Karen Vines for helping iterate the text, Edith Francis for helping iterate the OU-XML, and Mark Hall for the original markdown2ou-xml converter.</em></p>
+  <section id="authoring-reusable-content">
+<h1><span class="section-number">3. </span>Authoring reusable content<a class="headerlink" href="#authoring-reusable-content" title="Permalink to this heading">#</a></h1>
+<p>To start the authoring process, a legacy software guide available as an OU-XML structured content document was rendered to simple markdown.</p>
+<p>Sphinx style configration and table of contents scripts were created to so that the content could be previewed in an HTML book style format, or rendered back to OU-XML.</p>
+<p>Several features of Sphinx style publishing that support extensibility and reuse were adopted that allowed us to trade-off purely generic content, customisable content, and bespoke content for each module.</p>
+<section id="table-of-contents-conifiguration-files">
+<h2><span class="section-number">3.1. </span>Table of Contents Conifiguration Files<a class="headerlink" href="#table-of-contents-conifiguration-files" title="Permalink to this heading">#</a></h2>
+<p>From a set of content files, one of the easist ways of defining which content files are to be used to generate a particular output document is to specify the files that are to be included via a table of contents file.</p>
+<p>In current production workflows, it would not be unusual for each module team author to their own software guide. In a markdown workflow, this might include each module team authoring several separate markdown documents, many of which may  duplicate similar instructional intent, and then create their own table of contents files to use their authored documents.</p>
+<p>One obvious way of reusing content across several modules would be for each module to use exactly the same guide, where the same table of contents file pulls from the same source documents.</p>
+<p>Partial customisation might be supported by each module team writing their own introduction, for example, but reusing all the other sections of the guide.  The output document is then defined using a module specific table of contents file that pulls in the module specific content (for example, from the file <code class="docutils literal notranslate"><span class="pre">introduction-XY123.md</span></code>) as well as a the generic reusable content files.</p>
+<p>When writing this sort of content, we must try to avoid making any references to a particular module. Where references to a module code are required, one possible approach is to use a generic code (for example <code class="docutils literal notranslate"><span class="pre">XY123</span></code>, or <code class="docutils literal notranslate"><span class="pre">XXNNN</span></code>) and then tell a student to use apply their particular module code in place of the generic code.</p>
+<p>For example, two modules might reuse content from a set of common files, as well as featuring module specific content, using the following table of cotnents files:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jb-book</span>
+<span class="nt">root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">g-vce_cribsheet</span>
+<span class="nt">chapters</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">g-introduction-m348</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">g-compute_home</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">g-local_vce_quickstart</span>
+</pre></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jb-book</span>
+<span class="nt">root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">g-vce_cribsheet</span>
+<span class="nt">chapters</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">g-introduction-tm351</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">g-compute_home</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">g-local_vce_quickstart</span>
+</pre></div>
+</div>
+</section>
+<section id="transcluding-embedding-content">
+<h2><span class="section-number">3.2. </span>Transcluding / Embedding content<a class="headerlink" href="#transcluding-embedding-content" title="Permalink to this heading">#</a></h2>
+<p>One of the nice features of the Sphinx publishing workflow is that content files can import content from other content files. This allows us to define “partial” files that might include the content of just a single paragraph, for example.</p>
+<p>A module specific file can then be defined that includes module specific text (either imported from a partial content file or explicitly provided inline within the file) as well as generic text imported from a reusable partial content file.</p>
+<p>For example, the following markdown fragment shows how we might customise a module specific introduction file by first loading in generic content from a reusable file, and then appending some module specific content.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{include} ./g-introduction-core.md
+
+Finally, we have a conclusion paragraph that speaks to a particular module.
+</pre></div>
+</div>
+</section>
+<section id="parameterised-customisable-content">
+<h2><span class="section-number">3.3. </span>Parameterised Customisable Content<a class="headerlink" href="#parameterised-customisable-content" title="Permalink to this heading">#</a></h2>
+<p>In many cases, whilst the content is predomninantly reusable, there may be a requirement to customise it for use in particular module by referring to the module code or module name.</p>
+<p>In this case, rather than generate a custom file for each module, we can simply parameterise the module code, module name, etc., and then define a module configration file that sets a genric module name placeholder label, for example, to a required module name.</p>
+<p>For example, the following raw markdown fragment shows how we can use parameterised values at the start of a generic, customisable “cribsheet” document.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># Virtual Computing Environment Cribsheet ({{module_code}}, {{presentation_code}} Presentation)
+
+## VCE Cribsheet
+
+- Module code: {{module_code}}
+- Presentation code: {{presentation_code}}
+</pre></div>
+</div>
+<p>The configuration file allows the definition of variables as well as some limited processing of those variables (for example, casting to upper or lower case) as part of further configuration elements.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>myst_substitutions:
+    MCODE: M348
+    NCODE: &quot;348&quot;
+    MNAME: &quot;Applied Statistical Modelling&quot;
+    PCODE: 23J
+    YEAR: &quot;2023&quot;
+    jupyter_help_forum: &quot;&#39;Jupyter notebooks&#39; forum&quot;
+
+    # DEFAULT VALUES / RULES
+    module_code: &quot;{{&#39;`&#39; + MCODE|upper + &#39;`&#39;}}&quot;
+    presentation_code: &quot;{{&#39;`&#39; + PCODE|upper + &#39;`&#39;}}&quot;
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -371,20 +432,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="preface.html"
+       href="markdown_authoring.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Dummy</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Markdown authoring route</p>
       </div>
     </a>
     <a class="right-next"
-       href="markdown_authoring.html"
+       href="md_format.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Markdown authoring route</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Markdown format</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -394,6 +455,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents-conifiguration-files">3.1. Table of Contents Conifiguration Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transcluding-embedding-content">3.2. Transcluding / Embedding content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterised-customisable-content">3.3. Parameterised Customisable Content</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

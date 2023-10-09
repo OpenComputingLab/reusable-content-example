@@ -1,0 +1,563 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>4. Markdown format &#8212; Reusable Content Demonstration</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/scripts/ou-book-theme.js?digest=70cd4f36c5f75a004a4184ab875fcbdab8e13f88"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'md_format';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. Maths" href="maths.html" />
+    <link rel="prev" title="3. Authoring reusable content" href="authoring_reusable_content.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="preface.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Reusable Content Demonstration</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="preface.html">
+                    Dummy
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reusable workflow</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown_authoring.html">2. Markdown authoring route</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authoring_reusable_content.html">3. Authoring reusable content</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Markdown format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maths.html">5. Maths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html">6. Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quotations.html">7. Quotations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sandbox.html">8. Trying out the environment</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/md_format.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Markdown format</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-markdown-to-ou-xml">4.1. From markdown to OU-XML</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#headings">4.1.1. Headings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-references">4.1.2. Cross-references</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-elements">4.1.3. Figure elements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#component-numbering">4.1.4. Component numbering</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extending-the-markup-language">4.2. Extending the markup language</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rendering-mermaid-js-diagrams">4.2.1. Rendering <code class="docutils literal notranslate"><span class="pre">mermaid.js</span></code> diagrams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-activity-elements">4.2.2. Supporting activity elements</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="markdown-format">
+<h1><span class="section-number">4. </span>Markdown format<a class="headerlink" href="#markdown-format" title="Permalink to this heading">#</a></h1>
+<p>The MyST markdown format supports a range of mark-up devices that can be mapped naturally onto OU-XML tags. The format can also be extended to support the parsing, rendering and conversion of additional, custom defined tags.</p>
+<section id="from-markdown-to-ou-xml">
+<h2><span class="section-number">4.1. </span>From markdown to OU-XML<a class="headerlink" href="#from-markdown-to-ou-xml" title="Permalink to this heading">#</a></h2>
+<p>The range of MyST markdown elements that currently map on to OU-XML tags include:</p>
+<section id="headings">
+<h3><span class="section-number">4.1.1. </span>Headings<a class="headerlink" href="#headings" title="Permalink to this heading">#</a></h3>
+<p>Use standard markdown heading levels (one or more <code class="docutils literal notranslate"><span class="pre">#</span></code> characters at start a line, followed by whistespace and then the header. The number of <code class="docutils literal notranslate"><span class="pre">#</span></code> characters specifes the heading level).</p>
+<p>Each included file represents a session and should start with a first level heading. Interior headings within the file (second level, third level, etc.) are associated with increasingly nested <code class="docutils literal notranslate"><span class="pre">&lt;InternalSection&gt;</span></code> tags, with the heading mapped to the <code class="docutils literal notranslate"><span class="pre">&lt;Title&gt;</span></code> tag at the start of the section.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">sphinx.config.myst_heading_anchors</span></code> is set in the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file, identifiers are associated with each <code class="docutils literal notranslate"><span class="pre">&lt;Session&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;InternalSection&gt;</span></code> to the specified depth based on decasing the heading, removing punctuation and replace spaces with a <code class="docutils literal notranslate"><span class="pre">-</span></code>. Any generated section or subsection numbering is ignored.</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Second</span> <span class="pre">level</span> <span class="pre">heading</span></code> would map to:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;Session id=&quot;introduction&quot;&gt;
+    &lt;Title&gt;1 Introduction&lt;/Title&gt;
+    ...
+    &lt;InternalSection id=&quot;second-level-heading&quot;&gt;
+        &lt;Heading&gt;Second level heading&lt;/Heading&gt;
+    ...
+</pre></div>
+</div>
+<p>Note that section headings need to be unique within a <code class="docutils literal notranslate"><span class="pre">&lt;Session&gt;</span></code> if they are to be resolved as cross-referenced sections.</p>
+</section>
+<section id="cross-references">
+<h3><span class="section-number">4.1.2. </span>Cross-references<a class="headerlink" href="#cross-references" title="Permalink to this heading">#</a></h3>
+<p>Cross-references may be made to section or internal section headers in the same file / session, or to other files / sessions in the same item by means of the session or internal section identifier.</p>
+</section>
+<section id="figure-elements">
+<h3><span class="section-number">4.1.3. </span>Figure elements<a class="headerlink" href="#figure-elements" title="Permalink to this heading">#</a></h3>
+<p>Figure elements should be defined in markdown as follows:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{figure} assets_path/images_path/image_file.png
+:name: unique_image_reference
+
+Caption text
+
+Optional description text for the image. Possibly several sentences.
+
+```
+</pre></div>
+</div>
+<p>This then maps onto the following OU-XML:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Figure&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Image</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;https://generated.url/path/image_file.png&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Caption&gt;</span>Figure<span class="w"> </span>N.M<span class="w"> </span>Caption<span class="w"> </span>text<span class="nt">&lt;/Caption&gt;</span>
+<span class="w">            </span><span class="nt">&lt;Description&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Paragraph&gt;</span>Optional<span class="w"> </span>description<span class="w"> </span>text<span class="w"> </span>for<span class="w"> </span>the<span class="w"> </span>image.<span class="w"> </span>Possibly<span class="w"> </span>several<span class="w"> </span>sentences.<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/Description&gt;</span>
+<span class="nt">&lt;/Figure&gt;</span>
+</pre></div>
+</div>
+<p>Several settings in the <code class="docutils literal notranslate"><span class="pre">_config.txt</span></code> determine how references to the figure are generated:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">config</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">numfig</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">        </span><span class="nt">numfig_format</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&#39;figure&#39;</span><span class="p p-Indicator">:</span><span class="s">&#39;Figure</span><span class="nv"> </span><span class="s">%s&#39;</span><span class="p p-Indicator">}</span>
+<span class="w">        </span><span class="nt">numfig_secnum_depth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"> </span><span class="c1">#eg 0:1 1:2.1</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">numfig</span></code> parameter determines whether numeric references to figures may be generated; the <code class="docutils literal notranslate"><span class="pre">numfig_format</span></code> parameter specifies the format of the numeric reference text when a reference is generate; and the <code class="docutils literal notranslate"><span class="pre">numfig_secnum_depth</span></code> identifies the numbering level (incremental figure count across the item (<code class="docutils literal notranslate"><span class="pre">0</span></code>) or section number and figure number within section (<code class="docutils literal notranslate"><span class="pre">1</span></code>)).</p>
+<p>Links to figures can be described in the text via the unique reference, and either the caption text (<code class="docutils literal notranslate"><span class="pre">{ref}`unique_image_reference`)</span></code>) or, if enabled, the generated numeric reference (<code class="docutils literal notranslate"><span class="pre">{numref}`g-other_file_in_item.md#unique_image_reference`</span> </code>) may be displayed.</p>
+<p>If the reference is to a figure in a separate file, the path to the source dilename should also be specified (for example, <code class="docutils literal notranslate"><span class="pre">{numref}`unique_image_reference`</span> </code> or <code class="docutils literal notranslate"><span class="pre">{ref}`other_file_in_item.md#unique_image_reference`</span> </code>).</p>
+<p>The path to the image assets should be set in the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file and the image assets copied to that location.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ou</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">image_path_prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://generated.url/path</span>
+<span class="w">  </span><span class="c1"># For example:</span>
+<span class="w">  </span><span class="c1"># image_path_prefix: https://openuniv.sharepoint.com/sites/mmodules/m348/lmimages/</span>
+<span class="w"> </span>
+</pre></div>
+</div>
+</section>
+<section id="component-numbering">
+<h3><span class="section-number">4.1.4. </span>Component numbering<a class="headerlink" href="#component-numbering" title="Permalink to this heading">#</a></h3>
+<p>Automatic numbering may be enabled via the <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> file.</p>
+</section>
+</section>
+<section id="extending-the-markup-language">
+<h2><span class="section-number">4.2. </span>Extending the markup language<a class="headerlink" href="#extending-the-markup-language" title="Permalink to this heading">#</a></h2>
+<p>The MyST markdown format and the Sphinx publishing framework are both extensible, which means that it is possible to define additional tags to support the creation of bespoke materials.</p>
+<p>For example, the publishing workflow has been exteneded to support:</p>
+<ul class="simple">
+<li><p>the parsing and rendering of <code class="docutils literal notranslate"><span class="pre">mermaid.js</span></code> diagram syntax;</p></li>
+<li><p>the parsing and custom rendering of “activities” with revealable answers.</p></li>
+</ul>
+<section id="rendering-mermaid-js-diagrams">
+<h3><span class="section-number">4.2.1. </span>Rendering <code class="docutils literal notranslate"><span class="pre">mermaid.js</span></code> diagrams<a class="headerlink" href="#rendering-mermaid-js-diagrams" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">mermaid,js</span></code> package is a widely used Javascript that package TO DO</p>
+</section>
+<section id="supporting-activity-elements">
+<h3><span class="section-number">4.2.2. </span>Supporting activity elements<a class="headerlink" href="#supporting-activity-elements" title="Permalink to this heading">#</a></h3>
+<p>The OU-XML structured content format supports the definition of “activities” according to the following structure:</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="authoring_reusable_content.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Authoring reusable content</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="maths.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Maths</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-markdown-to-ou-xml">4.1. From markdown to OU-XML</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#headings">4.1.1. Headings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-references">4.1.2. Cross-references</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-elements">4.1.3. Figure elements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#component-numbering">4.1.4. Component numbering</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extending-the-markup-language">4.2. Extending the markup language</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rendering-mermaid-js-diagrams">4.2.1. Rendering <code class="docutils literal notranslate"><span class="pre">mermaid.js</span></code> diagrams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-activity-elements">4.2.2. Supporting activity elements</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tony Hirst
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
