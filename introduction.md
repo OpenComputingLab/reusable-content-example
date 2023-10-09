@@ -22,4 +22,6 @@ In addition, the work demonstrated a markdown-based authoring route with an auto
 
 The source repository for the source content can be found here: [innovationOUtside/vce-generic-guide](https://github.com/innovationOUtside/vce-generic-guide).
 
-*__Acknowledgements__: thanks to Karen Vines for helping iterate the text, Edith Francis for helping iterate the OU-XML, and Mark Hall for the original markdown2ou-xml converter.*
+Example OU-XML generated from an earlier version of this document can be found here: [https://github.com/OpenComputingLab/reusable-content-example/tree/main/example/ouxml](https://github.com/OpenComputingLab/reusable-content-example/tree/main/example/ouxml)
+
+*__Acknowledgements__: thanks to Karen Vines for helping iterate the text, Edith Francis for helping iterate the OU-XML, and Mark Hall for the original markdown2ou-xml converter. --Tony Hirst*
