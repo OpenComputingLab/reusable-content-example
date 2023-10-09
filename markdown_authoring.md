@@ -25,7 +25,6 @@ flowchart LR
   I --> L[OU-PDF]
 ```
 
-
 ## Example Markdown Styling
 
 Simple markdown styling supports the rendering of *emphasis* and __strong__ elements through simple markup.
