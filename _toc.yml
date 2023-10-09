@@ -15,4 +15,5 @@ parts:
       - file: maths
       - file: code
       - file: quotations
+      - file: collaborative-authoring
       - file: sandbox
