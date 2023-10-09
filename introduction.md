@@ -4,7 +4,7 @@ Writing software guides to support educational modules adds authoring, editing a
 
 This informal report describes the production route for a customisable software guide to support the use of virtual computing environments (VCEs) across several modules.
 
-The VCEs are accessed as a remotely hosted environment provided by the Open University *Compute Home* service, or as a locally run Docker container. *The same Docker image would typically be used to support both the hosted and locally run environment.*
+The VCEs are accessed as a remotely hosted environment provided by the Open University *Compute Home* service, or as a locally run Docker container. *The same Docker image should ideally be used to support both the hosted and locally run environment.*
 
 A common production route for the software guides required for three separate modules was explored:
 

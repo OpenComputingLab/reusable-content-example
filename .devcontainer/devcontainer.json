@@ -1,6 +1,6 @@
 {
     "name": "Reusable content demo",
-    "image": "ouvocl/obt-th",
+    "image": "outm351dev/ou-doc-builder",
 
     "customizations": {
         "vscode": {

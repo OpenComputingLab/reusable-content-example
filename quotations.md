@@ -1,0 +1,32 @@
+# Quotations
+
+We can define quotations in markdown by prefix the quoted line or lines with a `>` symbol at the start of the line:
+
+This works for sinle line quotes:
+
+`> Here is a single line quote.`
+
+> Here is a single line quote.
+
+and multi-line quotes:
+
+```text
+> Here is the first line of the quote...
+> ...and here is the second.
+>
+> And a final line.
+```
+
+The following is a quote and should be marked up as such:
+
+> Here is the first line of the quote...
+> ...and here is the second.
+>
+> And a final line.
+
+THe following is a quote that should be marked up as such, along with a typographically distinguished source reference component:
+
+> Here is the first line of the quote...
+> ...and here is the second.
+>
+> Source: And a final line source...

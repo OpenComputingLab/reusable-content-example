@@ -1,4 +1,18 @@
 # Table of contents file
 
 format: jb-book
-root: introduction
+root: preface
+#options:
+#  numbered: true
+parts:
+  - caption: Reusable workflow
+    numbered: true
+    chapters:
+      - file: introduction
+      - file: markdown_authoring
+      - file: authoring_reusable_content
+      - file: md_format
+      - file: maths
+      - file: code
+      - file: quotations
+      - file: sandbox

@@ -9,6 +9,7 @@ sphinx:
   extra_extensions:
     - ou_book_theme
     - sphinxcontrib.mermaid
+    - sphinx_exercise
   config:
     myst_heading_anchors: 3
     numfig: true
@@ -17,4 +18,16 @@ sphinx:
 
 parse:
   myst_enable_extensions:
-    - colon_fence
+    - colon_fenceparse
+    - amsmath
+    - dollarmath
+
+ou:
+  module_code: XXX
+  module_title: YYY
+  block: 0
+  presentation: ZZZ
+  first_published: YYYY
+  isbn:
+  edition:
+  block_title: QQQQ
