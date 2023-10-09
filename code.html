@@ -334,6 +334,7 @@ demo()
 ```
 </pre></div>
 </div>
+<p>This is then rendered as a style code block:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># A comment</span>
 <span class="k">def</span> <span class="nf">demo</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;An example function.</span>
@@ -345,7 +346,7 @@ demo()
 </pre></div>
 </div>
 <p><em>In Markdown, the backticked block typically also defines the language so that languge sensitive syntax highlighting can be applied appropriately.</em></p>
-<p>This renders to OU-XML as:</p>
+<p>This “rendered” block is described in OU-XML as:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ProgramListing&gt;</span>
 <span class="w">  </span><span class="nt">&lt;Paragraph&gt;</span>#<span class="w"> </span>A<span class="w"> </span>comment<span class="nt">&lt;/Paragraph&gt;</span>
 <span class="w">  </span><span class="nt">&lt;Paragraph&gt;</span>def<span class="w"> </span>demo():<span class="nt">&lt;/Paragraph&gt;</span>
@@ -358,7 +359,8 @@ demo()
 <span class="nt">&lt;/ProgramListing&gt;</span>
 </pre></div>
 </div>
-<p>We can also refer inline, for example to the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> package.</p>
+<p><em>Note that there is no declaration of the language type to support language sensitive syntax highlighting.</em></p>
+<p>We can also refer to code inline, for example to the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> package.</p>
 <p>This renders to OU-XML as:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Paragraph&gt;</span>We<span class="w"> </span>can<span class="w"> </span>also<span class="w"> </span>refer<span class="w"> </span>inline,<span class="w"> </span>for<span class="w"> </span>example<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span><span class="nt">&lt;ComputerCode&gt;</span>pandas<span class="nt">&lt;/ComputerCode&gt;</span><span class="w"> </span>package.<span class="nt">&lt;/Paragraph&gt;</span>
 </pre></div>
