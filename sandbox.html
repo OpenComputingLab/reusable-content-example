@@ -292,7 +292,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -308,6 +310,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-process">8.1. Build process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-do">8.2. TO DO</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -320,7 +331,17 @@ document.write(`
   <section id="trying-out-the-environment">
 <h1><span class="section-number">8. </span>Trying out the environment<a class="headerlink" href="#trying-out-the-environment" title="Permalink to this heading">#</a></h1>
 <p>You can try out the workflow in pre-configured environment using a <code class="docutils literal notranslate"><span class="pre">.devcontainer</span></code> in a VS Code environment running on your own computer, or in GitHub Codespaces.</p>
-<p>TO DO</p>
+<section id="build-process">
+<h2><span class="section-number">8.1. </span>Build process<a class="headerlink" href="#build-process" title="Permalink to this heading">#</a></h2>
+<p>The build process for generating OU-XML from markdown is a two step process.</p>
+<p>The first step is to generate a Sphinx XML version of the Jupyter Book, as defined by the <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> and <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file:</p>
+<p><code class="docutils literal notranslate"><span class="pre">jb</span> <span class="pre">build</span> <span class="pre">.</span> <span class="pre">--builder</span> <span class="pre">custom</span> <span class="pre">--custom-builder</span> <span class="pre">xml</span></code></p>
+<p>The second step is to use the <a class="reference external" href="https://pypi.org/project/ou-book-theme/"><code class="docutils literal notranslate"><span class="pre">ou-book-theme</span></code></a> Pyhton package to convert the Sphinx XML to OU-XML:</p>
+<p><code class="docutils literal notranslate"><span class="pre">obt</span> <span class="pre">convert-to-ouxml</span> <span class="pre">.</span></code></p>
+<p><em>NB I think release version of <code class="docutils literal notranslate"><span class="pre">ou-book-theme</span></code> is laggiong the modified version I have been working on…</em></p>
+</section>
+<section id="to-do">
+<h2><span class="section-number">8.2. </span>TO DO<a class="headerlink" href="#to-do" title="Permalink to this heading">#</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{exercise}
 :label: my-exercise
 
@@ -352,6 +373,7 @@ factorial(4)
 </pre></div>
 </div>
 <p>More</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -399,6 +421,21 @@ factorial(4)
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-process">8.1. Build process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-do">8.2. TO DO</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

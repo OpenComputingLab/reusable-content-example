@@ -99,7 +99,7 @@ parts:
       - file: conclusion2
 ```
 
-If no file suffix is provided for the filename, the build process will look for files with the markdon (`.md`) or Jupyter notebook (`.ipynb`) file suffix.
+If no file suffix is provided for the filename, the build process will look for files with the markdown (`.md`) or Jupyter notebook (`.ipynb`) file suffix.
 
 Typically, each file will define a single `<Session>` in the corresponding `<Item>`. Each file should start with a level 1 heading; lower level headings within each file trigger the creation of an `<InternalSection>` at that point. The  `<InternalSection>` blocks may be nested in line with ever subordinate heading levels.
 
