@@ -336,8 +336,24 @@ s(w_t) + y_{t+1}
 <div class="math notranslate nohighlight" id="equation-my-equation">
 <span class="eqno">(5.1)<a class="headerlink" href="#equation-my-equation" title="Permalink to this equation">#</a></span>\[w_{t+1} = (1 + r_{t+1})
 s(w_t) + y_{t+1}\]</div>
-<p>Dollar math syntax may also be used to define block equations:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$$
+<p>These corresponding OU-XML is then a <code class="docutils literal notranslate"><span class="pre">&lt;ProgramListing&gt;</span></code> to show the script that is used to defined the equation, and an <code class="docutils literal notranslate"><span class="pre">Equation</span></code> block from which the rendered equation can be generated:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>&lt;ProgramListing&gt;
+    &lt;Paragraph&gt;```{math}&lt;/Paragraph&gt;
+    &lt;Paragraph&gt;:label: my-equation-identifier&lt;/Paragraph&gt;
+    &lt;Paragraph&gt;w_{t+1} = (1 + r_{t+1})&lt;/Paragraph&gt;
+    &lt;Paragraph&gt;s(w_t) + y_{t+1}&lt;/Paragraph&gt;
+    &lt;Paragraph&gt;```&lt;/Paragraph&gt;
+&lt;/ProgramListing&gt;
+        
+&lt;Equation id=&quot;my-equation&quot;&gt;
+    &lt;TeX&gt;w_{t+1} = (1 + r_{t+1})
+s(w_t) + y_{t+1}&lt;/TeX&gt;
+&lt;/Equation&gt;
+
+Dollar math syntax may also be used to define block equations:
+
+```text
+$$
 \label{maxwell}
 \begin{aligned}
 \nabla \times \vec{e}+\frac{\partial \vec{b}}{\partial t}&amp;=0 \\
@@ -353,6 +369,27 @@ $$
 \nabla \times \vec{h}-\vec{j}&amp;=\vec{s}_{e}
 \end{aligned}
 $$</p>
+<p>In OU-XML, we again render the two elements above as a listing and an equation type:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ProgramListing&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Paragraph&gt;</span>$$<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Paragraph&gt;</span>\label{maxwell}<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Paragraph&gt;</span>\begin{aligned}<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Paragraph&gt;</span>\nabla<span class="w"> </span>\times<span class="w"> </span>\vec{e}+\frac{\partial<span class="w"> </span>\vec{b}}{\partial<span class="w"> </span>t}<span class="ni">&amp;amp;</span>amp;=0<span class="w"> </span>\\<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Paragraph&gt;</span>\nabla<span class="w"> </span>\times<span class="w"> </span>\vec{h}-\vec{j}<span class="ni">&amp;amp;</span>amp;=\vec{s}\_{e}<span class="nt">&lt;/Paragraph&gt;&lt;Paragraph&gt;</span>\end{aligned}<span class="nt">&lt;/Paragraph</span>
+<span class="nt">    &gt;&lt;Paragraph&gt;</span>$$<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="nt">&lt;/ProgramListing&gt;</span>
+
+<span class="nt">&lt;Equation&gt;</span>
+<span class="w">    </span><span class="nt">&lt;TeX&gt;</span>
+<span class="w">        </span>\label{maxwell}
+<span class="w">        </span>\begin{aligned}
+<span class="w">        </span>\nabla<span class="w"> </span>\times<span class="w"> </span>\vec{e}+\frac{\partial<span class="w"> </span>\vec{b}}{\partial<span class="w"> </span>t}<span class="ni">&amp;amp;</span>=0<span class="w"> </span>\
+<span class="w">        </span>\nabla<span class="w"> </span>\times<span class="w"> </span>\vec{h}-\vec{j}<span class="ni">&amp;amp;</span>=\vec{s}_{e}
+<span class="w">        </span>\end{aligned}
+<span class="w">    </span><span class="nt">&lt;/TeX&gt;</span>
+<span class="nt">&lt;/Equation&gt;</span>
+</pre></div>
+</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">$$</span></code> syntax also works as a one-liner. For example, the single line:</p>
 <p><code class="docutils literal notranslate"><span class="pre">$$</span> <span class="pre">\label{one-liner}</span> <span class="pre">Ax=b</span> <span class="pre">$$</span></code></p>
 <p>will ultimately render as the formatted equation:</p>
