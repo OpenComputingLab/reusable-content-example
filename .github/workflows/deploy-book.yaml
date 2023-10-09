@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install jupyter-book ou-jupyter-book-tools
-        pip install ou_book_theme sphinxcontrib.mermaid sphinxcontrib-youtube
+        pip install ou_book_theme sphinxcontrib.mermaid sphinxcontrib-youtube sphinx-exercise
     # Build the book
     - name: Build the book
       run: |
