@@ -25,6 +25,56 @@ flowchart LR
   I --> L[OU-PDF]
 ```
 
+
+## Example Markdown Styling
+
+Simple markdown styling supports the rendering of *emphasis* and __strong__ elements through simple markup.
+
+These are rendered to OU-XML as:
+
+```xml
+ <Paragraph>Simple markdown styling supports the rendering of <i>emphasis</i> and <b>strong</b> elements through simple markup.</Paragraph>
+```
+
+Simple lists can also be defined. For example, unordered lists:
+
+- item one
+- item two
+
+as well as ordered lists:
+
+1. item one
+1. item two
+
+The unordered list is rendered to OU-XML as:
+
+```xml
+<BulletedList>
+  <ListItem>
+    <Paragraph>item one</Paragraph>
+  </ListItem>
+  <ListItem>
+    <Paragraph>item two</Paragraph>
+  </ListItem>
+</BulletedList>
+```
+
+The fiollowing paragraph and the ordered list are then rendered as:
+
+```xml
+<Paragraph>as well as ordered lists:</Paragraph>
+<NumberedList>
+  <ListItem>
+    <Paragraph>item one</Paragraph>
+  </ListItem>
+  <ListItem>
+    <Paragraph>item two</Paragraph>
+  </ListItem>
+</NumberedList>
+```
+
+## Markdown Publishing Tools and Frameworks
+
 Example publishing tools and frameworks for working with markdown include:
 
 - [`pandoc`](https://pandoc.org/): a low level computation tool for converting between different document formats;

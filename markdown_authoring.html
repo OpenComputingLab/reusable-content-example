@@ -319,8 +319,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ou-xml-production-workflow-using-jupyter-book">2.1. OU-XML production workflow using Jupyter Book</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-the-table-of-contents-toc-yml">2.1.1. Defining the table of contents (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-markdown-styling">2.1. Example Markdown Styling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-publishing-tools-and-frameworks">2.2. Markdown Publishing Tools and Frameworks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ou-xml-production-workflow-using-jupyter-book">2.3. OU-XML production workflow using Jupyter Book</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-the-table-of-contents-toc-yml">2.3.1. Defining the table of contents (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>)</a></li>
 </ul>
 </li>
 </ul>
@@ -357,6 +359,49 @@ document.write(`
 <p><span class="caption-number">Figure 2.1 </span><span class="caption-text">Publishing workflows from MyST markdown</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+<section id="example-markdown-styling">
+<h2><span class="section-number">2.1. </span>Example Markdown Styling<a class="headerlink" href="#example-markdown-styling" title="Permalink to this heading">#</a></h2>
+<p>Simple markdown styling supports the rendering of <em>emphasis</em> and <strong>strong</strong> elements through simple markup.</p>
+<p>These are rendered to OU-XML as:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">&lt;Paragraph&gt;</span>Simple<span class="w"> </span>markdown<span class="w"> </span>styling<span class="w"> </span>supports<span class="w"> </span>the<span class="w"> </span>rendering<span class="w"> </span>of<span class="w"> </span><span class="nt">&lt;i&gt;</span>emphasis<span class="nt">&lt;/i&gt;</span><span class="w"> </span>and<span class="w"> </span><span class="nt">&lt;b&gt;</span>strong<span class="nt">&lt;/b&gt;</span><span class="w"> </span>elements<span class="w"> </span>through<span class="w"> </span>simple<span class="w"> </span>markup.<span class="nt">&lt;/Paragraph&gt;</span>
+</pre></div>
+</div>
+<p>Simple lists can also be defined. For example, unordered lists:</p>
+<ul class="simple">
+<li><p>item one</p></li>
+<li><p>item two</p></li>
+</ul>
+<p>as well as ordered lists:</p>
+<ol class="arabic simple">
+<li><p>item one</p></li>
+<li><p>item two</p></li>
+</ol>
+<p>The unordered list is rendered to OU-XML as:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;BulletedList&gt;</span>
+<span class="w">  </span><span class="nt">&lt;ListItem&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Paragraph&gt;</span>item<span class="w"> </span>one<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/ListItem&gt;</span>
+<span class="w">  </span><span class="nt">&lt;ListItem&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Paragraph&gt;</span>item<span class="w"> </span>two<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/ListItem&gt;</span>
+<span class="nt">&lt;/BulletedList&gt;</span>
+</pre></div>
+</div>
+<p>The fiollowing paragraph and the ordered list are then rendered as:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Paragraph&gt;</span>as<span class="w"> </span>well<span class="w"> </span>as<span class="w"> </span>ordered<span class="w"> </span>lists:<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="nt">&lt;NumberedList&gt;</span>
+<span class="w">  </span><span class="nt">&lt;ListItem&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Paragraph&gt;</span>item<span class="w"> </span>one<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/ListItem&gt;</span>
+<span class="w">  </span><span class="nt">&lt;ListItem&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Paragraph&gt;</span>item<span class="w"> </span>two<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/ListItem&gt;</span>
+<span class="nt">&lt;/NumberedList&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="markdown-publishing-tools-and-frameworks">
+<h2><span class="section-number">2.2. </span>Markdown Publishing Tools and Frameworks<a class="headerlink" href="#markdown-publishing-tools-and-frameworks" title="Permalink to this heading">#</a></h2>
 <p>Example publishing tools and frameworks for working with markdown include:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pandoc.org/"><code class="docutils literal notranslate"><span class="pre">pandoc</span></code></a>: a low level computation tool for converting between different document formats;</p></li>
@@ -375,8 +420,9 @@ document.write(`
 </figure>
 </div>
 <p>See TO DO  for guidance on how to launch a preconfigured development environment within which you can try out the workflow described in this document.</p>
+</section>
 <section id="ou-xml-production-workflow-using-jupyter-book">
-<h2><span class="section-number">2.1. </span>OU-XML production workflow using Jupyter Book<a class="headerlink" href="#ou-xml-production-workflow-using-jupyter-book" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.3. </span>OU-XML production workflow using Jupyter Book<a class="headerlink" href="#ou-xml-production-workflow-using-jupyter-book" title="Permalink to this heading">#</a></h2>
 <p>An increasing number of OU modules that require students to work with executable computer code are starting to use Jupyter notebooks to provide students with an interactive learning environment that blends rich content with embedded executable code and rendered code outputs (<a class="reference internal" href="#notebook-preview"><span class="std std-numref">Figure 2.3</span></a>).</p>
 <figure class="align-default" id="notebook-preview">
 <a class="reference internal image-reference" href="_images/notebook_preview.png"><img alt="screenshot of Juoyer notebook" src="_images/notebook_preview.png" style="width: 600px;" /></a>
@@ -398,7 +444,7 @@ document.write(`
 <li><p>Sphinx-XML converted to OU-XML.</p></li>
 </ul>
 <section id="defining-the-table-of-contents-toc-yml">
-<h3><span class="section-number">2.1.1. </span>Defining the table of contents (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>)<a class="headerlink" href="#defining-the-table-of-contents-toc-yml" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.3.1. </span>Defining the table of contents (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>)<a class="headerlink" href="#defining-the-table-of-contents-toc-yml" title="Permalink to this heading">#</a></h3>
 <p>The table of contents file can be used to define the contents of one of more OU-XML documents, where each part in the <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> file defines a structured content <code class="docutils literal notranslate"><span class="pre">&lt;Item&gt;</span></code>.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jb-book</span>
 <span class="nt">root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_copyright_notice</span>
@@ -488,8 +534,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ou-xml-production-workflow-using-jupyter-book">2.1. OU-XML production workflow using Jupyter Book</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-the-table-of-contents-toc-yml">2.1.1. Defining the table of contents (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-markdown-styling">2.1. Example Markdown Styling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-publishing-tools-and-frameworks">2.2. Markdown Publishing Tools and Frameworks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ou-xml-production-workflow-using-jupyter-book">2.3. OU-XML production workflow using Jupyter Book</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-the-table-of-contents-toc-yml">2.3.1. Defining the table of contents (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>)</a></li>
 </ul>
 </li>
 </ul>

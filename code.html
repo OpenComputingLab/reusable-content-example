@@ -332,7 +332,24 @@ document.write(`
 <span class="n">demo</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>This renders to OU-XML as:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ProgramListing&gt;</span>
+<span class="w">  </span><span class="nt">&lt;Paragraph&gt;</span>#<span class="w"> </span>A<span class="w"> </span>comment<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="w">  </span><span class="nt">&lt;Paragraph&gt;</span>def<span class="w"> </span>demo():<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="w">  </span><span class="nt">&lt;Paragraph&gt;</span><span class="w">    </span>&quot;&quot;&quot;An<span class="w"> </span>example<span class="w"> </span>function.<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="w">  </span><span class="nt">&lt;Paragraph&gt;</span><span class="w">    </span>&quot;&quot;&quot;<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="w">  </span><span class="nt">&lt;Paragraph&gt;</span><span class="w">    </span>a<span class="w"> </span>=<span class="w"> </span>1<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="w">  </span><span class="nt">&lt;Paragraph&gt;</span><span class="w">    </span>return<span class="w"> </span>a<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="w">  </span><span class="nt">&lt;Paragraph&gt;&lt;/Paragraph&gt;</span>
+<span class="w">  </span><span class="nt">&lt;Paragraph&gt;</span>demo()<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="nt">&lt;/ProgramListing&gt;</span>
+</pre></div>
+</div>
 <p>We can also refer inline, for example to the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> package.</p>
+<p>This renders to OU-XML as:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Paragraph&gt;</span>We<span class="w"> </span>can<span class="w"> </span>also<span class="w"> </span>refer<span class="w"> </span>inline,<span class="w"> </span>for<span class="w"> </span>example<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span><span class="nt">&lt;ComputerCode&gt;</span>pandas<span class="nt">&lt;/ComputerCode&gt;</span><span class="w"> </span>package.<span class="nt">&lt;/Paragraph&gt;</span>
+</pre></div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
