@@ -36,6 +36,7 @@ These corresponding OU-XML is then a `<ProgramListing>` to show the script that 
     <TeX>w_{t+1} = (1 + r_{t+1})
 s(w_t) + y_{t+1}</TeX>
 </Equation>
+```
 
 Dollar math syntax may also be used to define block equations:
 
