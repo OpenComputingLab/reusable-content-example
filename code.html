@@ -321,7 +321,19 @@ document.write(`
                   
   <section id="code">
 <h1><span class="section-number">6. </span>Code<a class="headerlink" href="#code" title="Permalink to this heading">#</a></h1>
-<p>We can mark up code blocks in usual markdown style:</p>
+<p>We can mark up code blocks in usual markdown style by using a triple backticked block to delimit the code block:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```python
+# A comment
+def demo():
+    &quot;&quot;&quot;An example function.
+    &quot;&quot;&quot;
+    a = 1
+    return a
+
+demo()
+```
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># A comment</span>
 <span class="k">def</span> <span class="nf">demo</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;An example function.</span>
@@ -332,6 +344,7 @@ document.write(`
 <span class="n">demo</span><span class="p">()</span>
 </pre></div>
 </div>
+<p><em>In Markdown, the backticked block typically also defines the language so that languge sensitive syntax highlighting can be applied appropriately.</em></p>
 <p>This renders to OU-XML as:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ProgramListing&gt;</span>
 <span class="w">  </span><span class="nt">&lt;Paragraph&gt;</span>#<span class="w"> </span>A<span class="w"> </span>comment<span class="nt">&lt;/Paragraph&gt;</span>
