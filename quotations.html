@@ -322,16 +322,28 @@ document.write(`
   <section id="quotations">
 <h1><span class="section-number">7. </span>Quotations<a class="headerlink" href="#quotations" title="Permalink to this heading">#</a></h1>
 <p>We can define quotations in markdown by prefix the quoted line or lines with a <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> symbol at the start of the line:</p>
-<p>This works for sinle line quotes:</p>
+<p>This works for single line quotes:</p>
 <p><code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">Here</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">single</span> <span class="pre">line</span> <span class="pre">quote.</span></code></p>
 <blockquote>
 <div><p>Here is a single line quote.</p>
 </div></blockquote>
-<p>and multi-line quotes:</p>
+<p>which are rendered in OU-XML as:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Quote&gt;&lt;Paragraph&gt;</span>Here<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>single<span class="w"> </span>line<span class="w"> </span>quote.<span class="nt">&lt;/Paragraph&gt;&lt;/Quote&gt;</span>
+</pre></div>
+</div>
+<p>amd multi-line quotes:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt; Here is the first line of the quote...
 &gt; ...and here is the second.
 &gt;
 &gt; And a final line.
+</pre></div>
+</div>
+<p>which are rendered in OU-XML as:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Quote&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Paragraph&gt;</span>Here<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>first<span class="w"> </span>line<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>quote…
+<span class="w">    </span>…and<span class="w"> </span>here<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>second.<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="nt">&lt;Paragraph&gt;</span>And<span class="w"> </span>a<span class="w"> </span>final<span class="w"> </span>line.<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="nt">&lt;/Quote&gt;</span>
 </pre></div>
 </div>
 <p>The following is a quote and should be marked up as such:</p>
@@ -340,12 +352,24 @@ document.write(`
 …and here is the second.</p>
 <p>And a final line.</p>
 </div></blockquote>
-<p>THe following is a quote that should be marked up as such, along with a typographically distinguished source reference component:</p>
+<p>The following is a quote that should be marked up as such, along with a typographically distinguished source reference component:</p>
 <blockquote>
 <div><p>Here is the first line of the quote…
 …and here is the second.</p>
 <p>Source: And a final line source…</p>
 </div></blockquote>
+<p>The source markdown is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt; Here is the first line of the quote...
+&gt; ...and here is the second.
+&gt;
+&gt; Source: And a final line source...
+</pre></div>
+</div>
+<p>In OU-XML, we get:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Quote&gt;&lt;Paragraph&gt;</span>Here<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>first<span class="w"> </span>line<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>quote…
+<span class="w">                </span>…and<span class="w"> </span>here<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>second.<span class="nt">&lt;/Paragraph&gt;&lt;SourceReference&gt;</span>And<span class="w"> </span>a<span class="w"> </span>final<span class="w"> </span>line<span class="w"> </span>source…<span class="nt">&lt;/SourceReference&gt;&lt;/Quote&gt;</span>
+</pre></div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
