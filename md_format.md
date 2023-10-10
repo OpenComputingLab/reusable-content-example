@@ -87,7 +87,7 @@ ou:
 
 ### Component numbering
 
-Automatic numbering may be enabled via the `_toc.yml` file. 
+Automatic numbering may be enabled via the `_toc.yml` file.
 
 ## Extending the markup language
 
