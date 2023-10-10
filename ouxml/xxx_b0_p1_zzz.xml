@@ -92,7 +92,7 @@
         </BulletedList>
         <Paragraph>The use of several tools to support quality processes (markdown linting, spellchecking, OU-XML validation) was also explored.</Paragraph>
         <Paragraph>The source repository for the source content can be found here: <a href="https://github.com/innovationOUtside/vce-generic-guide">innovationOUtside/vce-generic-guide</a>.</Paragraph>
-        <Paragraph>Example OU-XML automatically generated from the same source markdown can be viewed here: <a href="https://opencomputinglab.github.io/reusable-content-example//ouxmlxxx_b0_p1_zzz.xml">https://opencomputinglab.github.io/reusable-content-example//ouxmlxxx_b0_p1_zzz.xml</a></Paragraph>
+        <Paragraph>Example OU-XML automatically generated from the same source markdown can be viewed here: <a href="https://opencomputinglab.github.io/reusable-content-example/ouxml/xxx_b0_p1_zzz.xml">https://opencomputinglab.github.io/reusable-content-example/ouxml/xxx_b0_p1_zzz.xml</a></Paragraph>
         <Paragraph>An HTML version rendered from the same source markdown by a Jupyter Book publication process is available here: <a href="https://opencomputinglab.github.io/reusable-content-example/">https://opencomputinglab.github.io/reusable-content-example/</a></Paragraph>
         <Paragraph><i><b>Acknowledgements</b>: thanks to Karen Vines for helping iterate the text, Edith Francis for helping iterate the OU-XML, and Mark Hall for the original markdown2ou-xml converter.</i></Paragraph>
     </Session>
@@ -223,7 +223,7 @@
                     <Caption>Figure 2.2 Screenshot of MyST sandbox editor with live preview.</Caption>
                 </Figure>
             </Box>
-            <Paragraph>See <ComputerCode>sandobox</ComputerCode> for guidance on how to launch a preconfigured development environment within which you can try out the workflow described in this document.</Paragraph>
+            <Paragraph>See <ComputerCode>sandbox</ComputerCode> for guidance on how to launch a preconfigured development environment within which you can try out the workflow described in this document.</Paragraph>
         </InternalSection>
     </Session>
     <Session id="ou-xml-production-workflow-using-jupyter-book">
@@ -285,10 +285,10 @@
             <Paragraph>A GitHub Action associated with this repository can be used to automatically:</Paragraph>
             <BulletedList>
                 <ListItem>
-                    <Paragraph>build and publish ah HTML version of this book from the source markdown (HTML book available <a href="https://opencomputinglab.github.io/reusable-content-example/preface.html">here</a>)</Paragraph>
+                    <Paragraph>build and publish an HTML version of this book from the source markdown (HTML book available <a href="https://opencomputinglab.github.io/reusable-content-example/preface.html">here</a>)</Paragraph>
                 </ListItem>
                 <ListItem>
-                    <Paragraph>build and publish the OU-XML from the source markdown (OU-XML document available <a href="https://opencomputinglab.github.io/reusable-content-example//ouxmlxxx_b0_p1_zzz.xml">here</a> ; a zip archive file of the OU-XML and associated media asstets is ailable as an automatically generated GitHUb Action artefact attached to the <ComputerCode>deploy-book</ComputerCode> action reports <a href="https://github.com/OpenComputingLab/reusable-content-example/actions/workflows/deploy-book.yaml">here</a> )</Paragraph>
+                    <Paragraph>build and publish the OU-XML from the source markdown (OU-XML document available <a href="https://opencomputinglab.github.io/reusable-content-example/ouxml/xxx_b0_p1_zzz.xml">here</a> ; a zip archive file of the OU-XML and associated media asstets is ailable as an automatically generated GitHUb Action artefact attached to the <ComputerCode>deploy-book</ComputerCode> action reports <a href="https://github.com/OpenComputingLab/reusable-content-example/actions/workflows/deploy-book.yaml">here</a> )</Paragraph>
                 </ListItem>
             </BulletedList>
             <InternalSection id="example-github-action-automation-script">
@@ -488,7 +488,7 @@ s(w_t) + y_{t+1}</TeX></Equation>
             </ListItem>
         </BulletedList>
         <Box>
-            <Heading>Practical issues associated with using Oxygen Autho</Heading>
+            <Heading>Practical issues associated with using Oxygen Author</Heading>
             <Paragraph>The default web browser in the Microsoft Desktop environment was an old browser that did not work properly when trying to run the OU-XML publisher. Changing Windows preferences to use Chrome fxed the issue. When rendering the OU-XML via the browser accessed web-service, OU authentication was required within each new RDP session, adding further friction to the process.</Paragraph>
         </Box>
         <Paragraph>To simplify the process of validating the OU-XML, the XML schema file was located and exported. A simple OU-XML command line validation tool was then developed to allow for local validation of generated OU-XML files without the need to access Oxygen Author application. (The tool can be found <a href="https://github.com/innovationOUtside/ou-xml-validator">here</a>.) <i>A simple previewer XSL file also looked to be availabnle for generating preview HTML from OU-XML.</i></Paragraph>

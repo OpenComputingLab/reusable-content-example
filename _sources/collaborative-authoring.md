@@ -22,7 +22,7 @@ Several steps were then taken to improve this developmental workflow:
   - run additional quality checks against the generated OU-XML using unenforced Schematron quality rules; *these rules display quality improvement recommendations*
   - publish the content via a web browser to PDF or VLE previewed HTML.
 
-```{admonition} Practical issues associated with using Oxygen Autho
+```{admonition} Practical issues associated with using Oxygen Author
 
 The default web browser in the Microsoft Desktop environment was an old browser that did not work properly when trying to run the OU-XML publisher. Changing Windows preferences to use Chrome fxed the issue. When rendering the OU-XML via the browser accessed web-service, OU authentication was required within each new RDP session, adding further friction to the process.
 ```
