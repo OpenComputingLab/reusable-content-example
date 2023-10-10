@@ -58,7 +58,7 @@ The unordered list is rendered to OU-XML as:
 </BulletedList>
 ```
 
-The fiollowing paragraph and the ordered list are then rendered as:
+The following paragraph and the ordered list are then rendered as:
 
 ```xml
 <Paragraph>as well as ordered lists:</Paragraph>
@@ -71,6 +71,92 @@ The fiollowing paragraph and the ordered list are then rendered as:
   </ListItem>
 </NumberedList>
 ```
+
+Simple tables can be described using the markdown table format. The table format supports alignment within columns but the alignment does not carry over to the OU-XML:
+
+```text
+| Col 1 | Col 2         | Col 3  |
+|-------|:-------------:|-------:|
+| col 1 |  left-aligned | L      |
+| col 2 |    centered   | center |
+| col 2 | right-aligned | R      |
+
+```
+
+| Col 1 | Col 2         | Col 3  |
+|-------|:-------------:|-------:|
+| col 1 |  left-aligned | L      |
+| col 2 |    centered   | center |
+| col 2 | right-aligned | R      |
+
+Here's fragment of the corresponding OU-XML:
+
+```xml
+<Table>
+  <TableHead>Table 1 </TableHead><tbody>
+    <tr>
+      <th class="ColumnHeadLeft">
+          <Paragraph>Col 1</Paragraph>
+      </th>
+      <th class="ColumnHeadLeft">
+          <Paragraph>Col 2</Paragraph>
+      </th>
+      <th class="ColumnHeadLeft">
+          <Paragraph>Col 3</Paragraph>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <Paragraph>col 1</Paragraph>
+      </td>
+      <td>
+        <Paragraph>left-aligned</Paragraph>
+      </td>
+      <td>
+        <Paragraph>L</Paragraph>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <Paragraph>col 2</Paragraph>
+      </td>
+      <td>
+        <Paragraph>centered</Paragraph>
+      </td>
+      <td>
+        <Paragraph>center</Paragraph>
+      </td>
+    </tr>
+  </tbody>
+</Table>
+```
+
+Boxes can be defined using MyST markdown admonition blocks:
+
+````text
+```{admonition} Box Title
+
+Here is the box content.
+
+It can contain a *wide* __range__ of elements.
+```
+````
+
+```{admonition} Box Title
+
+Here is the box content.
+
+It can contain a *wide* __range__ of elements.
+```
+
+```xml
+  <Box>
+    <Heading>Box Title</Heading>
+    <Paragraph>Here is the box content.</Paragraph>
+    <Paragraph>It can contain a <i>wide</i> <b>range</b> of elements.</Paragraph>
+  </Box>
+```
+
 
 ## Markdown Publishing Tools and Frameworks
 
