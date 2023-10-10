@@ -171,7 +171,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Maths</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code.html">6. Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quotations.html">7. Quotations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">8. Collaborative Authoring and Publishing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">8. Collaborative Development, Authoring and Publishing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sandbox.html">9. Trying out the environment</a></li>
 </ul>
 
@@ -327,7 +327,7 @@ document.write(`
 <p>For example, the inline equation <span class="math notranslate nohighlight">\(e=mc^2\)</span> is specified in mardown using the <code class="docutils literal notranslate"><span class="pre">{math}</span></code> role: <code class="docutils literal notranslate"><span class="pre">{math}`e=mc^2`</span></code></p>
 <p>We can also use a <code class="docutils literal notranslate"><span class="pre">{math}</span></code> directive to define an equation block:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{math}
-:label: my-equation-identifier
+:label: my-equation
 w_{t+1} = (1 + r_{t+1})
 s(w_t) + y_{t+1}
 ```
@@ -339,7 +339,7 @@ s(w_t) + y_{t+1}\]</div>
 <p>These corresponding OU-XML is then a <code class="docutils literal notranslate"><span class="pre">&lt;ProgramListing&gt;</span></code> to show the script that is used to defined the equation, and an <code class="docutils literal notranslate"><span class="pre">Equation</span></code> block from which the rendered equation can be generated:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ProgramListing&gt;</span>
 <span class="w">    </span><span class="nt">&lt;Paragraph&gt;</span>```{math}<span class="nt">&lt;/Paragraph&gt;</span>
-<span class="w">    </span><span class="nt">&lt;Paragraph&gt;</span>:label:<span class="w"> </span>my-equation-identifier<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Paragraph&gt;</span>:label:<span class="w"> </span>my-equation<span class="nt">&lt;/Paragraph&gt;</span>
 <span class="w">    </span><span class="nt">&lt;Paragraph&gt;</span>w_{t+1}<span class="w"> </span>=<span class="w"> </span>(1<span class="w"> </span>+<span class="w"> </span>r_{t+1})<span class="nt">&lt;/Paragraph&gt;</span>
 <span class="w">    </span><span class="nt">&lt;Paragraph&gt;</span>s(w_t)<span class="w"> </span>+<span class="w"> </span>y_{t+1}<span class="nt">&lt;/Paragraph&gt;</span>
 <span class="w">    </span><span class="nt">&lt;Paragraph&gt;</span>```<span class="nt">&lt;/Paragraph&gt;</span>

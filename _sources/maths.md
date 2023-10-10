@@ -8,7 +8,7 @@ We can also use a `{math}` directive to define an equation block:
 
 ````text
 ```{math}
-:label: my-equation-identifier
+:label: my-equation
 w_{t+1} = (1 + r_{t+1})
 s(w_t) + y_{t+1}
 ```
@@ -20,13 +20,12 @@ w_{t+1} = (1 + r_{t+1})
 s(w_t) + y_{t+1}
 ```
 
-
 These corresponding OU-XML is then a `<ProgramListing>` to show the script that is used to defined the equation, and an `Equation` block from which the rendered equation can be generated:
 
 ```xml
 <ProgramListing>
     <Paragraph>```{math}</Paragraph>
-    <Paragraph>:label: my-equation-identifier</Paragraph>
+    <Paragraph>:label: my-equation</Paragraph>
     <Paragraph>w_{t+1} = (1 + r_{t+1})</Paragraph>
     <Paragraph>s(w_t) + y_{t+1}</Paragraph>
     <Paragraph>```</Paragraph>

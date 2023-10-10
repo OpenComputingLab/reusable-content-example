@@ -169,7 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="maths.html">5. Maths</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code.html">6. Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quotations.html">7. Quotations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">8. Collaborative Authoring and Publishing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">8. Collaborative Development, Authoring and Publishing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sandbox.html">9. Trying out the environment</a></li>
 </ul>
 
@@ -322,24 +322,29 @@ document.write(`
   <section id="introduction">
 <h1><span class="section-number">1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
 <p>Writing software guides to support educational modules adds authoring, editing and testing overheads to module production. If multiple modules use similar environments or software applications, reusing generic or customisable materials provides a way or reducing those overheads.</p>
-<p>This informal report describes the production route for a customisable software guide to support the use of virtual computing environments (VCEs) across several modules.</p>
-<p>The VCEs are accessed as a remotely hosted environment provided by the Open University <em>Compute Home</em> service, or as a locally run Docker container. <em>The same Docker image should ideally be used to support both the hosted and locally run environment.</em></p>
+<p>This informal report describes the production route for a customisable software guide to support the use of virtual computing environments (VCEs) across several modules. The VCEs are accessed as a remotely hosted environment provided by the Open University <em>Compute Home</em> service, or as a locally run Docker container. The method for getting started using the enviromment is likely to be the same across many modules, which suggests an opportunity for reusing generic <em>getting started</em> material. However, different modules may also vary in the sfotware provided by the VCE, which means that some degree of bespoke software guide style support material may also be required.</p>
 <p>A common production route for the software guides required for three separate modules was explored:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.open.ac.uk/courses/modules/m348"><em>M348 Applied statistical modelling</em></a>, which provides a classic Jupyter notebook environment running an R kernel;</p></li>
 <li><p><a class="reference external" href="https://www.open.ac.uk/courses/modules/tm129"><em>TM129 Technologies in practice (Robotics block)</em></a>, which provides a classic Jupyter notebook environment running an Python kernel and a simple notebook based robot simulation environment;</p></li>
 <li><p><a class="reference external" href="https://www.open.ac.uk/courses/modules/tm351"><em>TM351 Data management and analysis</em></a>, which provides a JupyterLab environment running a Python kernel, PostgreSQL and MongoDB database services, and the OpenRefine data-cleaning application.</p></li>
 </ul>
-<p>The main aims were:</p>
+<p>At a technical level main aims were to explore:</p>
 <ul class="simple">
-<li><p>to maximise the amount of directly reusable content;</p></li>
-<li><p>to explore the use of reusable customisable content;</p></li>
-<li><p>to explore ways of integrating module specific content.</p></li>
+<li><p>a markdown authoring route;</p></li>
+<li><p>a viable markdown to OU-XML conversion route;</p></li>
+<li><p>examples of direct publication from markdown to various output formats (HTML, PDF).</p></li>
 </ul>
-<p>In addition, the work demonstrated a markdown-based authoring route with an automated conversion process capable of producing output assets in various formats (OU-XML (for use in OU production workflows: VLE rendering, PDF creation); HTML book format; simple PDF preview). The use of several tools to support quality processes (markdown linting, spellchecking, OU-XML validation) were also explored.</p>
+<p>At a content production level, the main aims were to:</p>
+<ul class="simple">
+<li><p>maximise the amount of directly reusable content;</p></li>
+<li><p>explore the use of reusable customisable content;</p></li>
+<li><p>explore ways of integrating module specific content.</p></li>
+</ul>
+<p>The use of several tools to support quality processes (markdown linting, spellchecking, OU-XML validation) was also explored.</p>
 <p>The source repository for the source content can be found here: <a class="reference external" href="https://github.com/innovationOUtside/vce-generic-guide">innovationOUtside/vce-generic-guide</a>.</p>
 <p>Example OU-XML generated from an earlier version of this document can be found here: <a class="github reference external" href="https://github.com/OpenComputingLab/reusable-content-example/tree/main/example/ouxml">OpenComputingLab/reusable-content-example</a></p>
-<p><em><strong>Acknowledgements</strong>: thanks to Karen Vines for helping iterate the text, Edith Francis for helping iterate the OU-XML, and Mark Hall for the original markdown2ou-xml converter. –Tony Hirst</em></p>
+<p><em><strong>Acknowledgements</strong>: thanks to Karen Vines for helping iterate the text, Edith Francis for helping iterate the OU-XML, and Mark Hall for the original markdown2ou-xml converter.</em></p>
 </section>
 
     <script type="text/x-thebe-config">

@@ -10,11 +10,15 @@ The first step is to generate a Sphinx XML version of the Jupyter Book, as defin
 
 `jb build . --builder custom --custom-builder xml`
 
-The second step is to use the [`ou-book-theme`](https://pypi.org/project/ou-book-theme/) Pyhton package to convert the Sphinx XML to OU-XML:
+The second step is to use the [`ou-book-theme`](https://pypi.org/project/ou-book-theme/) Python package to convert the Sphinx XML to OU-XML:
 
 `obt convert-to-ouxml .`
 
 *NB I think release version of `ou-book-theme` is laggiong the modified version I have been working on...*
+
+Generated OU-XML content could then be validated against an OU-XML schema by running the command:
+
+`ou_xml_validator validate  path/to/testme.xml`
 
 ## TO DO
 
