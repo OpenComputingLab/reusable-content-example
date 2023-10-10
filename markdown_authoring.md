@@ -184,4 +184,4 @@ Screenshot of MyST sandbox editor with live preview.
 
 ````
 
-See `sandobox` for guidance on how to launch a preconfigured development environment within which you can try out the workflow described in this document.
+See `sandbox` for guidance on how to launch a preconfigured development environment within which you can try out the workflow described in this document.

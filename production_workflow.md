@@ -77,8 +77,8 @@ Generated OU-XML content in the `_build/ouxml` directory can then be validated a
 
 A GitHub Action associated with this repository can be used to automatically:
 
-- build and publish ah HTML version of this book from the source markdown (HTML book available [here](https://opencomputinglab.github.io/reusable-content-example/preface.html))
-- build and publish the OU-XML from the source markdown (OU-XML document available [here](https://opencomputinglab.github.io/reusable-content-example//ouxmlxxx_b0_p1_zzz.xml) ; a zip archive file of the OU-XML and associated media asstets is ailable as an automatically generated GitHUb Action artefact attached to the `deploy-book` action reports [here](https://github.com/OpenComputingLab/reusable-content-example/actions/workflows/deploy-book.yaml) )
+- build and publish an HTML version of this book from the source markdown (HTML book available [here](https://opencomputinglab.github.io/reusable-content-example/preface.html))
+- build and publish the OU-XML from the source markdown (OU-XML document available [here](https://opencomputinglab.github.io/reusable-content-example/ouxml/xxx_b0_p1_zzz.xml) ; a zip archive file of the OU-XML and associated media asstets is ailable as an automatically generated GitHUb Action artefact attached to the `deploy-book` action reports [here](https://github.com/OpenComputingLab/reusable-content-example/actions/workflows/deploy-book.yaml) )
 
 ### Example GitHub Action automation script
 
