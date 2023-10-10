@@ -222,54 +222,82 @@
                     <Caption>Figure 2.2 Screenshot of MyST sandbox editor with live preview.</Caption>
                 </Figure>
             </Box>
-            <Paragraph>See TO DO  for guidance on how to launch a preconfigured development environment within which you can try out the workflow described in this document.</Paragraph>
+            <Paragraph>See <ComputerCode>sandobox</ComputerCode> for guidance on how to launch a preconfigured development environment within which you can try out the workflow described in this document.</Paragraph>
         </InternalSection>
-        <InternalSection id="ou-xml-production-workflow-using-jupyter-book">
-            <Heading>OU-XML production workflow using Jupyter Book</Heading>
-            <Paragraph>An increasing number of OU modules that require students to work with executable computer code are starting to use Jupyter notebooks to provide students with an interactive learning environment that blends rich content with embedded executable code and rendered code outputs (Figure 2.3).</Paragraph>
-            <Figure>
-                <Image src="xxx_b0_p1_zzz_fig2.png"/>
-                <Caption>Figure 2.3 Screenshot of Jupyter notebook.</Caption>
-            </Figure>
-            <Paragraph>To support as general a workflow as a possible, the workflow adopted builds on the Jupyter Book publishing system. This supports:</Paragraph>
+    </Session>
+    <Session id="ou-xml-production-workflow-using-jupyter-book">
+        <Title>3 OU-XML production workflow using Jupyter Book</Title>
+        <Paragraph>An increasing number of OU modules that require students to work with executable computer code are starting to use Jupyter notebooks to provide students with an interactive learning environment that blends rich content with embedded executable code and rendered code outputs (Figure 3.1).</Paragraph>
+        <Figure>
+            <Image src="xxx_b0_p1_zzz_fig2.png"/>
+            <Caption>Figure 3.1 Screenshot of Jupyter notebook.</Caption>
+        </Figure>
+        <Paragraph>To support as general a workflow as a possible, the workflow adopted builds on the Jupyter Book publishing system. This supports:</Paragraph>
+        <BulletedList>
+            <ListItem>
+                <Paragraph>rich markdown (MyST syntax);</Paragraph>
+            </ListItem>
+            <ListItem>
+                <Paragraph>markdown and/or Jupyter notebook source documents;</Paragraph>
+            </ListItem>
+            <ListItem>
+                <Paragraph>executable content (via <ComputerCode>jupyter-server</ComputerCode>);</Paragraph>
+            </ListItem>
+            <ListItem>
+                <Paragraph>conversion to OU-XML via <ComputerCode>ou-book-theme</ComputerCode>.</Paragraph>
+            </ListItem>
+        </BulletedList>
+        <Paragraph>The workflow proceeds as follows:</Paragraph>
+        <BulletedList>
+            <ListItem>
+                <Paragraph>source content authored in one or more markdown files; a tables of contents file (<ComputerCode>_toc.yml</ComputerCode>) identifies the source files and the orfer in which they are presented;</Paragraph>
+            </ListItem>
+            <ListItem>
+                <Paragraph>source content converted to output formats including Sphinx-XML by Sphinx;</Paragraph>
+            </ListItem>
+            <ListItem>
+                <Paragraph>Sphinx-XML converted to OU-XML.</Paragraph>
+            </ListItem>
+        </BulletedList>
+        <InternalSection id="defining-the-table-of-contents-toc-yml">
+            <Heading>Defining the table of contents (<ComputerCode>_toc.yml</ComputerCode>)</Heading>
+            <Paragraph>The table of contents file can be used to define the contents of one of more OU-XML documents, where each part in the <ComputerCode>_toc.yml</ComputerCode> file defines a structured content <ComputerCode>&lt;Item&gt;</ComputerCode>.</Paragraph>
+            <ProgramListing><Paragraph>format: jb-book</Paragraph><Paragraph>root: _copyright_notice</Paragraph><Paragraph>parts:</Paragraph><Paragraph>  - caption: First item name</Paragraph><Paragraph>    numbered: true</Paragraph><Paragraph>    chapters:</Paragraph><Paragraph>      - file: introduction</Paragraph><Paragraph>      - file: first_section</Paragraph><Paragraph>      - file: another_section</Paragraph><Paragraph>      - file: conclusion</Paragraph><Paragraph>  - caption: Second item name</Paragraph><Paragraph>    numbered: true</Paragraph><Paragraph>    chapters:</Paragraph><Paragraph>      - file: introduction2</Paragraph><Paragraph>      - file: only_section</Paragraph><Paragraph>      - file: conclusion2</Paragraph></ProgramListing>
+            <Paragraph>If no file suffix is provided for the filename, the build process will look for files with the markdown (<ComputerCode>.md</ComputerCode>) or Jupyter notebook (<ComputerCode>.ipynb</ComputerCode>) file suffix.</Paragraph>
+            <Paragraph>Typically, each file will define a single <ComputerCode>&lt;Session&gt;</ComputerCode> in the corresponding <ComputerCode>&lt;Item&gt;</ComputerCode>. Each file should start with a level 1 heading; lower level headings within each file trigger the creation of an <ComputerCode>&lt;InternalSection&gt;</ComputerCode> at that point. The  <ComputerCode>&lt;InternalSection&gt;</ComputerCode> blocks may be nested in line with ever subordinate heading levels.</Paragraph>
+            <Paragraph>Internal <ComputerCode>&lt;CrossRef&gt;</ComputerCode> links may be generated within each part by referencing the file name and an identifier derived the linked to (sub)heading.</Paragraph>
+        </InternalSection>
+        <InternalSection id="build-process">
+            <Heading>Build process</Heading>
+            <Paragraph>The build process for generating OU-XML from markdown is a two step process.</Paragraph>
+            <Paragraph>The first step is to use Jupyter Book tooling to generate a Sphinx XML version of the Jupyter Book, as defined by the <ComputerCode>_toc.yml</ComputerCode> and <ComputerCode>_config.yml</ComputerCode> files:</Paragraph>
+            <Paragraph><ComputerCode>jb build . --builder custom --custom-builder xml</ComputerCode></Paragraph>
+            <Paragraph>This generates XML files in the default <ComputerCode>_build/xml</ComputerCode> directory.</Paragraph>
+            <Paragraph>The second step is to use the <a href="https://pypi.org/project/ou-book-theme/"><ComputerCode>ou-book-theme</ComputerCode></a> Python package to convert the Sphinx XML to OU-XML (this looks for XML source documents in <ComputerCode>_build/xml</ComputerCode> by default):</Paragraph>
+            <Paragraph><ComputerCode>obt convert-to-ouxml .</ComputerCode></Paragraph>
+            <Paragraph><i>NB I think release version of <ComputerCode>ou-book-theme</ComputerCode> is laggiong the modified version I have been working on…</i></Paragraph>
+            <Paragraph>Generated OU-XML content in the <ComputerCode>_build/ouxml</ComputerCode> directory can then be validated against an OU-XML schema by running the command:</Paragraph>
+            <Paragraph><ComputerCode>ou_xml_validator validate  path/to/testme.xml</ComputerCode></Paragraph>
+        </InternalSection>
+        <InternalSection id="workflow-automation">
+            <Heading>Workflow Automation</Heading>
+            <Paragraph>A GitHub Action associated with this repository can be used to automatically:</Paragraph>
             <BulletedList>
                 <ListItem>
-                    <Paragraph>rich markdown (MyST syntax);</Paragraph>
+                    <Paragraph>build and publish ah HTML version of this book from the source markdown (HTML book available <a href="https://opencomputinglab.github.io/reusable-content-example/preface.html">here</a>)</Paragraph>
                 </ListItem>
                 <ListItem>
-                    <Paragraph>markdown and/or Jupyter notebook source documents;</Paragraph>
-                </ListItem>
-                <ListItem>
-                    <Paragraph>executable content (via <ComputerCode>jupyter-server</ComputerCode>);</Paragraph>
-                </ListItem>
-                <ListItem>
-                    <Paragraph>conversion to OU-XML via <ComputerCode>ou-book-theme</ComputerCode>.</Paragraph>
+                    <Paragraph>build and publish the OU-XML from the source markdown (OU-XML document available <a href="https://opencomputinglab.github.io/reusable-content-example//ouxmlxxx_b0_p1_zzz.xml">here</a> ; a zip archive file of the OU-XML and associated media asstets is ailable as an automatically generated GitHUb Action artefact attached to the <ComputerCode>deploy-book</ComputerCode> action reports <a href="https://github.com/OpenComputingLab/reusable-content-example/actions/workflows/deploy-book.yaml">here</a> )</Paragraph>
                 </ListItem>
             </BulletedList>
-            <Paragraph>The workflow proceeds as follows:</Paragraph>
-            <BulletedList>
-                <ListItem>
-                    <Paragraph>source content authored in one or more markdown files; a tables of contents file (<ComputerCode>_toc.yml</ComputerCode>) identifies the source files and the orfer in which they are presented;</Paragraph>
-                </ListItem>
-                <ListItem>
-                    <Paragraph>source content converted to output formats including Sphinx-XML by Sphinx;</Paragraph>
-                </ListItem>
-                <ListItem>
-                    <Paragraph>Sphinx-XML converted to OU-XML.</Paragraph>
-                </ListItem>
-            </BulletedList>
-            <InternalSection id="defining-the-table-of-contents-toc-yml">
-                <Heading>Defining the table of contents (<ComputerCode>_toc.yml</ComputerCode>)</Heading>
-                <Paragraph>The table of contents file can be used to define the contents of one of more OU-XML documents, where each part in the <ComputerCode>_toc.yml</ComputerCode> file defines a structured content <ComputerCode>&lt;Item&gt;</ComputerCode>.</Paragraph>
-                <ProgramListing><Paragraph>format: jb-book</Paragraph><Paragraph>root: _copyright_notice</Paragraph><Paragraph>parts:</Paragraph><Paragraph>  - caption: First item name</Paragraph><Paragraph>    numbered: true</Paragraph><Paragraph>    chapters:</Paragraph><Paragraph>      - file: introduction</Paragraph><Paragraph>      - file: first_section</Paragraph><Paragraph>      - file: another_section</Paragraph><Paragraph>      - file: conclusion</Paragraph><Paragraph>  - caption: Second item name</Paragraph><Paragraph>    numbered: true</Paragraph><Paragraph>    chapters:</Paragraph><Paragraph>      - file: introduction2</Paragraph><Paragraph>      - file: only_section</Paragraph><Paragraph>      - file: conclusion2</Paragraph></ProgramListing>
-                <Paragraph>If no file suffix is provided for the filename, the build process will look for files with the markdown (<ComputerCode>.md</ComputerCode>) or Jupyter notebook (<ComputerCode>.ipynb</ComputerCode>) file suffix.</Paragraph>
-                <Paragraph>Typically, each file will define a single <ComputerCode>&lt;Session&gt;</ComputerCode> in the corresponding <ComputerCode>&lt;Item&gt;</ComputerCode>. Each file should start with a level 1 heading; lower level headings within each file trigger the creation of an <ComputerCode>&lt;InternalSection&gt;</ComputerCode> at that point. The  <ComputerCode>&lt;InternalSection&gt;</ComputerCode> blocks may be nested in line with ever subordinate heading levels.</Paragraph>
-                <Paragraph>Internal <ComputerCode>&lt;CrossRef&gt;</ComputerCode> links may be generated within each part by referencing the file name and an identifier derived the linked to (sub)heading.</Paragraph>
+            <InternalSection id="example-github-action-automation-script">
+                <Heading>Example GitHub Action automation script</Heading>
+                <ProgramListing><Paragraph>name: deploy-book</Paragraph><Paragraph></Paragraph><Paragraph>on:</Paragraph><Paragraph>  release:</Paragraph><Paragraph>    types: [published]</Paragraph><Paragraph>  workflow_dispatch:</Paragraph><Paragraph></Paragraph><Paragraph># This job installs dependencies, builds the book, and pushes it to `gh-pages`</Paragraph><Paragraph>jobs:</Paragraph><Paragraph>  deploy-book:</Paragraph><Paragraph>    runs-on: ubuntu-latest</Paragraph><Paragraph>    steps:</Paragraph><Paragraph>    - uses: actions/checkout@v2</Paragraph><Paragraph></Paragraph><Paragraph>    # Install dependencies</Paragraph><Paragraph>    - name: Set up Python 3.11</Paragraph><Paragraph>      uses: actions/setup-python@v1</Paragraph><Paragraph>      with:</Paragraph><Paragraph>        python-version: 3.11</Paragraph><Paragraph></Paragraph><Paragraph>    - name: Install dependencies</Paragraph><Paragraph>      run: |</Paragraph><Paragraph>        pip install jupyter-book ou-jupyter-book-tools</Paragraph><Paragraph>        pip install ou_book_theme sphinxcontrib.mermaid sphinxcontrib-youtube sphinx-exercise</Paragraph><Paragraph>    # Build the book</Paragraph><Paragraph>    - name: Build the book</Paragraph><Paragraph>      run: |</Paragraph><Paragraph>        jupyter-book build .</Paragraph><Paragraph>        touch ./_build/html/.nojekyll</Paragraph><Paragraph>    - uses: actions/setup-node@v3</Paragraph><Paragraph>      with:</Paragraph><Paragraph>        node-version: 18</Paragraph><Paragraph>    - name: Build the OU-XML</Paragraph><Paragraph>      run: |</Paragraph><Paragraph>        pip install https://github.com/innovationOUtside/ou-xml-validator/archive/refs/heads/main.zip</Paragraph><Paragraph>        jb build --builder custom --custom-builder xml .</Paragraph><Paragraph>        ouseful_obt .</Paragraph><Paragraph>        mkdir -p /var/tmp/dist</Paragraph><Paragraph>        cp -rf _build/ouxml /var/tmp/dist/</Paragraph><Paragraph>        cp -rf _build/ouxml ./_build/html</Paragraph><Paragraph>    # Push the book's HTML to github-pages</Paragraph><Paragraph>    - name: GitHub Pages action</Paragraph><Paragraph>      uses: peaceiris/actions-gh-pages@v3.6.1</Paragraph><Paragraph>      with:</Paragraph><Paragraph>        github_token: ${{ secrets.GITHUB_TOKEN }}</Paragraph><Paragraph>        publish_dir: ./_build/html</Paragraph><Paragraph>    - name: Upload docs bundle</Paragraph><Paragraph>      if: always()</Paragraph><Paragraph>      uses: actions/upload-artifact@v3</Paragraph><Paragraph>      with:</Paragraph><Paragraph>        name: ${{github.event.inputs.module}}_docs_bundle</Paragraph><Paragraph>        path: /var/tmp/dist</Paragraph></ProgramListing>
             </InternalSection>
         </InternalSection>
     </Session>
     <Session id="authoring-reusable-content">
-        <Title>3 Authoring reusable content</Title>
+        <Title>4 Authoring reusable content</Title>
         <Paragraph>To start the authoring process, a legacy software guide available as an OU-XML structured content document was rendered to simple markdown.</Paragraph>
         <Paragraph>Sphinx style configration and table of contents scripts were created to so that the content could be previewed in an HTML book style format, or rendered back to OU-XML.</Paragraph>
         <Paragraph>Several features of Sphinx style publishing that support extensibility and reuse were adopted that allowed us to trade-off purely generic content, customisable content, and bespoke content for each module.</Paragraph>
@@ -302,7 +330,7 @@
         </InternalSection>
     </Session>
     <Session id="markdown-format">
-        <Title>4 Markdown format</Title>
+        <Title>5 Markdown format</Title>
         <Paragraph>The MyST markdown format supports a range of mark-up devices that can be mapped naturally onto OU-XML tags. The format can also be extended to support the parsing, rendering and conversion of additional, custom defined tags.</Paragraph>
         <InternalSection id="from-markdown-to-ou-xml">
             <Heading>From markdown to OU-XML</Heading>
@@ -362,7 +390,7 @@
         </InternalSection>
     </Session>
     <Session id="maths">
-        <Title>5 Maths</Title>
+        <Title>6 Maths</Title>
         <Paragraph>Mathematical equations written using LaTeX syntac can be specified inline or as a block level equation.</Paragraph>
         <Paragraph>For example, the inline equation <InlineEquation><TeX>e=mc^2</TeX></InlineEquation> is specified in mardown using the <ComputerCode>{math}</ComputerCode> role: <ComputerCode>{math}`e=mc^2`</ComputerCode></Paragraph>
         <Paragraph>We can also use a <ComputerCode>{math}</ComputerCode> directive to define an equation block:</Paragraph>
@@ -389,7 +417,7 @@ s(w_t) + y_{t+1}</TeX></Equation>
         <Equation><TeX> \label{one-liner} Ax=b </TeX>
     </Equation></Session>
     <Session id="code">
-        <Title>6 Code</Title>
+        <Title>7 Code</Title>
         <Paragraph>We can mark up code blocks in usual markdown style by using a triple backticked block to delimit the code block:</Paragraph>
         <ProgramListing><Paragraph>```python</Paragraph><Paragraph># A comment</Paragraph><Paragraph>def demo():</Paragraph><Paragraph>    """An example function.</Paragraph><Paragraph>    """</Paragraph><Paragraph>    a = 1</Paragraph><Paragraph>    return a</Paragraph><Paragraph></Paragraph><Paragraph>demo()</Paragraph><Paragraph>```</Paragraph></ProgramListing>
         <Paragraph><i>In Markdown, the backticked block typically also defines the language so that languge sensitive syntax highlighting can be applied appropriately.</i></Paragraph>
@@ -403,7 +431,7 @@ s(w_t) + y_{t+1}</TeX></Equation>
         <ProgramListing><Paragraph>&amp;lt;Paragraph&amp;gt;We can also refer inline, for example to the &amp;lt;ComputerCode&amp;gt;pandas&amp;lt;/ComputerCode&amp;gt; package.&amp;lt;/Paragraph&amp;gt;</Paragraph></ProgramListing>
     </Session>
     <Session id="quotations">
-        <Title>7 Quotations</Title>
+        <Title>8 Quotations</Title>
         <Paragraph>We can define quotations in markdown by prefix the quoted line or lines with a <ComputerCode>&gt;</ComputerCode> symbol at the start of the line:</Paragraph>
         <Paragraph>This works for single line quotes:</Paragraph>
         <Paragraph><ComputerCode>&gt; Here is a single line quote.</ComputerCode></Paragraph>
@@ -426,7 +454,7 @@ s(w_t) + y_{t+1}</TeX></Equation>
         <ProgramListing><Paragraph>&amp;lt;Quote&amp;gt;&amp;lt;Paragraph&amp;gt;Here is the first line of the quote…</Paragraph><Paragraph>                …and here is the second.&amp;lt;/Paragraph&amp;gt;&amp;lt;SourceReference&amp;gt;And a final line source…&amp;lt;/SourceReference&amp;gt;&amp;lt;/Quote&amp;gt;</Paragraph></ProgramListing>
     </Session>
     <Session id="collaborative-development-authoring-and-publishing">
-        <Title>8 Collaborative Development, Authoring and Publishing</Title>
+        <Title>9 Collaborative Development, Authoring and Publishing</Title>
         <Paragraph>The original workflow involved the main author providing PDF previews of the materal to a second author by email, who returned an annotated and/or email comments.</Paragraph>
         <Paragraph>OU-XML was also generated and passed to a a DPA (Digital Prodcution Assistant) in LDS (Learner and Discovery Services) who checked and fixed the OU-XML, published it as previewable content in the VLE, and provided errata about OU-XML issues to the main author.</Paragraph>
         <Paragraph>As well as iterating the text in the source markdown documents, the main author was also iterating on the tools used to generate to the OU-XML. <i>This would not have been possible without the support of the DPA turning round documents almost on demand.</i></Paragraph>
@@ -465,37 +493,10 @@ s(w_t) + y_{t+1}</TeX></Equation>
         <Paragraph>To simplify the process of validating the OU-XML, the XML schema file was located and exported. A simple OU-XML command line validation tool was then developed to allow for local validation of generated OU-XML files without the need to access Oxygen Author application. (The tool can be found <a href="https://github.com/innovationOUtside/ou-xml-validator">here</a>.) <i>A simple previewer XSL file also looked to be availabnle for generating preview HTML from OU-XML.</i></Paragraph>
         <Paragraph>During the development process, the OU-XML schema was updated. This required updating both Oxygen Author and the OU-XML generator in line with the updated schema.</Paragraph>
         <Paragraph>To try to improve the authoring/editing process, the first and second author started to use a public Github repository to share content. The second author forked the first author’s repository, worked in their own repository, and then submitted pull requests back to the first author’s repository.</Paragraph>
-        <Paragraph>The</Paragraph>
-        <Paragraph>Then moved to github, PRs</Paragraph>
-        <Paragraph>Quick iteration handing OU-XML over to  then viewing in VLE previw (would have been impossible without Edith / rapid iteration); then checking in Oxygen notes on blockers using that); OU-XML validator / validation rules etc.</Paragraph>
-    </Session>
-    <Session id="automated-workflows">
-        <Title>9 Automated Workflows</Title>
-        <Paragraph>A GitHib Action associated with this repository can be used to automatically:</Paragraph>
-        <BulletedList>
-            <ListItem>
-                <Paragraph>build and publish ah HTML version of this book (available <a href="https://opencomputinglab.github.io/reusable-content-example/preface.html">here</a>)</Paragraph>
-            </ListItem>
-            <ListItem>
-                <Paragraph>build and publish the OU-XML (available <a href="https://opencomputinglab.github.io/reusable-content-example//ouxmlxxx_b0_p1_zzz.xml">here</a> and also pushed as a zip archive file / artifact attached to the <ComputerCode>deploy-book</ComputerCode> action reports <a href="https://github.com/OpenComputingLab/reusable-content-example/actions/workflows/deploy-book.yaml">here</a> )</Paragraph>
-            </ListItem>
-        </BulletedList>
-        <ProgramListing><Paragraph>name: deploy-book</Paragraph><Paragraph></Paragraph><Paragraph>on:</Paragraph><Paragraph>  release:</Paragraph><Paragraph>    types: [published]</Paragraph><Paragraph>  workflow_dispatch:</Paragraph><Paragraph></Paragraph><Paragraph># This job installs dependencies, builds the book, and pushes it to `gh-pages`</Paragraph><Paragraph>jobs:</Paragraph><Paragraph>  deploy-book:</Paragraph><Paragraph>    runs-on: ubuntu-latest</Paragraph><Paragraph>    steps:</Paragraph><Paragraph>    - uses: actions/checkout@v2</Paragraph><Paragraph></Paragraph><Paragraph>    # Install dependencies</Paragraph><Paragraph>    - name: Set up Python 3.11</Paragraph><Paragraph>      uses: actions/setup-python@v1</Paragraph><Paragraph>      with:</Paragraph><Paragraph>        python-version: 3.11</Paragraph><Paragraph></Paragraph><Paragraph>    - name: Install dependencies</Paragraph><Paragraph>      run: |</Paragraph><Paragraph>        pip install jupyter-book ou-jupyter-book-tools</Paragraph><Paragraph>        pip install ou_book_theme sphinxcontrib.mermaid sphinxcontrib-youtube sphinx-exercise</Paragraph><Paragraph>    # Build the book</Paragraph><Paragraph>    - name: Build the book</Paragraph><Paragraph>      run: |</Paragraph><Paragraph>        jupyter-book build .</Paragraph><Paragraph>        touch ./_build/html/.nojekyll</Paragraph><Paragraph>    - uses: actions/setup-node@v3</Paragraph><Paragraph>      with:</Paragraph><Paragraph>        node-version: 18</Paragraph><Paragraph>    - name: Build the OU-XML</Paragraph><Paragraph>      run: |</Paragraph><Paragraph>        pip install https://github.com/innovationOUtside/ou-xml-validator/archive/refs/heads/main.zip</Paragraph><Paragraph>        jb build --builder custom --custom-builder xml .</Paragraph><Paragraph>        ouseful_obt .</Paragraph><Paragraph>        mkdir -p /var/tmp/dist</Paragraph><Paragraph>        cp -rf _build/ouxml /var/tmp/dist/</Paragraph><Paragraph>        cp -rf _build/ouxml ./_build/html</Paragraph><Paragraph>    # Push the book's HTML to github-pages</Paragraph><Paragraph>    - name: GitHub Pages action</Paragraph><Paragraph>      uses: peaceiris/actions-gh-pages@v3.6.1</Paragraph><Paragraph>      with:</Paragraph><Paragraph>        github_token: ${{ secrets.GITHUB_TOKEN }}</Paragraph><Paragraph>        publish_dir: ./_build/html</Paragraph><Paragraph>    - name: Upload docs bundle</Paragraph><Paragraph>      if: always()</Paragraph><Paragraph>      uses: actions/upload-artifact@v3</Paragraph><Paragraph>      with:</Paragraph><Paragraph>        name: ${{github.event.inputs.module}}_docs_bundle</Paragraph><Paragraph>        path: /var/tmp/dist</Paragraph></ProgramListing>
     </Session>
     <Session id="trying-out-the-environment">
         <Title>10 Trying out the environment</Title>
         <Paragraph>You can try out the workflow in pre-configured environment using a <ComputerCode>.devcontainer</ComputerCode> in a VS Code environment running on your own computer, or in GitHub Codespaces.</Paragraph>
-        <InternalSection id="build-process">
-            <Heading>Build process</Heading>
-            <Paragraph>The build process for generating OU-XML from markdown is a two step process.</Paragraph>
-            <Paragraph>The first step is to generate a Sphinx XML version of the Jupyter Book, as defined by the <ComputerCode>_toc.yml</ComputerCode> and <ComputerCode>_config.yml</ComputerCode> file:</Paragraph>
-            <Paragraph><ComputerCode>jb build . --builder custom --custom-builder xml</ComputerCode></Paragraph>
-            <Paragraph>The second step is to use the <a href="https://pypi.org/project/ou-book-theme/"><ComputerCode>ou-book-theme</ComputerCode></a> Python package to convert the Sphinx XML to OU-XML:</Paragraph>
-            <Paragraph><ComputerCode>obt convert-to-ouxml .</ComputerCode></Paragraph>
-            <Paragraph><i>NB I think release version of <ComputerCode>ou-book-theme</ComputerCode> is laggiong the modified version I have been working on…</i></Paragraph>
-            <Paragraph>Generated OU-XML content could then be validated against an OU-XML schema by running the command:</Paragraph>
-            <Paragraph><ComputerCode>ou_xml_validator validate  path/to/testme.xml</ComputerCode></Paragraph>
-        </InternalSection>
         <InternalSection id="to-do">
             <Heading>TO DO</Heading>
             <ProgramListing><Paragraph></Paragraph><Paragraph>```{exercise}</Paragraph><Paragraph>:label: my-exercise</Paragraph><Paragraph></Paragraph><Paragraph>Recall that $n!$ is read as "$n$ factorial" and defined as</Paragraph><Paragraph>$n! = n \times (n - 1) \times \cdots \times 2 \times 1$.</Paragraph><Paragraph></Paragraph><Paragraph>There are functions to compute this in various modules, but let's</Paragraph><Paragraph>write our own version as an exercise.</Paragraph><Paragraph></Paragraph><Paragraph>In particular, write a function `factorial` such that `factorial(n)` returns $n!$</Paragraph><Paragraph>for any positive integer $n$.</Paragraph><Paragraph>```</Paragraph><Paragraph></Paragraph><Paragraph>````{solution} my-exercise</Paragraph><Paragraph>:label: my-solution</Paragraph><Paragraph></Paragraph><Paragraph>Here's one solution.</Paragraph><Paragraph></Paragraph><Paragraph>```{code-block} python</Paragraph><Paragraph>def factorial(n):</Paragraph><Paragraph>    k = 1</Paragraph><Paragraph>    for i in range(n):</Paragraph><Paragraph>        k = k * (i + 1)</Paragraph><Paragraph>    return k</Paragraph><Paragraph></Paragraph><Paragraph>factorial(4)</Paragraph><Paragraph>```</Paragraph><Paragraph>````</Paragraph><Paragraph></Paragraph></ProgramListing>

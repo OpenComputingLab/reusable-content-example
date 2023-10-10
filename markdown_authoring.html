@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'markdown_authoring';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Authoring reusable content" href="authoring_reusable_content.html" />
+    <link rel="next" title="3. OU-XML production workflow using Jupyter Book" href="production_workflow.html" />
     <link rel="prev" title="1. Introduction" href="introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -166,13 +166,13 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Markdown authoring route</a></li>
-<li class="toctree-l1"><a class="reference internal" href="authoring_reusable_content.html">3. Authoring reusable content</a></li>
-<li class="toctree-l1"><a class="reference internal" href="md_format.html">4. Markdown format</a></li>
-<li class="toctree-l1"><a class="reference internal" href="maths.html">5. Maths</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code.html">6. Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quotations.html">7. Quotations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">8. Collaborative Development, Authoring and Publishing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="automated_workflows.html">9. Automated Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="production_workflow.html">3. OU-XML production workflow using Jupyter Book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authoring_reusable_content.html">4. Authoring reusable content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="md_format.html">5. Markdown format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maths.html">6. Maths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html">7. Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quotations.html">8. Quotations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">9. Collaborative Development, Authoring and Publishing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sandbox.html">10. Trying out the environment</a></li>
 </ul>
 
@@ -322,10 +322,6 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-markdown-styling">2.1. Example Markdown Styling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-publishing-tools-and-frameworks">2.2. Markdown Publishing Tools and Frameworks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ou-xml-production-workflow-using-jupyter-book">2.3. OU-XML production workflow using Jupyter Book</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-the-table-of-contents-toc-yml">2.3.1. Defining the table of contents (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>)</a></li>
-</ul>
-</li>
 </ul>
             </nav>
         </div>
@@ -511,55 +507,7 @@ It can contain a *wide* __range__ of elements.
 </figcaption>
 </figure>
 </div>
-<p>See TO DO  for guidance on how to launch a preconfigured development environment within which you can try out the workflow described in this document.</p>
-</section>
-<section id="ou-xml-production-workflow-using-jupyter-book">
-<h2><span class="section-number">2.3. </span>OU-XML production workflow using Jupyter Book<a class="headerlink" href="#ou-xml-production-workflow-using-jupyter-book" title="Permalink to this heading">#</a></h2>
-<p>An increasing number of OU modules that require students to work with executable computer code are starting to use Jupyter notebooks to provide students with an interactive learning environment that blends rich content with embedded executable code and rendered code outputs (<a class="reference internal" href="#notebook-preview"><span class="std std-numref">Figure 2.3</span></a>).</p>
-<figure class="align-default" id="notebook-preview">
-<a class="reference internal image-reference" href="_images/notebook_preview.png"><img alt="screenshot of Juoyer notebook" src="_images/notebook_preview.png" style="width: 600px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figure 2.3 </span><span class="caption-text">Screenshot of Jupyter notebook.</span><a class="headerlink" href="#notebook-preview" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<p>To support as general a workflow as a possible, the workflow adopted builds on the Jupyter Book publishing system. This supports:</p>
-<ul class="simple">
-<li><p>rich markdown (MyST syntax);</p></li>
-<li><p>markdown and/or Jupyter notebook source documents;</p></li>
-<li><p>executable content (via <code class="docutils literal notranslate"><span class="pre">jupyter-server</span></code>);</p></li>
-<li><p>conversion to OU-XML via <code class="docutils literal notranslate"><span class="pre">ou-book-theme</span></code>.</p></li>
-</ul>
-<p>The workflow proceeds as follows:</p>
-<ul class="simple">
-<li><p>source content authored in one or more markdown files; a tables of contents file (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>) identifies the source files and the orfer in which they are presented;</p></li>
-<li><p>source content converted to output formats including Sphinx-XML by Sphinx;</p></li>
-<li><p>Sphinx-XML converted to OU-XML.</p></li>
-</ul>
-<section id="defining-the-table-of-contents-toc-yml">
-<h3><span class="section-number">2.3.1. </span>Defining the table of contents (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>)<a class="headerlink" href="#defining-the-table-of-contents-toc-yml" title="Permalink to this heading">#</a></h3>
-<p>The table of contents file can be used to define the contents of one of more OU-XML documents, where each part in the <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> file defines a structured content <code class="docutils literal notranslate"><span class="pre">&lt;Item&gt;</span></code>.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jb-book</span>
-<span class="nt">root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_copyright_notice</span>
-<span class="nt">parts</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">caption</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">First item name</span>
-<span class="w">    </span><span class="nt">numbered</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">chapters</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">introduction</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">first_section</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">another_section</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conclusion</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">caption</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Second item name</span>
-<span class="w">    </span><span class="nt">numbered</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">chapters</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">introduction2</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">only_section</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conclusion2</span>
-</pre></div>
-</div>
-<p>If no file suffix is provided for the filename, the build process will look for files with the markdown (<code class="docutils literal notranslate"><span class="pre">.md</span></code>) or Jupyter notebook (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) file suffix.</p>
-<p>Typically, each file will define a single <code class="docutils literal notranslate"><span class="pre">&lt;Session&gt;</span></code> in the corresponding <code class="docutils literal notranslate"><span class="pre">&lt;Item&gt;</span></code>. Each file should start with a level 1 heading; lower level headings within each file trigger the creation of an <code class="docutils literal notranslate"><span class="pre">&lt;InternalSection&gt;</span></code> at that point. The  <code class="docutils literal notranslate"><span class="pre">&lt;InternalSection&gt;</span></code> blocks may be nested in line with ever subordinate heading levels.</p>
-<p>Internal <code class="docutils literal notranslate"><span class="pre">&lt;CrossRef&gt;</span></code> links may be generated within each part by referencing the file name and an identifier derived the linked to (sub)heading.</p>
-</section>
+<p>See <code class="docutils literal notranslate"><span class="pre">sandobox</span></code> for guidance on how to launch a preconfigured development environment within which you can try out the workflow described in this document.</p>
 </section>
 </section>
 
@@ -603,11 +551,11 @@ It can contain a *wide* __range__ of elements.
       </div>
     </a>
     <a class="right-next"
-       href="authoring_reusable_content.html"
+       href="production_workflow.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Authoring reusable content</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>OU-XML production workflow using Jupyter Book</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -628,10 +576,6 @@ It can contain a *wide* __range__ of elements.
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-markdown-styling">2.1. Example Markdown Styling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-publishing-tools-and-frameworks">2.2. Markdown Publishing Tools and Frameworks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ou-xml-production-workflow-using-jupyter-book">2.3. OU-XML production workflow using Jupyter Book</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-the-table-of-contents-toc-yml">2.3.1. Defining the table of contents (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>)</a></li>
-</ul>
-</li>
 </ul>
   </nav></div>
 

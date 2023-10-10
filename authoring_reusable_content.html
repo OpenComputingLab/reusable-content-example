@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>3. Authoring reusable content &#8212; Reusable Content Demonstration</title>
+    <title>4. Authoring reusable content &#8212; Reusable Content Demonstration</title>
   
   
   
@@ -65,8 +65,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'authoring_reusable_content';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4. Markdown format" href="md_format.html" />
-    <link rel="prev" title="2. Markdown authoring route" href="markdown_authoring.html" />
+    <link rel="next" title="5. Markdown format" href="md_format.html" />
+    <link rel="prev" title="3. OU-XML production workflow using Jupyter Book" href="production_workflow.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -164,13 +164,13 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown_authoring.html">2. Markdown authoring route</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Authoring reusable content</a></li>
-<li class="toctree-l1"><a class="reference internal" href="md_format.html">4. Markdown format</a></li>
-<li class="toctree-l1"><a class="reference internal" href="maths.html">5. Maths</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code.html">6. Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quotations.html">7. Quotations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">8. Collaborative Development, Authoring and Publishing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="automated_workflows.html">9. Automated Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="production_workflow.html">3. OU-XML production workflow using Jupyter Book</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Authoring reusable content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="md_format.html">5. Markdown format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maths.html">6. Maths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html">7. Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quotations.html">8. Quotations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">9. Collaborative Development, Authoring and Publishing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sandbox.html">10. Trying out the environment</a></li>
 </ul>
 
@@ -318,9 +318,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents-conifiguration-files">3.1. Table of Contents Conifiguration Files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transcluding-embedding-content">3.2. Transcluding / Embedding content</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterised-customisable-content">3.3. Parameterised Customisable Content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents-conifiguration-files">4.1. Table of Contents Conifiguration Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transcluding-embedding-content">4.2. Transcluding / Embedding content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterised-customisable-content">4.3. Parameterised Customisable Content</a></li>
 </ul>
             </nav>
         </div>
@@ -333,12 +333,12 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="authoring-reusable-content">
-<h1><span class="section-number">3. </span>Authoring reusable content<a class="headerlink" href="#authoring-reusable-content" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">4. </span>Authoring reusable content<a class="headerlink" href="#authoring-reusable-content" title="Permalink to this heading">#</a></h1>
 <p>To start the authoring process, a legacy software guide available as an OU-XML structured content document was rendered to simple markdown.</p>
 <p>Sphinx style configration and table of contents scripts were created to so that the content could be previewed in an HTML book style format, or rendered back to OU-XML.</p>
 <p>Several features of Sphinx style publishing that support extensibility and reuse were adopted that allowed us to trade-off purely generic content, customisable content, and bespoke content for each module.</p>
 <section id="table-of-contents-conifiguration-files">
-<h2><span class="section-number">3.1. </span>Table of Contents Conifiguration Files<a class="headerlink" href="#table-of-contents-conifiguration-files" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.1. </span>Table of Contents Conifiguration Files<a class="headerlink" href="#table-of-contents-conifiguration-files" title="Permalink to this heading">#</a></h2>
 <p>From a set of content files, one of the easist ways of defining which content files are to be used to generate a particular output document is to specify the files that are to be included via a table of contents file.</p>
 <p>In current production workflows, it would not be unusual for each module team author to their own software guide. In a markdown workflow, this might include each module team authoring several separate markdown documents, many of which may  duplicate similar instructional intent, and then create their own table of contents files to use their authored documents.</p>
 <p>One obvious way of reusing content across several modules would be for each module to use exactly the same guide, where the same table of contents file pulls from the same source documents.</p>
@@ -363,7 +363,7 @@ document.write(`
 </div>
 </section>
 <section id="transcluding-embedding-content">
-<h2><span class="section-number">3.2. </span>Transcluding / Embedding content<a class="headerlink" href="#transcluding-embedding-content" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.2. </span>Transcluding / Embedding content<a class="headerlink" href="#transcluding-embedding-content" title="Permalink to this heading">#</a></h2>
 <p>One of the nice features of the Sphinx publishing workflow is that content files can import content from other content files. This allows us to define “partial” files that might include the content of just a single paragraph, for example.</p>
 <p>A module specific file can then be defined that includes module specific text (either imported from a partial content file or explicitly provided inline within the file) as well as generic text imported from a reusable partial content file.</p>
 <p>For example, the following markdown fragment shows how we might customise a module specific introduction file by first loading in generic content from a reusable file, and then appending some module specific content.</p>
@@ -374,7 +374,7 @@ Finally, we have a conclusion paragraph that speaks to a particular module.
 </div>
 </section>
 <section id="parameterised-customisable-content">
-<h2><span class="section-number">3.3. </span>Parameterised Customisable Content<a class="headerlink" href="#parameterised-customisable-content" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.3. </span>Parameterised Customisable Content<a class="headerlink" href="#parameterised-customisable-content" title="Permalink to this heading">#</a></h2>
 <p>In many cases, whilst the content is predomninantly reusable, there may be a requirement to customise it for use in particular module by referring to the module code or module name.</p>
 <p>In this case, rather than generate a custom file for each module, we can simply parameterise the module code, module name, etc., and then define a module configration file that sets a genric module name placeholder label, for example, to a required module name.</p>
 <p>For example, the following raw markdown fragment shows how we can use parameterised values at the start of a generic, customisable “cribsheet” document.</p>
@@ -434,12 +434,12 @@ Finally, we have a conclusion paragraph that speaks to a particular module.
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="markdown_authoring.html"
+       href="production_workflow.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Markdown authoring route</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>OU-XML production workflow using Jupyter Book</p>
       </div>
     </a>
     <a class="right-next"
@@ -447,7 +447,7 @@ Finally, we have a conclusion paragraph that speaks to a particular module.
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Markdown format</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Markdown format</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -466,9 +466,9 @@ Finally, we have a conclusion paragraph that speaks to a particular module.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents-conifiguration-files">3.1. Table of Contents Conifiguration Files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transcluding-embedding-content">3.2. Transcluding / Embedding content</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterised-customisable-content">3.3. Parameterised Customisable Content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents-conifiguration-files">4.1. Table of Contents Conifiguration Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transcluding-embedding-content">4.2. Transcluding / Embedding content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterised-customisable-content">4.3. Parameterised Customisable Content</a></li>
 </ul>
   </nav></div>
 

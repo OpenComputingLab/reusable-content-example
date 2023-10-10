@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>9. Automated Workflows &#8212; Reusable Content Demonstration</title>
+    <title>3. OU-XML production workflow using Jupyter Book &#8212; Reusable Content Demonstration</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'automated_workflows';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'production_workflow';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="10. Trying out the environment" href="sandbox.html" />
-    <link rel="prev" title="8. Collaborative Development, Authoring and Publishing" href="collaborative-authoring.html" />
+    <link rel="next" title="4. Authoring reusable content" href="authoring_reusable_content.html" />
+    <link rel="prev" title="2. Markdown authoring route" href="markdown_authoring.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -164,13 +164,13 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown_authoring.html">2. Markdown authoring route</a></li>
-<li class="toctree-l1"><a class="reference internal" href="authoring_reusable_content.html">3. Authoring reusable content</a></li>
-<li class="toctree-l1"><a class="reference internal" href="md_format.html">4. Markdown format</a></li>
-<li class="toctree-l1"><a class="reference internal" href="maths.html">5. Maths</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code.html">6. Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quotations.html">7. Quotations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">8. Collaborative Development, Authoring and Publishing</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Automated Workflows</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. OU-XML production workflow using Jupyter Book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authoring_reusable_content.html">4. Authoring reusable content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="md_format.html">5. Markdown format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maths.html">6. Maths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html">7. Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quotations.html">8. Quotations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">9. Collaborative Development, Authoring and Publishing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sandbox.html">10. Trying out the environment</a></li>
 </ul>
 
@@ -226,7 +226,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/automated_workflows.md" target="_blank"
+      <li><a href="_sources/production_workflow.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -295,7 +295,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -306,11 +308,24 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Automated Workflows</h1>
+    <h1>OU-XML production workflow using Jupyter Book</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-the-table-of-contents-toc-yml">3.1. Defining the table of contents (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-process">3.2. Build process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-automation">3.3. Workflow Automation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-github-action-automation-script">3.3.1. Example GitHub Action automation script</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -320,13 +335,74 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="automated-workflows">
-<h1><span class="section-number">9. </span>Automated Workflows<a class="headerlink" href="#automated-workflows" title="Permalink to this heading">#</a></h1>
-<p>A GitHib Action associated with this repository can be used to automatically:</p>
+  <section id="ou-xml-production-workflow-using-jupyter-book">
+<h1><span class="section-number">3. </span>OU-XML production workflow using Jupyter Book<a class="headerlink" href="#ou-xml-production-workflow-using-jupyter-book" title="Permalink to this heading">#</a></h1>
+<p>An increasing number of OU modules that require students to work with executable computer code are starting to use Jupyter notebooks to provide students with an interactive learning environment that blends rich content with embedded executable code and rendered code outputs (<a class="reference internal" href="#notebook-preview"><span class="std std-numref">Figure 3.1</span></a>).</p>
+<figure class="align-default" id="notebook-preview">
+<a class="reference internal image-reference" href="_images/notebook_preview.png"><img alt="screenshot of Juoyer notebook" src="_images/notebook_preview.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figure 3.1 </span><span class="caption-text">Screenshot of Jupyter notebook.</span><a class="headerlink" href="#notebook-preview" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To support as general a workflow as a possible, the workflow adopted builds on the Jupyter Book publishing system. This supports:</p>
 <ul class="simple">
-<li><p>build and publish ah HTML version of this book (available <a class="reference external" href="https://opencomputinglab.github.io/reusable-content-example/preface.html">here</a>)</p></li>
-<li><p>build and publish the OU-XML (available <a class="reference external" href="https://opencomputinglab.github.io/reusable-content-example//ouxmlxxx_b0_p1_zzz.xml">here</a> and also pushed as a zip archive file / artifact attached to the <code class="docutils literal notranslate"><span class="pre">deploy-book</span></code> action reports <a class="reference external" href="https://github.com/OpenComputingLab/reusable-content-example/actions/workflows/deploy-book.yaml">here</a> )</p></li>
+<li><p>rich markdown (MyST syntax);</p></li>
+<li><p>markdown and/or Jupyter notebook source documents;</p></li>
+<li><p>executable content (via <code class="docutils literal notranslate"><span class="pre">jupyter-server</span></code>);</p></li>
+<li><p>conversion to OU-XML via <code class="docutils literal notranslate"><span class="pre">ou-book-theme</span></code>.</p></li>
 </ul>
+<p>The workflow proceeds as follows:</p>
+<ul class="simple">
+<li><p>source content authored in one or more markdown files; a tables of contents file (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>) identifies the source files and the orfer in which they are presented;</p></li>
+<li><p>source content converted to output formats including Sphinx-XML by Sphinx;</p></li>
+<li><p>Sphinx-XML converted to OU-XML.</p></li>
+</ul>
+<section id="defining-the-table-of-contents-toc-yml">
+<h2><span class="section-number">3.1. </span>Defining the table of contents (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>)<a class="headerlink" href="#defining-the-table-of-contents-toc-yml" title="Permalink to this heading">#</a></h2>
+<p>The table of contents file can be used to define the contents of one of more OU-XML documents, where each part in the <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> file defines a structured content <code class="docutils literal notranslate"><span class="pre">&lt;Item&gt;</span></code>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jb-book</span>
+<span class="nt">root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_copyright_notice</span>
+<span class="nt">parts</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">caption</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">First item name</span>
+<span class="w">    </span><span class="nt">numbered</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">chapters</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">introduction</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">first_section</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">another_section</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conclusion</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">caption</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Second item name</span>
+<span class="w">    </span><span class="nt">numbered</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">chapters</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">introduction2</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">only_section</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conclusion2</span>
+</pre></div>
+</div>
+<p>If no file suffix is provided for the filename, the build process will look for files with the markdown (<code class="docutils literal notranslate"><span class="pre">.md</span></code>) or Jupyter notebook (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) file suffix.</p>
+<p>Typically, each file will define a single <code class="docutils literal notranslate"><span class="pre">&lt;Session&gt;</span></code> in the corresponding <code class="docutils literal notranslate"><span class="pre">&lt;Item&gt;</span></code>. Each file should start with a level 1 heading; lower level headings within each file trigger the creation of an <code class="docutils literal notranslate"><span class="pre">&lt;InternalSection&gt;</span></code> at that point. The  <code class="docutils literal notranslate"><span class="pre">&lt;InternalSection&gt;</span></code> blocks may be nested in line with ever subordinate heading levels.</p>
+<p>Internal <code class="docutils literal notranslate"><span class="pre">&lt;CrossRef&gt;</span></code> links may be generated within each part by referencing the file name and an identifier derived the linked to (sub)heading.</p>
+</section>
+<section id="build-process">
+<h2><span class="section-number">3.2. </span>Build process<a class="headerlink" href="#build-process" title="Permalink to this heading">#</a></h2>
+<p>The build process for generating OU-XML from markdown is a two step process.</p>
+<p>The first step is to use Jupyter Book tooling to generate a Sphinx XML version of the Jupyter Book, as defined by the <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> and <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> files:</p>
+<p><code class="docutils literal notranslate"><span class="pre">jb</span> <span class="pre">build</span> <span class="pre">.</span> <span class="pre">--builder</span> <span class="pre">custom</span> <span class="pre">--custom-builder</span> <span class="pre">xml</span></code></p>
+<p>This generates XML files in the default <code class="docutils literal notranslate"><span class="pre">_build/xml</span></code> directory.</p>
+<p>The second step is to use the <a class="reference external" href="https://pypi.org/project/ou-book-theme/"><code class="docutils literal notranslate"><span class="pre">ou-book-theme</span></code></a> Python package to convert the Sphinx XML to OU-XML (this looks for XML source documents in <code class="docutils literal notranslate"><span class="pre">_build/xml</span></code> by default):</p>
+<p><code class="docutils literal notranslate"><span class="pre">obt</span> <span class="pre">convert-to-ouxml</span> <span class="pre">.</span></code></p>
+<p><em>NB I think release version of <code class="docutils literal notranslate"><span class="pre">ou-book-theme</span></code> is laggiong the modified version I have been working on…</em></p>
+<p>Generated OU-XML content in the <code class="docutils literal notranslate"><span class="pre">_build/ouxml</span></code> directory can then be validated against an OU-XML schema by running the command:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ou_xml_validator</span> <span class="pre">validate</span>&#160; <span class="pre">path/to/testme.xml</span></code></p>
+</section>
+<section id="workflow-automation">
+<h2><span class="section-number">3.3. </span>Workflow Automation<a class="headerlink" href="#workflow-automation" title="Permalink to this heading">#</a></h2>
+<p>A GitHub Action associated with this repository can be used to automatically:</p>
+<ul class="simple">
+<li><p>build and publish ah HTML version of this book from the source markdown (HTML book available <a class="reference external" href="https://opencomputinglab.github.io/reusable-content-example/preface.html">here</a>)</p></li>
+<li><p>build and publish the OU-XML from the source markdown (OU-XML document available <a class="reference external" href="https://opencomputinglab.github.io/reusable-content-example//ouxmlxxx_b0_p1_zzz.xml">here</a> ; a zip archive file of the OU-XML and associated media asstets is ailable as an automatically generated GitHUb Action artefact attached to the <code class="docutils literal notranslate"><span class="pre">deploy-book</span></code> action reports <a class="reference external" href="https://github.com/OpenComputingLab/reusable-content-example/actions/workflows/deploy-book.yaml">here</a> )</p></li>
+</ul>
+<section id="example-github-action-automation-script">
+<h3><span class="section-number">3.3.1. </span>Example GitHub Action automation script<a class="headerlink" href="#example-github-action-automation-script" title="Permalink to this heading">#</a></h3>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy-book</span>
 
 <span class="nt">on</span><span class="p">:</span>
@@ -382,6 +458,8 @@ document.write(`
 </pre></div>
 </div>
 </section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -414,20 +492,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="collaborative-authoring.html"
+       href="markdown_authoring.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Collaborative Development, Authoring and Publishing</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Markdown authoring route</p>
       </div>
     </a>
     <a class="right-next"
-       href="sandbox.html"
+       href="authoring_reusable_content.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>Trying out the environment</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Authoring reusable content</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -437,6 +515,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-the-table-of-contents-toc-yml">3.1. Defining the table of contents (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-process">3.2. Build process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-automation">3.3. Workflow Automation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-github-action-automation-script">3.3.1. Example GitHub Action automation script</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

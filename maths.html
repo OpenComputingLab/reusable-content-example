@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>5. Maths &#8212; Reusable Content Demonstration</title>
+    <title>6. Maths &#8212; Reusable Content Demonstration</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'maths';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6. Code" href="code.html" />
-    <link rel="prev" title="4. Markdown format" href="md_format.html" />
+    <link rel="next" title="7. Code" href="code.html" />
+    <link rel="prev" title="5. Markdown format" href="md_format.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -166,13 +166,13 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown_authoring.html">2. Markdown authoring route</a></li>
-<li class="toctree-l1"><a class="reference internal" href="authoring_reusable_content.html">3. Authoring reusable content</a></li>
-<li class="toctree-l1"><a class="reference internal" href="md_format.html">4. Markdown format</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Maths</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code.html">6. Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quotations.html">7. Quotations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">8. Collaborative Development, Authoring and Publishing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="automated_workflows.html">9. Automated Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="production_workflow.html">3. OU-XML production workflow using Jupyter Book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authoring_reusable_content.html">4. Authoring reusable content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="md_format.html">5. Markdown format</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Maths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html">7. Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quotations.html">8. Quotations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">9. Collaborative Development, Authoring and Publishing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sandbox.html">10. Trying out the environment</a></li>
 </ul>
 
@@ -323,7 +323,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="maths">
-<h1><span class="section-number">5. </span>Maths<a class="headerlink" href="#maths" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>Maths<a class="headerlink" href="#maths" title="Permalink to this heading">#</a></h1>
 <p>Mathematical equations written using LaTeX syntac can be specified inline or as a block level equation.</p>
 <p>For example, the inline equation <span class="math notranslate nohighlight">\(e=mc^2\)</span> is specified in mardown using the <code class="docutils literal notranslate"><span class="pre">{math}</span></code> role: <code class="docutils literal notranslate"><span class="pre">{math}`e=mc^2`</span></code></p>
 <p>We can also use a <code class="docutils literal notranslate"><span class="pre">{math}</span></code> directive to define an equation block:</p>
@@ -335,7 +335,7 @@ s(w_t) + y_{t+1}
 </pre></div>
 </div>
 <div class="math notranslate nohighlight" id="equation-my-equation">
-<span class="eqno">(5.1)<a class="headerlink" href="#equation-my-equation" title="Permalink to this equation">#</a></span>\[w_{t+1} = (1 + r_{t+1})
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-my-equation" title="Permalink to this equation">#</a></span>\[w_{t+1} = (1 + r_{t+1})
 s(w_t) + y_{t+1}\]</div>
 <p>These corresponding OU-XML is then a <code class="docutils literal notranslate"><span class="pre">&lt;ProgramListing&gt;</span></code> to show the script that is used to defined the equation, and an <code class="docutils literal notranslate"><span class="pre">Equation</span></code> block from which the rendered equation can be generated:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ProgramListing&gt;</span>
@@ -432,7 +432,7 @@ $$</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Markdown format</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Markdown format</p>
       </div>
     </a>
     <a class="right-next"
@@ -440,7 +440,7 @@ $$</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Code</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Code</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
