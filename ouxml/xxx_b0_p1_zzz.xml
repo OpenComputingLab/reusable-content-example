@@ -92,7 +92,8 @@
         </BulletedList>
         <Paragraph>The use of several tools to support quality processes (markdown linting, spellchecking, OU-XML validation) was also explored.</Paragraph>
         <Paragraph>The source repository for the source content can be found here: <a href="https://github.com/innovationOUtside/vce-generic-guide">innovationOUtside/vce-generic-guide</a>.</Paragraph>
-        <Paragraph>Example OU-XML generated from an earlier version of this document can be found here: <a href="https://github.com/OpenComputingLab/reusable-content-example/tree/main/example/ouxml">https://github.com/OpenComputingLab/reusable-content-example/tree/main/example/ouxml</a></Paragraph>
+        <Paragraph>Example OU-XML automatically generated from the same source markdown can be viewed here: <a href="https://opencomputinglab.github.io/reusable-content-example//ouxmlxxx_b0_p1_zzz.xml">https://opencomputinglab.github.io/reusable-content-example//ouxmlxxx_b0_p1_zzz.xml</a></Paragraph>
+        <Paragraph>An HTML version rendered from the same source markdown by a Jupyter Book publication process is available here: <a href="https://opencomputinglab.github.io/reusable-content-example/">https://opencomputinglab.github.io/reusable-content-example/</a></Paragraph>
         <Paragraph><i><b>Acknowledgements</b>: thanks to Karen Vines for helping iterate the text, Edith Francis for helping iterate the OU-XML, and Mark Hall for the original markdown2ou-xml converter.</i></Paragraph>
     </Session>
     <Session id="markdown-authoring-route">
