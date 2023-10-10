@@ -32,9 +32,3 @@ To simplify the process of validating the OU-XML, the XML schema file was locate
 During the development process, the OU-XML schema was updated. This required updating both Oxygen Author and the OU-XML generator in line with the updated schema.
 
 To try to improve the authoring/editing process, the first and second author started to use a public Github repository to share content. The second author forked the first author's repository, worked in their own repository, and then submitted pull requests back to the first author's repository.
-
-The 
-
-Then moved to github, PRs
-
-Quick iteration handing OU-XML over to  then viewing in VLE previw (would have been impossible without Edith / rapid iteration); then checking in Oxygen notes on blockers using that); OU-XML validator / validation rules etc.

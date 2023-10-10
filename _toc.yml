@@ -10,11 +10,11 @@ parts:
     chapters:
       - file: introduction
       - file: markdown_authoring
+      - file: production_workflow
       - file: authoring_reusable_content
       - file: md_format
       - file: maths
       - file: code
       - file: quotations
       - file: collaborative-authoring
-      - file: automated_workflows
       - file: sandbox
