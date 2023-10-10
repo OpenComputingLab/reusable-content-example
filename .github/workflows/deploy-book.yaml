@@ -33,3 +33,19 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_build/html
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+    - name: Build the OU-XML
+      run: |
+        pip install https://github.com/innovationOUtside/ou-xml-validator/archive/refs/heads/main.zip
+        jb build --builder custom --custom-builder xml .
+        ouseful_obt .
+        mkdir -p /var/tmp/dist
+        cp -rf _build/ouxml /var/tmp/dist/
+    - name: Upload docs bundle
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{github.event.inputs.module}}_docs_bundle
+        path: /var/tmp/dist
