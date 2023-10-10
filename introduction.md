@@ -26,6 +26,8 @@ The use of several tools to support quality processes (markdown linting, spellch
 
 The source repository for the source content can be found here: [innovationOUtside/vce-generic-guide](https://github.com/innovationOUtside/vce-generic-guide).
 
-Example OU-XML generated from an earlier version of this document can be found here: [https://github.com/OpenComputingLab/reusable-content-example/tree/main/example/ouxml](https://github.com/OpenComputingLab/reusable-content-example/tree/main/example/ouxml)
+Example OU-XML automatically generated from the same source markdown can be viewed here: [https://opencomputinglab.github.io/reusable-content-example//ouxmlxxx_b0_p1_zzz.xml](https://opencomputinglab.github.io/reusable-content-example//ouxmlxxx_b0_p1_zzz.xml)
+
+An HTML version rendered from the same source markdown by a Jupyter Book publication process is available here: [https://opencomputinglab.github.io/reusable-content-example/](https://opencomputinglab.github.io/reusable-content-example/)
 
 *__Acknowledgements__: thanks to Karen Vines for helping iterate the text, Edith Francis for helping iterate the OU-XML, and Mark Hall for the original markdown2ou-xml converter.*
