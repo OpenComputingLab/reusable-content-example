@@ -3,7 +3,7 @@ ou-jupyter-book-tools
 ou_book_theme
 
 sphinxcontrib.mermaid
-sphinxcontrib-youtube
+sphinxcontrib-youtube==1.3.0
 sphinx-exercise
 sphinxcontrib-video
 
