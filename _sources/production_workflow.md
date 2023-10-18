@@ -1,13 +1,13 @@
-
 # OU-XML production workflow using Jupyter Book
 
 An increasing number of OU modules that require students to work with executable computer code are starting to use Jupyter notebooks to provide students with an interactive learning environment that blends rich content with embedded executable code and rendered code outputs ({numref}`notebook_preview`).
 
 ```{figure} images/notebook_preview.png
-:name: notebook_preview
-:alt: screenshot of Juoyer notebook
-:width: 600px
-
+---
+name: notebook_preview
+alt: screenshot of Juoyer notebook
+width: 600px
+---
 Screenshot of Jupyter notebook.
 ```
 
@@ -20,7 +20,7 @@ To support as general a workflow as a possible, the workflow adopted builds on t
 
 The workflow proceeds as follows:
 
-- source content authored in one or more markdown files; a tables of contents file (`_toc.yml`) identifies the source files and the orfer in which they are presented;
+- source content authored in one or more markdown files; a tables of contents file (`_toc.yml`) identifies the source files and the order in which they are presented;
 - source content converted to output formats including Sphinx-XML by Sphinx;
 - Sphinx-XML converted to OU-XML.
 
@@ -67,7 +67,7 @@ The second step is to use the [`ou-book-theme`](https://pypi.org/project/ou-book
 
 `obt convert-to-ouxml .`
 
-*NB I think release version of `ou-book-theme` is laggiong the modified version I have been working on...*
+*NB I think release version of `ou-book-theme` is lagging the modified version I have been working on...*
 
 Generated OU-XML content in the `_build/ouxml` directory can then be validated against an OU-XML schema by running the command:
 
@@ -78,7 +78,7 @@ Generated OU-XML content in the `_build/ouxml` directory can then be validated a
 A GitHub Action associated with this repository can be used to automatically:
 
 - build and publish an HTML version of this book from the source markdown (HTML book available [here](https://opencomputinglab.github.io/reusable-content-example/preface.html))
-- build and publish the OU-XML from the source markdown (OU-XML document available [here](https://opencomputinglab.github.io/reusable-content-example/ouxml/xxx_b0_p1_zzz.xml) ; a zip archive file of the OU-XML and associated media asstets is ailable as an automatically generated GitHUb Action artefact attached to the `deploy-book` action reports [here](https://github.com/OpenComputingLab/reusable-content-example/actions/workflows/deploy-book.yaml) )
+- build and publish the OU-XML from the source markdown (OU-XML document available [here](https://opencomputinglab.github.io/reusable-content-example/ouxml/xxx_b0_p1_zzz.xml) ; a zip archive file of the OU-XML and associated media assets are available as an automatically generated GitHub Action artefact attached to the `deploy-book` action reports [here](https://github.com/OpenComputingLab/reusable-content-example/actions/workflows/deploy-book.yaml) )
 
 ### Example GitHub Action automation script
 
@@ -106,7 +106,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install jupyter-book ou-jupyter-book-tools
-        pip install ou_book_theme sphinxcontrib.mermaid sphinxcontrib-youtube sphinx-exercise
+        pip install ou_book_theme sphinxcontrib.mermaid sphinxcontrib-youtube==1.3.0 sphinx-exercise
     # Build the book
     - name: Build the book
       run: |

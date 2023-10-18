@@ -30,13 +30,13 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/ou-book-theme.css?digest=e2356d549ad34df00aeb97b1e33ec7c85da0ce8b" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
@@ -44,8 +44,10 @@
   <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -172,6 +174,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="quotations.html">8. Quotations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">9. Collaborative Development, Authoring and Publishing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sandbox.html">10. Trying out the environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">11. To Do</a></li>
 </ul>
 
     </div>
@@ -349,7 +352,7 @@ document.write(`
 <p>The range of MyST markdown elements that currently map on to OU-XML tags include:</p>
 <section id="headings">
 <h3><span class="section-number">5.1.1. </span>Headings<a class="headerlink" href="#headings" title="Permalink to this heading">#</a></h3>
-<p>Use standard markdown heading levels (one or more <code class="docutils literal notranslate"><span class="pre">#</span></code> characters at start a line, followed by whistespace and then the header. The number of <code class="docutils literal notranslate"><span class="pre">#</span></code> characters specifes the heading level).</p>
+<p>Use standard markdown heading levels (one or more <code class="docutils literal notranslate"><span class="pre">#</span></code> characters at start a line, followed by whitespace and then the header. The number of <code class="docutils literal notranslate"><span class="pre">#</span></code> characters specifies the heading level).</p>
 <p>Each included file represents a session and should start with a first level heading. Interior headings within the file (second level, third level, etc.) are associated with increasingly nested <code class="docutils literal notranslate"><span class="pre">&lt;InternalSection&gt;</span></code> tags, with the heading mapped to the <code class="docutils literal notranslate"><span class="pre">&lt;Title&gt;</span></code> tag at the start of the section.</p>
 <p>If the <code class="docutils literal notranslate"><span class="pre">sphinx.config.myst_heading_anchors</span></code> is set in the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file, identifiers are associated with each <code class="docutils literal notranslate"><span class="pre">&lt;Session&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;InternalSection&gt;</span></code> to the specified depth based on decasing the heading, removing punctuation and replace spaces with a <code class="docutils literal notranslate"><span class="pre">-</span></code>. Any generated section or subsection numbering is ignored.</p>
 <p>For example, <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Second</span> <span class="pre">level</span> <span class="pre">heading</span></code> would map to:</p>
@@ -383,10 +386,10 @@ Optional description text for the image. Possibly several sentences.
 <p>This then maps onto the following OU-XML:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Figure&gt;</span>
 <span class="w">    </span><span class="nt">&lt;Image</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;https://generated.url/path/image_file.png&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;Caption&gt;</span>Figure<span class="w"> </span>N.M<span class="w"> </span>Caption<span class="w"> </span>text<span class="nt">&lt;/Caption&gt;</span>
-<span class="w">            </span><span class="nt">&lt;Description&gt;</span>
-<span class="w">                </span><span class="nt">&lt;Paragraph&gt;</span>Optional<span class="w"> </span>description<span class="w"> </span>text<span class="w"> </span>for<span class="w"> </span>the<span class="w"> </span>image.<span class="w"> </span>Possibly<span class="w"> </span>several<span class="w"> </span>sentences.<span class="nt">&lt;/Paragraph&gt;</span>
-<span class="w">            </span><span class="nt">&lt;/Description&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Caption&gt;</span>Figure<span class="w"> </span>N.M<span class="w"> </span>Caption<span class="w"> </span>text<span class="nt">&lt;/Caption&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Description&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Paragraph&gt;</span>Optional<span class="w"> </span>description<span class="w"> </span>text<span class="w"> </span>for<span class="w"> </span>the<span class="w"> </span>image.<span class="w"> </span>Possibly<span class="w"> </span>several<span class="w"> </span>sentences.<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/Description&gt;</span>
 <span class="nt">&lt;/Figure&gt;</span>
 </pre></div>
 </div>
@@ -400,8 +403,8 @@ Optional description text for the image. Possibly several sentences.
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">numfig</span></code> parameter determines whether numeric references to figures may be generated; the <code class="docutils literal notranslate"><span class="pre">numfig_format</span></code> parameter specifies the format of the numeric reference text when a reference is generate; and the <code class="docutils literal notranslate"><span class="pre">numfig_secnum_depth</span></code> identifies the numbering level (incremental figure count across the item (<code class="docutils literal notranslate"><span class="pre">0</span></code>) or section number and figure number within section (<code class="docutils literal notranslate"><span class="pre">1</span></code>)).</p>
 <p>Links to figures can be described in the text via the unique reference, and either the caption text (<code class="docutils literal notranslate"><span class="pre">{ref}`unique_image_reference`)</span></code>) or, if enabled, the generated numeric reference (<code class="docutils literal notranslate"><span class="pre">{numref}`g-other_file_in_item.md#unique_image_reference`</span> </code>) may be displayed.</p>
-<p>If the reference is to a figure in a separate file, the path to the source dilename should also be specified (for example, <code class="docutils literal notranslate"><span class="pre">{numref}`unique_image_reference`</span> </code> or <code class="docutils literal notranslate"><span class="pre">{ref}`other_file_in_item.md#unique_image_reference`</span> </code>).</p>
-<p>The path to the image assets should be set in the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file and the image assets copied to that location.</p>
+<p>If the reference is to a figure in a separate file, the path to the source filename should also be specified (for example, <code class="docutils literal notranslate"><span class="pre">{numref}`unique_image_reference`</span> </code> or <code class="docutils literal notranslate"><span class="pre">{ref}`other_file_in_item.md#unique_image_reference`</span> </code>).</p>
+<p>An optional <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> configuration setting, <code class="docutils literal notranslate"><span class="pre">ou.image_path_prefix</span></code>, allows a path to the image directory to be specified.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ou</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">image_path_prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://generated.url/path</span>
 <span class="w">  </span><span class="c1"># For example:</span>
@@ -418,14 +421,14 @@ Optional description text for the image. Possibly several sentences.
 <section id="extending-the-markup-language">
 <h2><span class="section-number">5.2. </span>Extending the markup language<a class="headerlink" href="#extending-the-markup-language" title="Permalink to this heading">#</a></h2>
 <p>The MyST markdown format and the Sphinx publishing framework are both extensible, which means that it is possible to define additional tags to support the creation of bespoke materials.</p>
-<p>For example, the publishing workflow has been exteneded to support:</p>
+<p>For example, the publishing workflow has been extended to support:</p>
 <ul class="simple">
 <li><p>the parsing and rendering of <code class="docutils literal notranslate"><span class="pre">mermaid.js</span></code> diagram syntax;</p></li>
 <li><p>the parsing and custom rendering of “activities” with revealable answers.</p></li>
 </ul>
 <section id="rendering-mermaid-js-diagrams">
 <h3><span class="section-number">5.2.1. </span>Rendering <code class="docutils literal notranslate"><span class="pre">mermaid.js</span></code> diagrams<a class="headerlink" href="#rendering-mermaid-js-diagrams" title="Permalink to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">mermaid,js</span></code> package is a widely used Javascript that package TO DO</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">mermaid,js</span></code> package is a widely used JavaScript that package TO DO</p>
 </section>
 <section id="supporting-activity-elements">
 <h3><span class="section-number">5.2.2. </span>Supporting activity elements<a class="headerlink" href="#supporting-activity-elements" title="Permalink to this heading">#</a></h3>

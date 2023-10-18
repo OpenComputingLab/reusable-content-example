@@ -2,13 +2,13 @@
 
 To start the authoring process, a legacy software guide available as an OU-XML structured content document was rendered to simple markdown.
 
-Sphinx style configration and table of contents scripts were created to so that the content could be previewed in an HTML book style format, or rendered back to OU-XML.
+Sphinx style configuration and table of contents scripts were created to so that the content could be previewed in an HTML book style format, or rendered back to OU-XML.
 
 Several features of Sphinx style publishing that support extensibility and reuse were adopted that allowed us to trade-off purely generic content, customisable content, and bespoke content for each module.
 
-## Table of Contents Conifiguration Files
+## Table of Contents Configuration Files
 
-From a set of content files, one of the easist ways of defining which content files are to be used to generate a particular output document is to specify the files that are to be included via a table of contents file.
+From a set of content files, one of the easiest ways of defining which content files are to be used to generate a particular output document is to specify the files that are to be included via a table of contents file.
 
 In current production workflows, it would not be unusual for each module team author to their own software guide. In a markdown workflow, this might include each module team authoring several separate markdown documents, many of which may  duplicate similar instructional intent, and then create their own table of contents files to use their authored documents.
 
@@ -18,7 +18,7 @@ Partial customisation might be supported by each module team writing their own i
 
 When writing this sort of content, we must try to avoid making any references to a particular module. Where references to a module code are required, one possible approach is to use a generic code (for example `XY123`, or `XXNNN`) and then tell a student to use apply their particular module code in place of the generic code.
 
-For example, two modules might reuse content from a set of common files, as well as featuring module specific content, using the following table of cotnents files:
+For example, two modules might reuse content from a set of common files, as well as featuring module specific content, using the following table of contents files:
 
 ```yaml
 format: jb-book
@@ -50,13 +50,14 @@ For example, the following markdown fragment shows how we might customise a modu
 ```{include} ./g-introduction-core.md
 
 Finally, we have a conclusion paragraph that speaks to a particular module.
+```
 ````
 
 ## Parameterised Customisable Content
 
-In many cases, whilst the content is predomninantly reusable, there may be a requirement to customise it for use in particular module by referring to the module code or module name.
+In many cases, whilst the content is predominantly reusable, there may be a requirement to customise it for use in particular module by referring to the module code or module name.
 
-In this case, rather than generate a custom file for each module, we can simply parameterise the module code, module name, etc., and then define a module configration file that sets a genric module name placeholder label, for example, to a required module name.
+In this case, rather than generate a custom file for each module, we can simply parameterise the module code, module name, etc., and then define a module configuration file that sets a generic module name placeholder label, for example, to a required module name.
 
 For example, the following raw markdown fragment shows how we can use parameterised values at the start of a generic, customisable "cribsheet" document.
 

@@ -30,13 +30,13 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/ou-book-theme.css?digest=e2356d549ad34df00aeb97b1e33ec7c85da0ce8b" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
@@ -44,8 +44,10 @@
   <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -174,6 +176,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="quotations.html">8. Quotations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">9. Collaborative Development, Authoring and Publishing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sandbox.html">10. Trying out the environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">11. To Do</a></li>
 </ul>
 
     </div>
@@ -324,8 +327,8 @@ document.write(`
                   
   <section id="maths">
 <h1><span class="section-number">6. </span>Maths<a class="headerlink" href="#maths" title="Permalink to this heading">#</a></h1>
-<p>Mathematical equations written using LaTeX syntac can be specified inline or as a block level equation.</p>
-<p>For example, the inline equation <span class="math notranslate nohighlight">\(e=mc^2\)</span> is specified in mardown using the <code class="docutils literal notranslate"><span class="pre">{math}</span></code> role: <code class="docutils literal notranslate"><span class="pre">{math}`e=mc^2`</span></code></p>
+<p>Mathematical equations written using LaTeX syntax can be specified inline or as a block level equation.</p>
+<p>For example, the inline equation <span class="math notranslate nohighlight">\(e=mc^2\)</span> is specified in markdown using the <code class="docutils literal notranslate"><span class="pre">{math}</span></code> role: <code class="docutils literal notranslate"><span class="pre">{math}`e=mc^2`</span></code></p>
 <p>We can also use a <code class="docutils literal notranslate"><span class="pre">{math}</span></code> directive to define an equation block:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{math}
 :label: my-equation

@@ -30,13 +30,13 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/ou-book-theme.css?digest=e2356d549ad34df00aeb97b1e33ec7c85da0ce8b" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
@@ -44,8 +44,10 @@
   <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -172,6 +174,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="quotations.html">8. Quotations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">9. Collaborative Development, Authoring and Publishing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sandbox.html">10. Trying out the environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">11. To Do</a></li>
 </ul>
 
     </div>
@@ -318,7 +321,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents-conifiguration-files">4.1. Table of Contents Conifiguration Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents-configuration-files">4.1. Table of Contents Configuration Files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transcluding-embedding-content">4.2. Transcluding / Embedding content</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterised-customisable-content">4.3. Parameterised Customisable Content</a></li>
 </ul>
@@ -335,16 +338,16 @@ document.write(`
   <section id="authoring-reusable-content">
 <h1><span class="section-number">4. </span>Authoring reusable content<a class="headerlink" href="#authoring-reusable-content" title="Permalink to this heading">#</a></h1>
 <p>To start the authoring process, a legacy software guide available as an OU-XML structured content document was rendered to simple markdown.</p>
-<p>Sphinx style configration and table of contents scripts were created to so that the content could be previewed in an HTML book style format, or rendered back to OU-XML.</p>
+<p>Sphinx style configuration and table of contents scripts were created to so that the content could be previewed in an HTML book style format, or rendered back to OU-XML.</p>
 <p>Several features of Sphinx style publishing that support extensibility and reuse were adopted that allowed us to trade-off purely generic content, customisable content, and bespoke content for each module.</p>
-<section id="table-of-contents-conifiguration-files">
-<h2><span class="section-number">4.1. </span>Table of Contents Conifiguration Files<a class="headerlink" href="#table-of-contents-conifiguration-files" title="Permalink to this heading">#</a></h2>
-<p>From a set of content files, one of the easist ways of defining which content files are to be used to generate a particular output document is to specify the files that are to be included via a table of contents file.</p>
+<section id="table-of-contents-configuration-files">
+<h2><span class="section-number">4.1. </span>Table of Contents Configuration Files<a class="headerlink" href="#table-of-contents-configuration-files" title="Permalink to this heading">#</a></h2>
+<p>From a set of content files, one of the easiest ways of defining which content files are to be used to generate a particular output document is to specify the files that are to be included via a table of contents file.</p>
 <p>In current production workflows, it would not be unusual for each module team author to their own software guide. In a markdown workflow, this might include each module team authoring several separate markdown documents, many of which may  duplicate similar instructional intent, and then create their own table of contents files to use their authored documents.</p>
 <p>One obvious way of reusing content across several modules would be for each module to use exactly the same guide, where the same table of contents file pulls from the same source documents.</p>
 <p>Partial customisation might be supported by each module team writing their own introduction, for example, but reusing all the other sections of the guide.  The output document is then defined using a module specific table of contents file that pulls in the module specific content (for example, from the file <code class="docutils literal notranslate"><span class="pre">introduction-XY123.md</span></code>) as well as a the generic reusable content files.</p>
 <p>When writing this sort of content, we must try to avoid making any references to a particular module. Where references to a module code are required, one possible approach is to use a generic code (for example <code class="docutils literal notranslate"><span class="pre">XY123</span></code>, or <code class="docutils literal notranslate"><span class="pre">XXNNN</span></code>) and then tell a student to use apply their particular module code in place of the generic code.</p>
-<p>For example, two modules might reuse content from a set of common files, as well as featuring module specific content, using the following table of cotnents files:</p>
+<p>For example, two modules might reuse content from a set of common files, as well as featuring module specific content, using the following table of contents files:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jb-book</span>
 <span class="nt">root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">g-vce_cribsheet</span>
 <span class="nt">chapters</span><span class="p">:</span>
@@ -370,13 +373,14 @@ document.write(`
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{include} ./g-introduction-core.md
 
 Finally, we have a conclusion paragraph that speaks to a particular module.
+```
 </pre></div>
 </div>
 </section>
 <section id="parameterised-customisable-content">
 <h2><span class="section-number">4.3. </span>Parameterised Customisable Content<a class="headerlink" href="#parameterised-customisable-content" title="Permalink to this heading">#</a></h2>
-<p>In many cases, whilst the content is predomninantly reusable, there may be a requirement to customise it for use in particular module by referring to the module code or module name.</p>
-<p>In this case, rather than generate a custom file for each module, we can simply parameterise the module code, module name, etc., and then define a module configration file that sets a genric module name placeholder label, for example, to a required module name.</p>
+<p>In many cases, whilst the content is predominantly reusable, there may be a requirement to customise it for use in particular module by referring to the module code or module name.</p>
+<p>In this case, rather than generate a custom file for each module, we can simply parameterise the module code, module name, etc., and then define a module configuration file that sets a generic module name placeholder label, for example, to a required module name.</p>
 <p>For example, the following raw markdown fragment shows how we can use parameterised values at the start of a generic, customisable “cribsheet” document.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span># Virtual Computing Environment Cribsheet ({{module_code}}, {{presentation_code}} Presentation)
 
@@ -466,7 +470,7 @@ Finally, we have a conclusion paragraph that speaks to a particular module.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents-conifiguration-files">4.1. Table of Contents Conifiguration Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents-configuration-files">4.1. Table of Contents Configuration Files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transcluding-embedding-content">4.2. Transcluding / Embedding content</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterised-customisable-content">4.3. Parameterised Customisable Content</a></li>
 </ul>

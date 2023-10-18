@@ -2,7 +2,7 @@
 
 Writing software guides to support educational modules adds authoring, editing and testing overheads to module production. If multiple modules use similar environments or software applications, reusing generic or customisable materials provides a way or reducing those overheads.
 
-This informal report describes the production route for a customisable software guide to support the use of virtual computing environments (VCEs) across several modules. The VCEs are accessed as a remotely hosted environment provided by the Open University *Compute Home* service, or as a locally run Docker container. The method for getting started using the enviromment is likely to be the same across many modules, which suggests an opportunity for reusing generic *getting started* material. However, different modules may also vary in the sfotware provided by the VCE, which means that some degree of bespoke software guide style support material may also be required.
+This informal report describes the production route for a customisable software guide to support the use of virtual computing environments (VCEs) across several modules. The VCEs are accessed as a remotely hosted environment provided by the Open University *Compute Home* service, or as a locally run Docker container. The method for getting started using the environment is likely to be the same across many modules, which suggests an opportunity for reusing generic *getting started* material. However, different modules may also vary in the software provided by the VCE, which means that some degree of bespoke software guide style support material may also be required.
 
 A common production route for the software guides required for three separate modules was explored:
 
