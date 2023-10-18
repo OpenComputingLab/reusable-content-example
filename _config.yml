@@ -11,7 +11,7 @@ sphinx:
     - sphinxcontrib.mermaid
     - sphinx_exercise
     - sphinxcontrib.youtube
- #   - sphinxcontrib.video
+    - sphinxcontrib.video
     - sphinxcontrib.audio
   config:
     myst_heading_anchors: 3
