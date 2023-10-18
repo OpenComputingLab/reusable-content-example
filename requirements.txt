@@ -8,4 +8,4 @@ sphinx-exercise
 sphinxcontrib-video
 
 https://github.com/innovationOUtside/ou-xml-validator/archive/refs/heads/main.zip
-sphinx-contrib-ou-xml-tags @ https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags/archive/refs/heads/main.zip
+https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags/archive/refs/heads/main.zip
