@@ -15,7 +15,7 @@ demo()
 ```
 ````
 
-*In Markdown, the backticked block typically also defines the language so that languge sensitive syntax highlighting can be applied appropriately.*
+*In Markdown, the backticked block typically also defines the language so that language sensitive syntax highlighting can be applied appropriately.*
 
 This is then rendered as a style code block:
 

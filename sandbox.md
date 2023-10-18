@@ -1,8 +1,6 @@
 # Trying out the environment
 
-You can try out the workflow in pre-configured environment using a `.devcontainer` in a VS Code environment running on your own computer, or in GitHub Codespaces.
-
-
+You can try out the workflow in preconfigured environment using a `.devcontainer` in a VS Code environment running on your own computer, or in GitHub Codespaces.
 
 ## TO DO
 

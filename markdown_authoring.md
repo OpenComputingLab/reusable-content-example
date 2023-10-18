@@ -9,9 +9,10 @@ A variety of publishing tools and frameworks are available that can render markd
 As well as rendering rich text, markdown publishing extensions can also be used to render diagrams. For example, flowcharts can be rendered from simple text-based `Mermaid.js` scripts.
 
 ```{mermaid}
-:alt: 
-:caption: Publishing workflows from MyST markdown
-
+---
+alt:
+caption: Publishing workflows from MyST markdown
+---
 flowchart LR
   A[Jupyter Notebook] --> C
   B[MyST Markdown] --> C
@@ -83,11 +84,11 @@ Simple tables can be described using the markdown table format. The table format
 
 ```
 
-| Col 1 | Col 2         | Col 3  |
-|-------|:-------------:|-------:|
-| col 1 |  left-aligned | L      |
-| col 2 |    centered   | center |
-| col 2 | right-aligned | R      |
+| Col 1 |     Col 2     |  Col 3 |
+| ----- | :-----------: | -----: |
+| col 1 | left-aligned  |      L |
+| col 2 |   centered    | center |
+| col 2 | right-aligned |      R |
 
 Here's fragment of the corresponding OU-XML:
 
@@ -156,7 +157,6 @@ It can contain a *wide* __range__ of elements.
     <Paragraph>It can contain a <i>wide</i> <b>range</b> of elements.</Paragraph>
   </Box>
 ```
-
 
 ## Markdown Publishing Tools and Frameworks
 

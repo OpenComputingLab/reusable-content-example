@@ -14,7 +14,7 @@ which are rendered in OU-XML as:
 <Quote><Paragraph>Here is a single line quote.</Paragraph></Quote>
 ```
 
-amd multi-line quotes:
+and multi-line quotes:
 
 ```text
 > Here is the first line of the quote...

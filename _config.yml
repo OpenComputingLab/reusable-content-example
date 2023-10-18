@@ -10,12 +10,15 @@ sphinx:
     - ou_book_theme
     - sphinxcontrib.mermaid
     - sphinx_exercise
+    - sphinxcontrib.youtube
+    - sphinxcontrib.video
+    - sphinxcontrib.audio
   config:
     myst_heading_anchors: 3
     numfig: true
     numfig_format: {'figure':'Figure %s'}
     numfig_secnum_depth: 1 #eg 0:1 1:2.1 2:3.2.1
-
+    html_theme: ou_book_theme
 parse:
   myst_enable_extensions:
     - colon_fenceparse
@@ -31,3 +34,5 @@ ou:
   isbn:
   edition:
   block_title: QQQQ
+  image_path_prefix: https://specified.path/to/image/directory/
+  audio_path_prefix: https://specified.path/to/audio/directory/

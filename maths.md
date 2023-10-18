@@ -1,8 +1,8 @@
 # Maths
 
-Mathematical equations written using LaTeX syntac can be specified inline or as a block level equation.
+Mathematical equations written using LaTeX syntax can be specified inline or as a block level equation.
 
-For example, the inline equation {math}`e=mc^2` is specified in mardown using the `{math}` role: `` {math}`e=mc^2` ``
+For example, the inline equation {math}`e=mc^2` is specified in markdown using the `{math}` role: `` {math}`e=mc^2` ``
 
 We can also use a `{math}` directive to define an equation block:
 
@@ -15,14 +15,16 @@ s(w_t) + y_{t+1}
 ````
 
 ```{math}
-:label: my-equation
+---
+label: my-equation
+---
 w_{t+1} = (1 + r_{t+1})
 s(w_t) + y_{t+1}
 ```
 
 These corresponding OU-XML is then a `<ProgramListing>` to show the script that is used to defined the equation, and an `Equation` block from which the rendered equation can be generated:
 
-```xml
+````xml
 <ProgramListing>
     <Paragraph>```{math}</Paragraph>
     <Paragraph>:label: my-equation</Paragraph>
@@ -35,7 +37,7 @@ These corresponding OU-XML is then a `<ProgramListing>` to show the script that 
     <TeX>w_{t+1} = (1 + r_{t+1})
 s(w_t) + y_{t+1}</TeX>
 </Equation>
-```
+````
 
 Dollar math syntax may also be used to define block equations:
 

@@ -1,0 +1,10 @@
+jupyter-book
+ou-jupyter-book-tools
+ou_book_theme
+
+sphinxcontrib.mermaid
+sphinxcontrib-youtube
+sphinx-exercise
+sphinxcontrib-video
+
+https://github.com/innovationOUtside/ou-xml-validator/archive/refs/heads/main.zip

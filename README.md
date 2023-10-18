@@ -2,7 +2,6 @@
 
 Informal report on creating reusable / generic content as Markdown text with conversion to OU-XML
 
-
 ## Build process
 
 Generate the Sphinx XML version of the Jupyter Book, as defined by the `_toc.yml` and `_config.yml` file:
@@ -16,3 +15,13 @@ Convert to OU-XML:
 ## `.devcontainer` Set-up
 
 The `.devcontainer` set up allows you to run the build tools ... TO DO
+
+## Spellchecking and formatting
+
+Using [`tbroadley/spellchecker-cli`](https://github.com/tbroadley/spellchecker-cli):
+
+`spellchecker --files  *.md --language en-GB --dictionaries rce-dictionary.txt`
+
+Formatting using [`mdformat`](<>):
+
+`mdformat .`
