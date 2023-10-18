@@ -322,7 +322,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary-items">11.1. Glossary Items</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#youtube-video-items-sphinx-contrib-youtube">11.2. YouTube Video items (sphinx-contrib.youtube)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-items-sphinxcontrib-video">11.3. Video Items (sphinxcontrib.video)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-items">11.3. Video Items</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#audio-items">11.4. Audio Items</a></li>
 </ul>
             </nav>
         </div>
@@ -370,14 +371,22 @@ No blank line</p>
 <div class="video_wrapper" style="">
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/PmxZywVwhP8" style="border: 0; height: 345px; width: 560px">
 </iframe></div></section>
-<section id="video-items-sphinxcontrib-video">
-<h2><span class="section-number">11.3. </span>Video Items (sphinxcontrib.video)<a class="headerlink" href="#video-items-sphinxcontrib-video" title="Permalink to this heading">#</a></h2>
-<p>We can embed a video file as:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{video} resources/test.mp4
+<section id="video-items">
+<h2><span class="section-number">11.3. </span>Video Items<a class="headerlink" href="#video-items" title="Permalink to this heading">#</a></h2>
+<p>Embedded video player using <a class="reference external" href="https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags"><code class="docutils literal notranslate"><span class="pre">innovationOUtside/sphinxcontrib-ou-xml-tags</span></code></a>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{ou-video} resources/test.mp4
 ```
 </pre></div>
 </div>
-<p>Audio using <a class="reference external" href="https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags"><code class="docutils literal notranslate"><span class="pre">innovationOUtside/sphinxcontrib-ou-xml-tags</span></code></a>:</p>
+<video src="resources/test.mp4" controls="True" preload="auto"/></section>
+<section id="audio-items">
+<h2><span class="section-number">11.4. </span>Audio Items<a class="headerlink" href="#audio-items" title="Permalink to this heading">#</a></h2>
+<p>Audio player using <a class="reference external" href="https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags"><code class="docutils literal notranslate"><span class="pre">innovationOUtside/sphinxcontrib-ou-xml-tags</span></code></a>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{ou-audio} resources/test.mp3
+asasas asasa
+```
+</pre></div>
+</div>
 <audio controls="True" preload="auto" src="resources/test.mp3"/><p><span class="caption-text">asasas asasa</span></p>
 </section>
 </section>
@@ -438,7 +447,8 @@ No blank line</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary-items">11.1. Glossary Items</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#youtube-video-items-sphinx-contrib-youtube">11.2. YouTube Video items (sphinx-contrib.youtube)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-items-sphinxcontrib-video">11.3. Video Items (sphinxcontrib.video)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-items">11.3. Video Items</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#audio-items">11.4. Audio Items</a></li>
 </ul>
   </nav></div>
 

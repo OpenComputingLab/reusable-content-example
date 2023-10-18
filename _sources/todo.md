@@ -44,16 +44,27 @@ We can embed video items as:
 Some text
 ```
 
-## Video Items (sphinxcontrib.video)
+## Video Items
 
-We can embed a video file as:
+Embedded video player using [`innovationOUtside/sphinxcontrib-ou-xml-tags`](https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags):
 
 ````text
-```{video} resources/test.mp4
+```{ou-video} resources/test.mp4
 ```
 ````
 
-Audio using [`innovationOUtside/sphinxcontrib-ou-xml-tags`](https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags):
+```{ou-video} resources/test.mp4
+```
+
+## Audio Items
+
+Audio player using [`innovationOUtside/sphinxcontrib-ou-xml-tags`](https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags):
+
+````text
+```{ou-audio} resources/test.mp3
+asasas asasa
+```
+````
 
 ```{ou-audio} resources/test.mp3
 asasas asasa
