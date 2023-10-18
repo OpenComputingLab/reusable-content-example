@@ -49,12 +49,12 @@ Some text
 We can embed a video file as:
 
 ````text
-```{video} movie.mp4
+```{video} resources/test.mp4
 ```
 ````
 
-Audio
+Audio using [`innovationOUtside/sphinxcontrib-ou-xml-tags`](https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags):
 
-```{ou-audio} sdsdsd.mp3
+```{ou-audio} resources/test.mp3
 asasas asasa
 ```

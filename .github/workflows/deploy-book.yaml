@@ -20,8 +20,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install jupyter-book ou-jupyter-book-tools
-        pip install ou_book_theme sphinxcontrib.mermaid sphinxcontrib-youtube sphinx-exercise
+        pip install -r requirements.txt
     # Build the book
     - name: Build the book
       run: |
@@ -32,7 +31,6 @@ jobs:
         node-version: 18
     - name: Build the OU-XML
       run: |
-        pip install https://github.com/innovationOUtside/ou-xml-validator/archive/refs/heads/main.zip
         jb build --builder custom --custom-builder xml .
         ouseful_obt .
         mkdir -p /var/tmp/dist
