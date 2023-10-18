@@ -36,6 +36,7 @@ jobs:
         mkdir -p /var/tmp/dist
         cp -rf _build/ouxml /var/tmp/dist/
         cp -rf _build/ouxml ./_build/html
+        cp -rf resources ./_build/ouxml/
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.6.1
