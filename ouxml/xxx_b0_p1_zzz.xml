@@ -390,8 +390,36 @@
             </InternalSection>
         </InternalSection>
     </Session>
+    <Session id="embedded-media">
+        <Title>6 Embedded Media</Title>
+        <Paragraph>Embedded media items can be specified in MyST markdown using custom <ComputerCode>{video}</ComputerCode> and <ComputerCode>{audio}</ComputerCode> admonitions and rendered into HTML using the <a href="https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags"><ComputerCode>innovationOUtside/sphinxcontrib-ou-xml-tags</ComputerCode></a> Sphinx extension.</Paragraph>
+        <Paragraph><i>The mapping to appropriate XML tags is under developement; currently it is only partially handled for <ComputerCode>audio</ComputerCode> items and not handled for <ComputerCode>video</ComputerCode> items.</i></Paragraph>
+        <InternalSection id="video-items">
+            <Heading>Video Items</Heading>
+            <Paragraph>Embedded video player using <a href="https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags"><ComputerCode>innovationOUtside/sphinxcontrib-ou-xml-tags</ComputerCode></a>:</Paragraph>
+            <Paragraph>````text`</Paragraph>
+            <UnknownTag>ou_video</UnknownTag>
+            <ProgramListing><Paragraph></Paragraph><Paragraph>```{ou-video} resources/test.mp4</Paragraph><Paragraph>```</Paragraph><Paragraph></Paragraph><Paragraph>The MyST spec also lets you use a video file path in a `{figure}` admonition:</Paragraph><Paragraph></Paragraph><Paragraph>````text</Paragraph><Paragraph>```{figure} resources/test.mp4</Paragraph><Paragraph>My video caption</Paragraph><Paragraph></Paragraph><Paragraph>And description.</Paragraph><Paragraph></Paragraph><Paragraph>More description.</Paragraph><Paragraph>```</Paragraph></ProgramListing>
+            <Figure>
+                <Image src="https://specified.path/to/image/directory/xxx_b0_p1_zzz_fig3.png"/>
+                <Caption>Figure 6.1 My video caption</Caption>
+                <Description>
+                    <Paragraph>And description.</Paragraph>
+                    <Paragraph>More description.</Paragraph>
+                </Description>
+            </Figure>
+            <Paragraph>…which is handy…</Paragraph>
+        </InternalSection>
+        <InternalSection id="audio-items">
+            <Heading>Audio Items</Heading>
+            <Paragraph>Audio player using <a href="https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags"><ComputerCode>innovationOUtside/sphinxcontrib-ou-xml-tags</ComputerCode></a>:</Paragraph>
+            <ProgramListing><Paragraph>```{ou-audio} resources/test.mp3</Paragraph><Paragraph>A caption for an audio file.</Paragraph><Paragraph>```</Paragraph></ProgramListing>
+            <MediaContent type="audio" src="https://specified.path/to/audio/directory/xxx_b0_p1_zzz_media_test.mp3"/>
+            <Paragraph><i>Currently, there is no native MyST admonition for embedding an audio player.</i></Paragraph>
+        </InternalSection>
+    </Session>
     <Session id="maths">
-        <Title>6 Maths</Title>
+        <Title>7 Maths</Title>
         <Paragraph>Mathematical equations written using LaTeX syntax can be specified inline or as a block level equation.</Paragraph>
         <Paragraph>For example, the inline equation <InlineEquation><TeX>e=mc^2</TeX></InlineEquation> is specified in markdown using the <ComputerCode>{math}</ComputerCode> role: <ComputerCode>{math}`e=mc^2`</ComputerCode></Paragraph>
         <Paragraph>We can also use a <ComputerCode>{math}</ComputerCode> directive to define an equation block:</Paragraph>
@@ -418,7 +446,7 @@ s(w_t) + y_{t+1}</TeX></Equation>
         <Equation><TeX> \label{one-liner} Ax=b </TeX>
     </Equation></Session>
     <Session id="code">
-        <Title>7 Code</Title>
+        <Title>8 Code</Title>
         <Paragraph>We can mark up code blocks in usual markdown style by using a triple backticked block to delimit the code block:</Paragraph>
         <ProgramListing><Paragraph>```python</Paragraph><Paragraph># A comment</Paragraph><Paragraph>def demo():</Paragraph><Paragraph>    """An example function.</Paragraph><Paragraph>    """</Paragraph><Paragraph>    a = 1</Paragraph><Paragraph>    return a</Paragraph><Paragraph></Paragraph><Paragraph>demo()</Paragraph><Paragraph>```</Paragraph></ProgramListing>
         <Paragraph><i>In Markdown, the backticked block typically also defines the language so that language sensitive syntax highlighting can be applied appropriately.</i></Paragraph>
@@ -432,7 +460,7 @@ s(w_t) + y_{t+1}</TeX></Equation>
         <ProgramListing><Paragraph>&amp;lt;Paragraph&amp;gt;We can also refer inline, for example to the &amp;lt;ComputerCode&amp;gt;pandas&amp;lt;/ComputerCode&amp;gt; package.&amp;lt;/Paragraph&amp;gt;</Paragraph></ProgramListing>
     </Session>
     <Session id="quotations">
-        <Title>8 Quotations</Title>
+        <Title>9 Quotations</Title>
         <Paragraph>We can define quotations in markdown by prefix the quoted line or lines with a <ComputerCode>&gt;</ComputerCode> symbol at the start of the line:</Paragraph>
         <Paragraph>This works for single line quotes:</Paragraph>
         <Paragraph><ComputerCode>&gt; Here is a single line quote.</ComputerCode></Paragraph>
@@ -455,7 +483,7 @@ s(w_t) + y_{t+1}</TeX></Equation>
         <ProgramListing><Paragraph>&amp;lt;Quote&amp;gt;&amp;lt;Paragraph&amp;gt;Here is the first line of the quote…</Paragraph><Paragraph>                …and here is the second.&amp;lt;/Paragraph&amp;gt;&amp;lt;SourceReference&amp;gt;And a final line source…&amp;lt;/SourceReference&amp;gt;&amp;lt;/Quote&amp;gt;</Paragraph></ProgramListing>
     </Session>
     <Session id="collaborative-development-authoring-and-publishing">
-        <Title>9 Collaborative Development, Authoring and Publishing</Title>
+        <Title>10 Collaborative Development, Authoring and Publishing</Title>
         <Paragraph>The original workflow involved the main author providing PDF previews of the material to a second author by email, who returned an annotated and/or email comments.</Paragraph>
         <Paragraph>OU-XML was also generated and passed to a DPA (Digital Production Assistant) in LDS (Learner and Discovery Services) who checked and fixed the OU-XML, published it as previewable content in the VLE, and provided errata about OU-XML issues to the main author.</Paragraph>
         <Paragraph>As well as iterating the text in the source markdown documents, the main author was also iterating on the tools used to generate to the OU-XML. <i>This would not have been possible without the support of the DPA turning round documents almost on demand.</i></Paragraph>
@@ -496,7 +524,7 @@ s(w_t) + y_{t+1}</TeX></Equation>
         <Paragraph>To try to improve the authoring/editing process, the first and second author started to use a public GitHub repository to share content. The second author forked the first author’s repository, worked in their own repository, and then submitted pull requests back to the first author’s repository.</Paragraph>
     </Session>
     <Session id="trying-out-the-environment">
-        <Title>10 Trying out the environment</Title>
+        <Title>11 Trying out the environment</Title>
         <Paragraph>You can try out the workflow in preconfigured environment using a <ComputerCode>.devcontainer</ComputerCode> in a VS Code environment running on your own computer, or in GitHub Codespaces.</Paragraph>
         <InternalSection id="to-do">
             <Heading>TO DO</Heading>
@@ -505,7 +533,7 @@ s(w_t) + y_{t+1}</TeX></Equation>
         </InternalSection>
     </Session>
     <Session id="to-do">
-        <Title>11 To Do</Title>
+        <Title>12 To Do</Title>
         <Paragraph>Examples of markdown markup that hasn’t yet been mapped over to corresponding OU-XML tags…</Paragraph>
         <InternalSection id="glossary-items">
             <Heading>Glossary Items</Heading>
@@ -521,17 +549,10 @@ s(w_t) + y_{t+1}</TeX></Equation>
             <ProgramListing><Paragraph>```{youtube} PmxZywVwhP8</Paragraph><Paragraph>```</Paragraph></ProgramListing>
             <MediaContent type="oembed" src="https://youtu.be/PmxZywVwhP8"/>
         </InternalSection>
-        <InternalSection id="video-items">
-            <Heading>Video Items</Heading>
-            <Paragraph>Embedded video player using <a href="https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags"><ComputerCode>innovationOUtside/sphinxcontrib-ou-xml-tags</ComputerCode></a>:</Paragraph>
-            <ProgramListing><Paragraph>```{ou-video} resources/test.mp4</Paragraph><Paragraph>```</Paragraph></ProgramListing>
-            <UnknownTag>ou_video</UnknownTag>
-        </InternalSection>
-        <InternalSection id="audio-items">
-            <Heading>Audio Items</Heading>
-            <Paragraph>Audio player using <a href="https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags"><ComputerCode>innovationOUtside/sphinxcontrib-ou-xml-tags</ComputerCode></a>:</Paragraph>
-            <ProgramListing><Paragraph>```{ou-audio} resources/test.mp3</Paragraph><Paragraph>asasas asasa</Paragraph><Paragraph>```</Paragraph></ProgramListing>
-            <MediaContent type="audio" src="https://specified.path/to/audio/directory/xxx_b0_p1_zzz_media_test.mp3"/>
+        <InternalSection id="code-execution">
+            <Heading>Code Execution</Heading>
+            <Paragraph>We should be able to execute code purely within the browser using <ComputerCode>thebe</ComputerCode>.</Paragraph>
+            <UnknownTag>container</UnknownTag>
         </InternalSection>
     </Session>
   </Unit>

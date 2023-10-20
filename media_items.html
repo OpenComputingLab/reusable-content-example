@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>9. Quotations &#8212; Reusable Content Demonstration</title>
+    <title>6. Embedded Media &#8212; Reusable Content Demonstration</title>
   
   
   
@@ -64,11 +64,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'quotations';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'media_items';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="10. Collaborative Development, Authoring and Publishing" href="collaborative-authoring.html" />
-    <link rel="prev" title="8. Code" href="code.html" />
+    <link rel="next" title="7. Maths" href="maths.html" />
+    <link rel="prev" title="5. Markdown format" href="md_format.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,10 +169,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="production_workflow.html">3. OU-XML production workflow using Jupyter Book</a></li>
 <li class="toctree-l1"><a class="reference internal" href="authoring_reusable_content.html">4. Authoring reusable content</a></li>
 <li class="toctree-l1"><a class="reference internal" href="md_format.html">5. Markdown format</a></li>
-<li class="toctree-l1"><a class="reference internal" href="media_items.html">6. Embedded Media</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Embedded Media</a></li>
 <li class="toctree-l1"><a class="reference internal" href="maths.html">7. Maths</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code.html">8. Code</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Quotations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quotations.html">9. Quotations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">10. Collaborative Development, Authoring and Publishing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sandbox.html">11. Trying out the environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="todo.html">12. To Do</a></li>
@@ -230,7 +230,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/quotations.md" target="_blank"
+      <li><a href="_sources/media_items.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -299,7 +299,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -310,11 +312,20 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Quotations</h1>
+    <h1>Embedded Media</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-items">6.1. Video Items</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#audio-items">6.2. Audio Items</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -324,57 +335,55 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="quotations">
-<h1><span class="section-number">9. </span>Quotations<a class="headerlink" href="#quotations" title="Permalink to this heading">#</a></h1>
-<p>We can define quotations in markdown by prefix the quoted line or lines with a <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> symbol at the start of the line:</p>
-<p>This works for single line quotes:</p>
-<p><code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">Here</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">single</span> <span class="pre">line</span> <span class="pre">quote.</span></code></p>
-<blockquote>
-<div><p>Here is a single line quote.</p>
-</div></blockquote>
-<p>which are rendered in OU-XML as:</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Quote&gt;&lt;Paragraph&gt;</span>Here<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>single<span class="w"> </span>line<span class="w"> </span>quote.<span class="nt">&lt;/Paragraph&gt;&lt;/Quote&gt;</span>
+  <section id="embedded-media">
+<h1><span class="section-number">6. </span>Embedded Media<a class="headerlink" href="#embedded-media" title="Permalink to this heading">#</a></h1>
+<p>Embedded media items can be specified in MyST markdown using custom <code class="docutils literal notranslate"><span class="pre">{video}</span></code> and <code class="docutils literal notranslate"><span class="pre">{audio}</span></code> admonitions and rendered into HTML using the <a class="reference external" href="https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags"><code class="docutils literal notranslate"><span class="pre">innovationOUtside/sphinxcontrib-ou-xml-tags</span></code></a> Sphinx extension.</p>
+<p><em>The mapping to appropriate XML tags is under developement; currently it is only partially handled for <code class="docutils literal notranslate"><span class="pre">audio</span></code> items and not handled for <code class="docutils literal notranslate"><span class="pre">video</span></code> items.</em></p>
+<section id="video-items">
+<h2><span class="section-number">6.1. </span>Video Items<a class="headerlink" href="#video-items" title="Permalink to this heading">#</a></h2>
+<p>Embedded video player using <a class="reference external" href="https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags"><code class="docutils literal notranslate"><span class="pre">innovationOUtside/sphinxcontrib-ou-xml-tags</span></code></a>:</p>
+<p>````text`</p>
+<video src="resources/test.mp4" controls="True" preload="auto"></video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+```{ou-video} resources/test.mp4
+```
+
+The MyST spec also lets you use a video file path in a `{figure}` admonition:
+
+````text
+```{figure} resources/test.mp4
+My video caption
+
+And description.
+
+More description.
+```
 </pre></div>
 </div>
-<p>and multi-line quotes:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt; Here is the first line of the quote...
-&gt; ...and here is the second.
-&gt;
-&gt; And a final line.
+<figure class="align-default" id="id1">
+<video src="_images/test.mp4" title="_images/test.mp4">
+<a href="_images/test.mp4">_images/test.mp4</a>
+</video>
+<figcaption>
+<p><span class="caption-number">Figure 6.1 </span><span class="caption-text">My video caption</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<div class="legend">
+<p>And description.</p>
+<p>More description.</p>
+</div>
+</figcaption>
+</figure>
+<p>…which is handy…</p>
+</section>
+<section id="audio-items">
+<h2><span class="section-number">6.2. </span>Audio Items<a class="headerlink" href="#audio-items" title="Permalink to this heading">#</a></h2>
+<p>Audio player using <a class="reference external" href="https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags"><code class="docutils literal notranslate"><span class="pre">innovationOUtside/sphinxcontrib-ou-xml-tags</span></code></a>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{ou-audio} resources/test.mp3
+A caption for an audio file.
+```
 </pre></div>
 </div>
-<p>which are rendered in OU-XML as:</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Quote&gt;</span>
-<span class="w">    </span><span class="nt">&lt;Paragraph&gt;</span>Here<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>first<span class="w"> </span>line<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>quote…
-<span class="w">    </span>…and<span class="w"> </span>here<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>second.<span class="nt">&lt;/Paragraph&gt;</span>
-<span class="nt">&lt;Paragraph&gt;</span>And<span class="w"> </span>a<span class="w"> </span>final<span class="w"> </span>line.<span class="nt">&lt;/Paragraph&gt;</span>
-<span class="nt">&lt;/Quote&gt;</span>
-</pre></div>
-</div>
-<p>The following is a quote and should be marked up as such:</p>
-<blockquote>
-<div><p>Here is the first line of the quote…
-…and here is the second.</p>
-<p>And a final line.</p>
-</div></blockquote>
-<p>The following is a quote that should be marked up as such, along with a typographically distinguished source reference component:</p>
-<blockquote>
-<div><p>Here is the first line of the quote…
-…and here is the second.</p>
-<p>Source: And a final line source…</p>
-</div></blockquote>
-<p>The source markdown is:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt; Here is the first line of the quote...
-&gt; ...and here is the second.
-&gt;
-&gt; Source: And a final line source...
-</pre></div>
-</div>
-<p>In OU-XML, we get:</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Quote&gt;&lt;Paragraph&gt;</span>Here<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>first<span class="w"> </span>line<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>quote…
-<span class="w">                </span>…and<span class="w"> </span>here<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>second.<span class="nt">&lt;/Paragraph&gt;&lt;SourceReference&gt;</span>And<span class="w"> </span>a<span class="w"> </span>final<span class="w"> </span>line<span class="w"> </span>source…<span class="nt">&lt;/SourceReference&gt;&lt;/Quote&gt;</span>
-</pre></div>
-</div>
+<audio controls="True" preload="auto" src="resources/test.mp3"><p><span class="caption-text">A caption for an audio file.</span></p>
+</audio><p><em>Currently, there is no native MyST admonition for embedding an audio player.</em></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -408,20 +417,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="code.html"
+       href="md_format.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Code</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Markdown format</p>
       </div>
     </a>
     <a class="right-next"
-       href="collaborative-authoring.html"
+       href="maths.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>Collaborative Development, Authoring and Publishing</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Maths</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -431,6 +440,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-items">6.1. Video Items</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#audio-items">6.2. Audio Items</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

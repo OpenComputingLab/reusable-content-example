@@ -1,3 +1,18 @@
+---
+jupytext:
+  cell_metadata_filter: -all
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.15.0
+kernelspec:
+  display_name: Python 3 (ipykernel)
+  language: python
+  name: python3
+---
+
 # To Do
 
 Examples of markdown markup that hasn't yet been mapped over to corresponding OU-XML tags...
@@ -44,28 +59,43 @@ We can embed video items as:
 Some text
 ```
 
-## Video Items
+## Code Execution
 
-Embedded video player using [`innovationOUtside/sphinxcontrib-ou-xml-tags`](https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags):
+We should be able to execute code purely within the browser using `thebe`.
 
-````text
-```{ou-video} resources/test.mp4
-```
-````
++++
 
-```{ou-video} resources/test.mp4
-```
+```{code-cell} ipython3
+:tags: [hide-input]
 
-## Audio Items
+import numpy as np
+import pandas as pd
 
-Audio player using [`innovationOUtside/sphinxcontrib-ou-xml-tags`](https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags):
+np.random.seed(24)
+df = pd.DataFrame({'A': np.linspace(1, 10, 10)})
+df = pd.concat([df, pd.DataFrame(np.random.randn(10, 4), columns=list('BCDE'))],
+               axis=1)
+df.iloc[3, 3] = np.nan
+df.iloc[0, 2] = np.nan
 
-````text
-```{ou-audio} resources/test.mp3
-asasas asasa
-```
-````
+def color_negative_red(val):
+    """
+    Takes a scalar and returns a string with
+    the css property `'color: red'` for negative
+    strings, black otherwise.
+    """
+    color = 'red' if val < 0 else 'black'
+    return 'color: %s' % color
 
-```{ou-audio} resources/test.mp3
-asasas asasa
+def highlight_max(s):
+    '''
+    highlight the maximum in a Series yellow.
+    '''
+    is_max = s == s.max()
+    return ['background-color: yellow' if v else '' for v in is_max]
+
+df.style.\
+    applymap(color_negative_red).\
+    apply(highlight_max).\
+    set_table_attributes('style="font-size: 10px"')
 ```
