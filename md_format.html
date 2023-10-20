@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>5. Markdown format &#8212; Reusable Content Demonstration</title>
+    <title>6. Markdown format &#8212; Reusable Content Demonstration</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'md_format';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6. Embedded Media" href="media_items.html" />
-    <link rel="prev" title="4. Authoring reusable content" href="authoring_reusable_content.html" />
+    <link rel="next" title="7. Embedded Media" href="media_items.html" />
+    <link rel="prev" title="5. Authoring reusable content" href="authoring_reusable_content.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -167,15 +167,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown_authoring.html">2. Markdown authoring route</a></li>
 <li class="toctree-l1"><a class="reference internal" href="production_workflow.html">3. OU-XML production workflow using Jupyter Book</a></li>
-<li class="toctree-l1"><a class="reference internal" href="authoring_reusable_content.html">4. Authoring reusable content</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Markdown format</a></li>
-<li class="toctree-l1"><a class="reference internal" href="media_items.html">6. Embedded Media</a></li>
-<li class="toctree-l1"><a class="reference internal" href="maths.html">7. Maths</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code.html">8. Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quotations.html">9. Quotations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">10. Collaborative Development, Authoring and Publishing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sandbox.html">11. Trying out the environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="todo.html">12. To Do</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_automation.html">4. Workflow Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authoring_reusable_content.html">5. Authoring reusable content</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Markdown format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media_items.html">7. Embedded Media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maths.html">8. Maths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html">9. Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quotations.html">10. Quotations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">11. Collaborative Development, Authoring and Publishing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sandbox.html">12. Trying out the environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">13. To Do</a></li>
 </ul>
 
     </div>
@@ -322,16 +323,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-markdown-to-ou-xml">5.1. From markdown to OU-XML</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#headings">5.1.1. Headings</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-references">5.1.2. Cross-references</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-elements">5.1.3. Figure elements</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#component-numbering">5.1.4. Component numbering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-markdown-to-ou-xml">6.1. From markdown to OU-XML</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#headings">6.1.1. Headings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-references">6.1.2. Cross-references</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-elements">6.1.3. Figure elements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#component-numbering">6.1.4. Component numbering</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extending-the-markup-language">5.2. Extending the markup language</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rendering-mermaid-js-diagrams">5.2.1. Rendering <code class="docutils literal notranslate"><span class="pre">mermaid.js</span></code> diagrams</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-activity-elements">5.2.2. Supporting activity elements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extending-the-markup-language">6.2. Extending the markup language</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rendering-mermaid-js-diagrams">6.2.1. Rendering <code class="docutils literal notranslate"><span class="pre">mermaid.js</span></code> diagrams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-activity-elements">6.2.2. Supporting activity elements</a></li>
 </ul>
 </li>
 </ul>
@@ -346,13 +347,13 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="markdown-format">
-<h1><span class="section-number">5. </span>Markdown format<a class="headerlink" href="#markdown-format" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>Markdown format<a class="headerlink" href="#markdown-format" title="Permalink to this heading">#</a></h1>
 <p>The MyST markdown format supports a range of mark-up devices that can be mapped naturally onto OU-XML tags. The format can also be extended to support the parsing, rendering and conversion of additional, custom defined tags.</p>
 <section id="from-markdown-to-ou-xml">
-<h2><span class="section-number">5.1. </span>From markdown to OU-XML<a class="headerlink" href="#from-markdown-to-ou-xml" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>From markdown to OU-XML<a class="headerlink" href="#from-markdown-to-ou-xml" title="Permalink to this heading">#</a></h2>
 <p>The range of MyST markdown elements that currently map on to OU-XML tags include:</p>
 <section id="headings">
-<h3><span class="section-number">5.1.1. </span>Headings<a class="headerlink" href="#headings" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.1.1. </span>Headings<a class="headerlink" href="#headings" title="Permalink to this heading">#</a></h3>
 <p>Use standard markdown heading levels (one or more <code class="docutils literal notranslate"><span class="pre">#</span></code> characters at start a line, followed by whitespace and then the header. The number of <code class="docutils literal notranslate"><span class="pre">#</span></code> characters specifies the heading level).</p>
 <p>Each included file represents a session and should start with a first level heading. Interior headings within the file (second level, third level, etc.) are associated with increasingly nested <code class="docutils literal notranslate"><span class="pre">&lt;InternalSection&gt;</span></code> tags, with the heading mapped to the <code class="docutils literal notranslate"><span class="pre">&lt;Title&gt;</span></code> tag at the start of the section.</p>
 <p>If the <code class="docutils literal notranslate"><span class="pre">sphinx.config.myst_heading_anchors</span></code> is set in the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file, identifiers are associated with each <code class="docutils literal notranslate"><span class="pre">&lt;Session&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;InternalSection&gt;</span></code> to the specified depth based on decasing the heading, removing punctuation and replace spaces with a <code class="docutils literal notranslate"><span class="pre">-</span></code>. Any generated section or subsection numbering is ignored.</p>
@@ -368,11 +369,11 @@ document.write(`
 <p>Note that section headings need to be unique within a <code class="docutils literal notranslate"><span class="pre">&lt;Session&gt;</span></code> if they are to be resolved as cross-referenced sections.</p>
 </section>
 <section id="cross-references">
-<h3><span class="section-number">5.1.2. </span>Cross-references<a class="headerlink" href="#cross-references" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.1.2. </span>Cross-references<a class="headerlink" href="#cross-references" title="Permalink to this heading">#</a></h3>
 <p>Cross-references may be made to section or internal section headers in the same file / session, or to other files / sessions in the same item by means of the session or internal section identifier.</p>
 </section>
 <section id="figure-elements">
-<h3><span class="section-number">5.1.3. </span>Figure elements<a class="headerlink" href="#figure-elements" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.1.3. </span>Figure elements<a class="headerlink" href="#figure-elements" title="Permalink to this heading">#</a></h3>
 <p>Figure elements should be defined in markdown as follows:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{figure} assets_path/images_path/image_file.png
 :name: unique_image_reference
@@ -415,12 +416,12 @@ Optional description text for the image. Possibly several sentences.
 </div>
 </section>
 <section id="component-numbering">
-<h3><span class="section-number">5.1.4. </span>Component numbering<a class="headerlink" href="#component-numbering" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.1.4. </span>Component numbering<a class="headerlink" href="#component-numbering" title="Permalink to this heading">#</a></h3>
 <p>Automatic numbering may be enabled via the <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> file.</p>
 </section>
 </section>
 <section id="extending-the-markup-language">
-<h2><span class="section-number">5.2. </span>Extending the markup language<a class="headerlink" href="#extending-the-markup-language" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>Extending the markup language<a class="headerlink" href="#extending-the-markup-language" title="Permalink to this heading">#</a></h2>
 <p>The MyST markdown format and the Sphinx publishing framework are both extensible, which means that it is possible to define additional tags to support the creation of bespoke materials.</p>
 <p>For example, the publishing workflow has been extended to support:</p>
 <ul class="simple">
@@ -428,11 +429,11 @@ Optional description text for the image. Possibly several sentences.
 <li><p>the parsing and custom rendering of “activities” with revealable answers.</p></li>
 </ul>
 <section id="rendering-mermaid-js-diagrams">
-<h3><span class="section-number">5.2.1. </span>Rendering <code class="docutils literal notranslate"><span class="pre">mermaid.js</span></code> diagrams<a class="headerlink" href="#rendering-mermaid-js-diagrams" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.1. </span>Rendering <code class="docutils literal notranslate"><span class="pre">mermaid.js</span></code> diagrams<a class="headerlink" href="#rendering-mermaid-js-diagrams" title="Permalink to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">mermaid,js</span></code> package is a widely used JavaScript that package TO DO</p>
 </section>
 <section id="supporting-activity-elements">
-<h3><span class="section-number">5.2.2. </span>Supporting activity elements<a class="headerlink" href="#supporting-activity-elements" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.2.2. </span>Supporting activity elements<a class="headerlink" href="#supporting-activity-elements" title="Permalink to this heading">#</a></h3>
 <p>The OU-XML structured content format supports the definition of “activities” according to the following structure:</p>
 </section>
 </section>
@@ -474,7 +475,7 @@ Optional description text for the image. Possibly several sentences.
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Authoring reusable content</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Authoring reusable content</p>
       </div>
     </a>
     <a class="right-next"
@@ -482,7 +483,7 @@ Optional description text for the image. Possibly several sentences.
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Embedded Media</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Embedded Media</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -501,16 +502,16 @@ Optional description text for the image. Possibly several sentences.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-markdown-to-ou-xml">5.1. From markdown to OU-XML</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#headings">5.1.1. Headings</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-references">5.1.2. Cross-references</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-elements">5.1.3. Figure elements</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#component-numbering">5.1.4. Component numbering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-markdown-to-ou-xml">6.1. From markdown to OU-XML</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#headings">6.1.1. Headings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-references">6.1.2. Cross-references</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-elements">6.1.3. Figure elements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#component-numbering">6.1.4. Component numbering</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extending-the-markup-language">5.2. Extending the markup language</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rendering-mermaid-js-diagrams">5.2.1. Rendering <code class="docutils literal notranslate"><span class="pre">mermaid.js</span></code> diagrams</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-activity-elements">5.2.2. Supporting activity elements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extending-the-markup-language">6.2. Extending the markup language</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rendering-mermaid-js-diagrams">6.2.1. Rendering <code class="docutils literal notranslate"><span class="pre">mermaid.js</span></code> diagrams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-activity-elements">6.2.2. Supporting activity elements</a></li>
 </ul>
 </li>
 </ul>

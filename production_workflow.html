@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'production_workflow';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4. Authoring reusable content" href="authoring_reusable_content.html" />
+    <link rel="next" title="4. Workflow Automation" href="workflow_automation.html" />
     <link rel="prev" title="2. Markdown authoring route" href="markdown_authoring.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -167,15 +167,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown_authoring.html">2. Markdown authoring route</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. OU-XML production workflow using Jupyter Book</a></li>
-<li class="toctree-l1"><a class="reference internal" href="authoring_reusable_content.html">4. Authoring reusable content</a></li>
-<li class="toctree-l1"><a class="reference internal" href="md_format.html">5. Markdown format</a></li>
-<li class="toctree-l1"><a class="reference internal" href="media_items.html">6. Embedded Media</a></li>
-<li class="toctree-l1"><a class="reference internal" href="maths.html">7. Maths</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code.html">8. Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quotations.html">9. Quotations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">10. Collaborative Development, Authoring and Publishing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sandbox.html">11. Trying out the environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="todo.html">12. To Do</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_automation.html">4. Workflow Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authoring_reusable_content.html">5. Authoring reusable content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="md_format.html">6. Markdown format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media_items.html">7. Embedded Media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maths.html">8. Maths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html">9. Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quotations.html">10. Quotations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">11. Collaborative Development, Authoring and Publishing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sandbox.html">12. Trying out the environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">13. To Do</a></li>
 </ul>
 
     </div>
@@ -324,10 +325,6 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-the-table-of-contents-toc-yml">3.1. Defining the table of contents (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-process">3.2. Build process</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-automation">3.3. Workflow Automation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-github-action-automation-script">3.3.1. Example GitHub Action automation script</a></li>
-</ul>
-</li>
 </ul>
             </nav>
         </div>
@@ -398,71 +395,6 @@ document.write(`
 <p>Generated OU-XML content in the <code class="docutils literal notranslate"><span class="pre">_build/ouxml</span></code> directory can then be validated against an OU-XML schema by running the command:</p>
 <p><code class="docutils literal notranslate"><span class="pre">ou_xml_validator</span> <span class="pre">validate</span>&#160; <span class="pre">path/to/testme.xml</span></code></p>
 </section>
-<section id="workflow-automation">
-<h2><span class="section-number">3.3. </span>Workflow Automation<a class="headerlink" href="#workflow-automation" title="Permalink to this heading">#</a></h2>
-<p>A GitHub Action associated with this repository can be used to automatically:</p>
-<ul class="simple">
-<li><p>build and publish an HTML version of this book from the source markdown (HTML book available <a class="reference external" href="https://opencomputinglab.github.io/reusable-content-example/preface.html">here</a>)</p></li>
-<li><p>build and publish the OU-XML from the source markdown (OU-XML document available <a class="reference external" href="https://opencomputinglab.github.io/reusable-content-example/ouxml/xxx_b0_p1_zzz.xml">here</a> ; a zip archive file of the OU-XML and associated media assets are available as an automatically generated GitHub Action artefact attached to the <code class="docutils literal notranslate"><span class="pre">deploy-book</span></code> action reports <a class="reference external" href="https://github.com/OpenComputingLab/reusable-content-example/actions/workflows/deploy-book.yaml">here</a> )</p></li>
-</ul>
-<section id="example-github-action-automation-script">
-<h3><span class="section-number">3.3.1. </span>Example GitHub Action automation script<a class="headerlink" href="#example-github-action-automation-script" title="Permalink to this heading">#</a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy-book</span>
-
-<span class="nt">on</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">release</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">types</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">published</span><span class="p p-Indicator">]</span>
-<span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span>
-
-<span class="c1"># This job installs dependencies, builds the book, and pushes it to `gh-pages`</span>
-<span class="nt">jobs</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">deploy-book</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
-<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span>
-
-<span class="w">    </span><span class="c1"># Install dependencies</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Python 3.11</span>
-<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v1</span>
-<span class="w">      </span><span class="nt">with</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.11</span>
-
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
-<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<span class="w">        </span><span class="no">pip install jupyter-book ou-jupyter-book-tools</span>
-<span class="w">        </span><span class="no">pip install ou_book_theme sphinxcontrib.mermaid sphinxcontrib-youtube==1.3.0 sphinx-exercise</span>
-<span class="w">    </span><span class="c1"># Build the book</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build the book</span>
-<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<span class="w">        </span><span class="no">jupyter-book build .</span>
-<span class="w">        </span><span class="no">touch ./_build/html/.nojekyll</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-node@v3</span>
-<span class="w">      </span><span class="nt">with</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">node-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">18</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build the OU-XML</span>
-<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<span class="w">        </span><span class="no">pip install https://github.com/innovationOUtside/ou-xml-validator/archive/refs/heads/main.zip</span>
-<span class="w">        </span><span class="no">jb build --builder custom --custom-builder xml .</span>
-<span class="w">        </span><span class="no">ouseful_obt .</span>
-<span class="w">        </span><span class="no">mkdir -p /var/tmp/dist</span>
-<span class="w">        </span><span class="no">cp -rf _build/ouxml /var/tmp/dist/</span>
-<span class="w">        </span><span class="no">cp -rf _build/ouxml ./_build/html</span>
-<span class="w">    </span><span class="c1"># Push the book&#39;s HTML to github-pages</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitHub Pages action</span>
-<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">peaceiris/actions-gh-pages@v3.6.1</span>
-<span class="w">      </span><span class="nt">with</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">github_token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span>
-<span class="w">        </span><span class="nt">publish_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./_build/html</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Upload docs bundle</span>
-<span class="w">      </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always()</span>
-<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/upload-artifact@v3</span>
-<span class="w">      </span><span class="nt">with</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{github.event.inputs.module}}_docs_bundle</span>
-<span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/tmp/dist</span>
-</pre></div>
-</div>
-</section>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -505,11 +437,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="authoring_reusable_content.html"
+       href="workflow_automation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Authoring reusable content</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Workflow Automation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -530,10 +462,6 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-the-table-of-contents-toc-yml">3.1. Defining the table of contents (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-process">3.2. Build process</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-automation">3.3. Workflow Automation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-github-action-automation-script">3.3.1. Example GitHub Action automation script</a></li>
-</ul>
-</li>
 </ul>
   </nav></div>
 

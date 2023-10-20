@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>7. Embedded Media &#8212; Reusable Content Demonstration</title>
+    <title>4. Workflow Automation &#8212; Reusable Content Demonstration</title>
   
   
   
@@ -64,11 +64,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'media_items';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workflow_automation';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="8. Maths" href="maths.html" />
-    <link rel="prev" title="6. Markdown format" href="md_format.html" />
+    <link rel="next" title="5. Authoring reusable content" href="authoring_reusable_content.html" />
+    <link rel="prev" title="3. OU-XML production workflow using Jupyter Book" href="production_workflow.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -167,10 +167,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown_authoring.html">2. Markdown authoring route</a></li>
 <li class="toctree-l1"><a class="reference internal" href="production_workflow.html">3. OU-XML production workflow using Jupyter Book</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workflow_automation.html">4. Workflow Automation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Workflow Automation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="authoring_reusable_content.html">5. Authoring reusable content</a></li>
 <li class="toctree-l1"><a class="reference internal" href="md_format.html">6. Markdown format</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Embedded Media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media_items.html">7. Embedded Media</a></li>
 <li class="toctree-l1"><a class="reference internal" href="maths.html">8. Maths</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code.html">9. Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quotations.html">10. Quotations</a></li>
@@ -231,7 +231,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/media_items.md" target="_blank"
+      <li><a href="_sources/workflow_automation.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -313,7 +313,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Embedded Media</h1>
+    <h1>Workflow Automation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -323,8 +323,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-items">7.1. Video Items</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#audio-items">7.2. Audio Items</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-github-action-automation-script">4.1. Example GitHub Action automation script</a></li>
 </ul>
             </nav>
         </div>
@@ -336,54 +335,78 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="embedded-media">
-<h1><span class="section-number">7. </span>Embedded Media<a class="headerlink" href="#embedded-media" title="Permalink to this heading">#</a></h1>
-<p>Embedded media items can be specified in MyST markdown using custom <code class="docutils literal notranslate"><span class="pre">{video}</span></code> and <code class="docutils literal notranslate"><span class="pre">{audio}</span></code> admonitions and rendered into HTML using the <a class="reference external" href="https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags"><code class="docutils literal notranslate"><span class="pre">innovationOUtside/sphinxcontrib-ou-xml-tags</span></code></a> Sphinx extension.</p>
-<p><em>The mapping to appropriate XML tags is under developement; currently it is only partially handled for <code class="docutils literal notranslate"><span class="pre">audio</span></code> items and not handled for <code class="docutils literal notranslate"><span class="pre">video</span></code> items.</em></p>
-<section id="video-items">
-<h2><span class="section-number">7.1. </span>Video Items<a class="headerlink" href="#video-items" title="Permalink to this heading">#</a></h2>
-<p>Embedded video player using <a class="reference external" href="https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags"><code class="docutils literal notranslate"><span class="pre">innovationOUtside/sphinxcontrib-ou-xml-tags</span></code></a>:</p>
-<p>````text`</p>
-<video src="resources/test.mp4" controls="True" preload="auto"></video><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-```{ou-video} resources/test.mp4
-```
+  <section id="workflow-automation">
+<h1><span class="section-number">4. </span>Workflow Automation<a class="headerlink" href="#workflow-automation" title="Permalink to this heading">#</a></h1>
+<p>A GitHub Action associated with this repository can be used to automatically:</p>
+<ul class="simple">
+<li><p>build and publish an HTML version of this book from the source markdown (HTML book available <a class="reference external" href="https://opencomputinglab.github.io/reusable-content-example/preface.html">here</a>)</p></li>
+<li><p>build and publish the OU-XML from the source markdown (OU-XML document available <a class="reference external" href="https://opencomputinglab.github.io/reusable-content-example/ouxml/xxx_b0_p1_zzz.xml">here</a> ; a zip archive file of the OU-XML and associated media assets are available as an automatically generated GitHub Action artefact attached to the <code class="docutils literal notranslate"><span class="pre">deploy-book</span></code> action reports <a class="reference external" href="https://github.com/OpenComputingLab/reusable-content-example/actions/workflows/deploy-book.yaml">here</a> )</p></li>
+</ul>
+<section id="example-github-action-automation-script">
+<h2><span class="section-number">4.1. </span>Example GitHub Action automation script<a class="headerlink" href="#example-github-action-automation-script" title="Permalink to this heading">#</a></h2>
+<p>The following Github Action automation script is used to:</p>
+<ul class="simple">
+<li><p>checkout the contents of the repository;</p></li>
+<li><p>install requirements;</p></li>
+<li><p>build an HTML version of using Jupyter Book</p></li>
+<li><p>generate a Sphinx XML version;</p></li>
+<li><p>convert the Sphinx XML to OU-XML;</p></li>
+<li><p>publish the HTML version of the book to GitHub Pages;</p></li>
+<li><p>zip the OU-XML files and publish them as a workflow artifact in the GitHub Actions report for the job;</p></li>
+</ul>
+<p>TO DO - valudate the generated OU-XML.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy-book</span>
 
-The MyST spec also lets you use a video file path in a `{figure}` admonition:
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">release</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">types</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">published</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span>
 
-````text
-```{figure} resources/test.mp4
-My video caption
+<span class="c1"># This job installs dependencies, builds the book, and pushes it to `gh-pages`</span>
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deploy-book</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span>
 
-And description.
+<span class="w">    </span><span class="c1"># Install dependencies</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Python 3.11</span>
+<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v1</span>
+<span class="w">      </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.11</span>
 
-More description.
-```
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">pip install -r requirements.txt</span>
+<span class="w">    </span><span class="c1"># Build the book</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build the book</span>
+<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">jupyter-book build .</span>
+<span class="w">        </span><span class="no">touch ./_build/html/.nojekyll</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-node@v3</span>
+<span class="w">      </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">node-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">18</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build the OU-XML</span>
+<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">jb build --builder custom --custom-builder xml .</span>
+<span class="w">        </span><span class="no">ouseful_obt .</span>
+<span class="w">        </span><span class="no">mkdir -p /var/tmp/dist</span>
+<span class="w">        </span><span class="no">cp -rf _build/ouxml /var/tmp/dist/</span>
+<span class="w">        </span><span class="no">cp -rf _build/ouxml ./_build/html</span>
+<span class="w">    </span><span class="c1"># Push the book&#39;s HTML to github-pages</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitHub Pages action</span>
+<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">peaceiris/actions-gh-pages@v3.6.1</span>
+<span class="w">      </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">github_token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span>
+<span class="w">        </span><span class="nt">publish_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./_build/html</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Upload docs bundle</span>
+<span class="w">      </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always()</span>
+<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/upload-artifact@v3</span>
+<span class="w">      </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{github.event.inputs.module}}_docs_bundle</span>
+<span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/tmp/dist</span>
 </pre></div>
 </div>
-<figure class="align-default" id="id1">
-<video src="_images/test.mp4" title="_images/test.mp4">
-<a href="_images/test.mp4">_images/test.mp4</a>
-</video>
-<figcaption>
-<p><span class="caption-number">Figure 7.1 </span><span class="caption-text">My video caption</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
-<div class="legend">
-<p>And description.</p>
-<p>More description.</p>
-</div>
-</figcaption>
-</figure>
-<p>…which is handy…</p>
-</section>
-<section id="audio-items">
-<h2><span class="section-number">7.2. </span>Audio Items<a class="headerlink" href="#audio-items" title="Permalink to this heading">#</a></h2>
-<p>Audio player using <a class="reference external" href="https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags"><code class="docutils literal notranslate"><span class="pre">innovationOUtside/sphinxcontrib-ou-xml-tags</span></code></a>:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{ou-audio} resources/test.mp3
-A caption for an audio file.
-```
-</pre></div>
-</div>
-<audio controls="True" preload="auto" src="resources/test.mp3"><p><span class="caption-text">A caption for an audio file.</span></p>
-</audio><p><em>Currently, there is no native MyST admonition for embedding an audio player.</em></p>
 </section>
 </section>
 
@@ -418,20 +441,20 @@ A caption for an audio file.
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="md_format.html"
+       href="production_workflow.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Markdown format</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>OU-XML production workflow using Jupyter Book</p>
       </div>
     </a>
     <a class="right-next"
-       href="maths.html"
+       href="authoring_reusable_content.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Maths</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Authoring reusable content</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -450,8 +473,7 @@ A caption for an audio file.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-items">7.1. Video Items</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#audio-items">7.2. Audio Items</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-github-action-automation-script">4.1. Example GitHub Action automation script</a></li>
 </ul>
   </nav></div>
 
