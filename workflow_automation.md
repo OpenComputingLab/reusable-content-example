@@ -1,3 +1,17 @@
+---
+jupytext:
+  cell_metadata_filter: -all
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.15.0
+kernelspec:
+  display_name: Python 3 (ipykernel)
+  language: python
+  name: python3
+---
 # Workflow Automation
 
 A GitHub Action associated with this repository can be used to automatically:
@@ -16,6 +30,8 @@ The following Github Action automation script is used to:
 - convert the Sphinx XML to OU-XML;
 - publish the HTML version of the book to GitHub Pages;
 - zip the OU-XML files and publish them as a workflow artifact in the GitHub Actions report for the job;
+
+TO DO - valudate the generated OU-XML.
 
 ```yaml
 name: deploy-book
