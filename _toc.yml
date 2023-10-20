@@ -11,6 +11,7 @@ parts:
       - file: introduction
       - file: markdown_authoring
       - file: production_workflow
+      - file: workflow-automation
       - file: authoring_reusable_content
       - file: md_format
       - file: media_items
