@@ -13,45 +13,58 @@ kernelspec:
   name: python3
 ---
 
-
-
-+++
-
-+++
-
 # reusable-content-example
 
 Informal report on creating reusable / generic content as Markdown text with conversion to OU-XML
 
-## Build process
+## Quality Enhanced Build process
 
-Generate the Sphinx XML version of the Jupyter Book, as defined by the `_toc.yml` and `_config.yml` file:
+To improve the quality of output documents, we can use the a quality enhanced build process that includes markdown formatting and spellchecking prior to the generation of output formats and conversion to OU-XML.
 
-`jb build . --builder custom --custom-builder xml`
-
-Convert to OU-XML:
-
-`obt convert-to-ouxml .`
-
-Initialise documents:
-
-- if only one hernel is available, it will be specified in inital metadata: `jupyter-book myst init *.md`
-- if multiple jernels are available (they will be listed when you run the above comment), you must spoecify which kernel to use; for example: `jupyter-book myst init *.md --kernel python3`
-
-Convert to MyST md:
-
-`jupytext --to myst *.md`
-
-## `.devcontainer` Set-up
-
-The `.devcontainer` set up allows you to run the build tools ... TO DO
-
-## Spellchecking and formatting
+### Spellchecking and formatting
 
 Using [`tbroadley/spellchecker-cli`](https://github.com/tbroadley/spellchecker-cli):
 
 `spellchecker --files  *.md --language en-GB --dictionaries rce-dictionary.txt`
 
-Formatting using [`mdformat`](<>):
+Formatting using [`mdformat`](https://github.com/executablebooks/mdformat):
 
-`mdformat .`
+```bash
+# pip3 install mdformat mdformat-myst
+mdformat .
+```
+
+Additional custom cleaning of markdown files (useful following automated conversion of OU-XML to markdown):
+
+`ou_xml_validator cleanmd PATH`
+
+## Conversion to Jupytext / `MyST` executable markdown format
+
+Initialise markdown documents as executable MyST markdown documents:
+
+- if only one hernel is available, it will be specified in inital metadata: `jupyter-book myst init *.md`
+- if multiple jernels are available (they will be listed when you run the above comment), you must spoecify which kernel to use; for example: `jupyter-book myst init *.md --kernel python3`
+
+If no Jupytext header is required, convert to headerlss MyST md:
+
+`jupytext --to myst *.md`
+
+### Generating Sphinx XML
+
+Generate the Sphinx XML version of the Jupyter Book, as defined by the `_toc.yml` and `_config.yml` file:
+
+`jb build . --builder custom --custom-builder xml`
+
+### Convert to OU-XML
+
+Convert to OU-XML (tool in `ou-xml-validator` package):
+
+`ouseful_obt .`
+
+We can then valiudate the OU-XML:
+
+`ou_xml_validator validate path-to-file/testme.xml`
+
+## `.devcontainer` Set-up
+
+The `.devcontainer` set up allows you to run the build tools ... TO DO
