@@ -13,7 +13,7 @@ kernelspec:
   name: python3
 ---
 
-# To Do
+# Work in Progress
 
 Examples of markdown markup that hasn't yet been mapped over to corresponding OU-XML tags...
 
@@ -33,7 +33,7 @@ Glossary term one
   Glossary term one definition is indented
 ```
 
-We can then refer to a {term}`Glossary term one` that links to the glossary listing.
+We can then refer to a ``{term}`Glossary term one` TO DO`` that links to the glossary listing.
 
 ```{glossary}
 A Glossary term two
@@ -63,7 +63,7 @@ Some text
 
 We should be able to execute code purely within the browser using `thebe`.
 
-+++
+We should also be able to execute code as part of a Sphinx publishing process. Currently, rich media code outuputs will be rendered in the HTML output, but only simple `text_plain` outputs are rendered into the Sphinx XML and then literally into OU-XML.
 
 ```{code-cell} ipython3
 :tags: [hide-input]

@@ -10,14 +10,15 @@ parts:
     chapters:
       - file: introduction
       - file: markdown_authoring
-      - file: production_workflow
-      - file: workflow_automation
-      - file: authoring_reusable_content
       - file: md_format
       - file: media_items
       - file: maths
       - file: code
       - file: quotations
+      - file: demo-notebook
+      - file: authoring_reusable_content
       - file: collaborative-authoring
+      - file: production_workflow
+      - file: workflow_automation
       - file: sandbox
       - file: todo

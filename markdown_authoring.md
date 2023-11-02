@@ -173,6 +173,8 @@ It can contain a *wide* __range__ of elements.
   </Box>
 ```
 
+A wide range of richer media elements are also supported by MyST markdown and can be mapped onto appropriate OU-XML elements (see later sections for examples).
+
 ## Markdown Publishing Tools and Frameworks
 
 Example publishing tools and frameworks for working with markdown include:

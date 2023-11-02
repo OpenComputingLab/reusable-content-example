@@ -15,6 +15,6 @@ kernelspec:
 
 # Preface
 
-Notes on a markdown based workflow for generating a customisable, generic software guide for several OU modules from a set of common source documents and then rendering them to OU-XML.
+Notes on a markdown based workflow for generating OU VLE content published from and intermediary OU-XML document format using off the shelf Sphinx publishing tools with a simple custom extension. A case study for generating a customisable, generic software guide for several OU modules from a set of common source documents and then rendering them to OU-XML is also described.
 
---Tony Hirst (tony.hirst@open.ac.uk), July-Sept, 2023
+--Tony Hirst (tony.hirst@open.ac.uk), July-Nov, 2023

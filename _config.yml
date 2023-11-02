@@ -26,13 +26,15 @@ parse:
     - dollarmath
 
 ou:
-  module_code: XXX
-  module_title: YYY
+  module_code: OUSEFUL-DEMOS
+  module_title: OUSEFUL-DEMOS
   block: 0
   presentation: ZZZ
   first_published: YYYY
   isbn:
   edition:
   block_title: QQQQ
-  image_path_prefix: https://specified.path/to/image/directory/
-  audio_path_prefix: https://specified.path/to/audio/directory/
+  image_path_prefix: https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/
+  audio_path_prefix: https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/
+  #image_path_prefix: https://openuniv.sharepoint.com/sites/modules–shared/test_render_site/Shared%20Documents/
+  #audio_path_prefix: https://openuniv.sharepoint.com/sites/modules–shared/test_render_site/Shared%20Documents/
