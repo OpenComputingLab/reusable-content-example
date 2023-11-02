@@ -15,17 +15,25 @@ kernelspec:
 
 # Introduction
 
-Writing software guides to support educational modules adds authoring, editing and testing overheads to module production. If multiple modules use similar environments or software applications, reusing generic or customisable materials provides a way or reducing those overheads.
+OU course materials destined for publication on the Open University VLE via the "Structured Content" OU-XML publishing route ([OU internal docs](https://learn3.open.ac.uk/mod/oucontent/view.php?id=185734)) are typically authored as Microsoft Word documents.
 
-This informal report describes the production route for a customisable software guide to support the use of virtual computing environments (VCEs) across several modules. The VCEs are accessed as a remotely hosted environment provided by the Open University *Compute Home* service, or as a locally run Docker container. The method for getting started using the environment is likely to be the same across many modules, which suggests an opportunity for reusing generic *getting started* material. However, different modules may also vary in the software provided by the VCE, which means that some degree of bespoke software guide style support material may also be required.
+Updating materials using this route can often be a laborious process, with authors editing the MS Word document and then handing over the document the changes to be "tagged" elsewhere.
 
-A common production route for the software guides required for three separate modules was explored:
+The current workflow is not particularly conducive to supporting the reuse of content across modules if the content requires any form of customisation. For example, writing software guides to support educational modules adds authoring, editing and testing overheads to module production. If multiple modules use similar computer environments or software applications, reusing generic or customisable materials provides a way or reducing those overheads.
+
+However, module teams often require software guides that are customised at several different levels. At an "inline" level, a module team may want the guide to refer to the module by module code or module name, or refer to a particular block of study. At a "paragraph" level, where some form of "localisation" relative to the module may be appropropriate, such as situating the use of a the software environment within a particular block or module with some module specific context. Or at the "section: level, where for example the software environment may have additional, module specific features that require an additional form of guidance, or a cut-down version of the envirinment that does not require sections that are likely to be relevant to other modules.
+
+Although the MS Word originated workflow has remained largely unchanged for several years, other routes into the Structured Content production *are* available. One such route is a markdown based workflow which supports the creation of markdown flavoured content and its conversion to OU-XML.
+
+This report introduces a markdown based publication route that uses a Sphinx-based publishing route to generate valid OU-XML Structured Content documents from markdown source documents.
+
+An earlier version of the production route has already been used in an initial proof of concept project to produce a customisable software guide to support the use of virtual computing environments (VCEs) across several modules:
 
 - [*M348 Applied statistical modelling*](https://www.open.ac.uk/courses/modules/m348), which provides a classic Jupyter notebook environment running an R kernel;
 - [*TM129 Technologies in practice (Robotics block)*](https://www.open.ac.uk/courses/modules/tm129), which provides a classic Jupyter notebook environment running an Python kernel and a simple notebook based robot simulation environment;
 - [*TM351 Data management and analysis*](https://www.open.ac.uk/courses/modules/tm351), which provides a JupyterLab environment running a Python kernel, PostgreSQL and MongoDB database services, and the OpenRefine data-cleaning application.
 
-At a technical level main aims were to explore:
+At a technical level, the main aims of that initial project were to explore:
 
 - a markdown authoring route;
 - a viable markdown to OU-XML conversion route;
@@ -39,10 +47,12 @@ At a content production level, the main aims were to:
 
 The use of several tools to support quality processes (markdown linting, spellchecking, OU-XML validation) was also explored.
 
-The source repository for the source content can be found here: [innovationOUtside/vce-generic-guide](https://github.com/innovationOUtside/vce-generic-guide).
+The source repository for the source content for the generic, customisable virtual computing environment (VCE) can be found here: [`innovationOUtside/vce-generic-guide`](https://github.com/innovationOUtside/vce-generic-guide).
 
-Example OU-XML automatically generated from the same source markdown can be viewed here: [https://opencomputinglab.github.io/reusable-content-example/ouxml/xxx_b0_p1_zzz.xml](https://opencomputinglab.github.io/reusable-content-example/ouxml/xxx_b0_p1_zzz.xml)
+The source repository for the source content for the generic, customisable virtual computing envirpmment (VCE) software guide can be found here: [`innovationOUtside/vce-generic-guide`](https://github.com/innovationOUtside/vce-generic-guide).
+
+Example OU-XML automatically generated from the same source markdown can be viewed here: [generated OU-XML](https://opencomputinglab.github.io/reusable-content-example/ouxml/xxx_b0_p1_zzz.xml)
 
 An HTML version rendered from the same source markdown by a Jupyter Book publication process is available here: [https://opencomputinglab.github.io/reusable-content-example/](https://opencomputinglab.github.io/reusable-content-example/)
 
-*__Acknowledgements__: thanks to Karen Vines for helping iterate the text, Edith Francis for helping iterate the OU-XML, and Mark Hall for the original markdown2ou-xml converter.*
+*__Acknowledgements__: thanks to Karen Vines for helping iterate the text, Edith Francis for helping iterate the OU-XML, and Mark Hall for the original markdown2ou-xml converter and his insight into using Sphinx XML as a route to OU-XML.*

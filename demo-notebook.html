@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>10. Collaborative Development, Authoring and Publishing &#8212; Reusable Content Demonstration</title>
+    <title>8. Example publishing from Jupyter notebook &#8212; Reusable Content Demonstration</title>
   
   
   
@@ -64,11 +64,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'collaborative-authoring';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'demo-notebook';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="11. OU-XML production workflow using Jupyter Book" href="production_workflow.html" />
-    <link rel="prev" title="9. Authoring reusable content" href="authoring_reusable_content.html" />
+    <link rel="next" title="9. Authoring reusable content" href="authoring_reusable_content.html" />
+    <link rel="prev" title="7. Quotations" href="quotations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -172,9 +172,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="maths.html">5. Maths</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code.html">6. Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quotations.html">7. Quotations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="demo-notebook.html">8. Example publishing from Jupyter notebook</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Example publishing from Jupyter notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="authoring_reusable_content.html">9. Authoring reusable content</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Collaborative Development, Authoring and Publishing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">10. Collaborative Development, Authoring and Publishing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="production_workflow.html">11. OU-XML production workflow using Jupyter Book</a></li>
 <li class="toctree-l1"><a class="reference internal" href="workflow_automation.html">12. Workflow Automation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sandbox.html">13. Trying out the environment</a></li>
@@ -233,7 +233,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/collaborative-authoring.md" target="_blank"
+      <li><a href="_sources/demo-notebook.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -313,7 +313,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Collaborative Development, Authoring and Publishing</h1>
+    <h1>Example publishing from Jupyter notebook</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -327,35 +327,76 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="collaborative-development-authoring-and-publishing">
-<h1><span class="section-number">10. </span>Collaborative Development, Authoring and Publishing<a class="headerlink" href="#collaborative-development-authoring-and-publishing" title="Permalink to this heading">#</a></h1>
-<p>The original workflow involved the main author providing PDF previews of the material to a second author by email, who returned an annotated and/or email comments.</p>
-<p>OU-XML was also generated and passed to a DPA (Digital Production Assistant) in LDS (Learner and Discovery Services) who checked and fixed the OU-XML, published it as previewable content in the VLE, and provided errata about OU-XML issues to the main author.</p>
-<p>As well as iterating the text in the source markdown documents, the main author was also iterating on the tools used to generate to the OU-XML. <em>This would not have been possible without the support of the DPA turning round documents almost on demand.</em></p>
-<p>Two recurring OU-XML issues were:</p>
+  <section id="example-publishing-from-jupyter-notebook">
+<h1><span class="section-number">8. </span>Example publishing from Jupyter notebook<a class="headerlink" href="#example-publishing-from-jupyter-notebook" title="Permalink to this heading">#</a></h1>
+<p>As well as authoring content in MyST markdown files, we can also author content in Jupyter notebooks.</p>
+<p>As might be expected, notebook markdown cells support the full range of simple markdown syntax elements such as <em>emphasised</em> and <strong>bold font</strong> content, as well as lists:</p>
 <ul class="simple">
-<li><p>unknown tags;</p></li>
-<li><p>incorrectly formatted or otherwise broken link references in internal reference links.</p></li>
+<li><p>item 1</p></li>
+<li><p>item 2</p></li>
 </ul>
-<p>In parsing the markdown to Sphinx XML, various docutils XML tags were generated that were not recognised by the translation tool that converted Sphinx docutils XML to OU-XML.</p>
-<p>Initially, and perhaps rather lazily, the main author passed this incorrect OU-XML to the DPA who then reported back the broken XML issues.</p>
-<p>Several steps were then taken to improve this developmental workflow:</p>
-<ul class="simple">
-<li><p>the main author (working on an autonomous Mac) installed Microsoft Remote Desktop and via Citrix Secure Access and a Microsoft Authenticator app running providing 2FA from a  personal mobile phone, gained access to an OU configured Microsoft Desktop. This environment could then be used to run Oxygen XML Author application. After installing the OU Publishing extensions to Oxygen XML Author, the environment could then be used to:</p>
-<ul>
-<li><p>validate the generated OU-XML against the OU-XML schema;</p></li>
-<li><p>run additional quality checks against the generated OU-XML using unenforced Schematron quality rules; <em>these rules display quality improvement recommendations</em></p></li>
-<li><p>publish the content via a web browser to PDF or VLE previewed HTML.</p></li>
-</ul>
-</li>
-</ul>
-<div class="admonition-practical-issues-associated-with-using-oxygen-xml-author admonition">
-<p class="admonition-title">Practical issues associated with using Oxygen XML Author</p>
-<p>The default web browser in the Microsoft Desktop environment was an old browser that did not work properly when trying to run the OU-XML publisher. Changing Windows preferences to use Chrome fxed the issue. When rendering the OU-XML via the browser accessed web-service, OU authentication was required within each new RDP session, adding further friction to the process.</p>
+<p>and quotes:</p>
+<blockquote>
+<div><p>My quotation</p>
+</div></blockquote>
+<p>But we can also use notebooks to generate output content from code.</p>
+<p>For example, we can create a simple data table:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s2">&quot;y&quot;</span><span class="p">:[</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">]})</span>
+<span class="n">df</span>
+</pre></div>
 </div>
-<p>To simplify the process of validating the OU-XML, the XML schema file was located and exported. A simple OU-XML command line validation tool was then developed to allow for local validation of generated OU-XML files without the need to access Oxygen XML Author application. (The tool can be found <a class="reference external" href="https://github.com/innovationOUtside/ou-xml-validator">here</a>.) <em>A simple previewer XSL file also looked to be available for generating preview HTML from OU-XML.</em></p>
-<p>During the development process, the OU-XML schema was updated. This required updating both Oxygen XML Author and the OU-XML generator in line with the updated schema.</p>
-<p>To try to improve the authoring/editing process, the first and second author started to use a public GitHub repository to share content. The second author forked the first author’s repository, worked in their own repository, and then submitted pull requests back to the first author’s repository.</p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</pre></div>
+</div>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>And then generate a simple plot from the data:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;My plot&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/demo-notebook_3_0.png" /></p>
+<p>An output chart image is created directly from the data in the dataframe.</p>
+<p>The image is saved to an image file and then embedded back into the generated HTML in the Jupyter Book HTML publishing processing, but currently the XML generation process does not generate the image file or reference it via a tag in the XML.</p>
+<p>Related discussion: https://github.com/orgs/executablebooks/discussions/1096</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -389,20 +430,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="authoring_reusable_content.html"
+       href="quotations.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>Authoring reusable content</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Quotations</p>
       </div>
     </a>
     <a class="right-next"
-       href="production_workflow.html"
+       href="authoring_reusable_content.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">11. </span>OU-XML production workflow using Jupyter Book</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Authoring reusable content</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

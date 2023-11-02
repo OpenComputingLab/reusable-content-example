@@ -32,7 +32,7 @@ demo()
 
 *In Markdown, the backticked block typically also defines the language so that language sensitive syntax highlighting can be applied appropriately.*
 
-This is then rendered as a style code block:
+This is then rendered as a styled code block:
 
 ```python
 # A comment
@@ -48,23 +48,24 @@ demo()
 This "rendered" block is described in OU-XML as:
 
 ```xml
-<ProgramListing>
-  <Paragraph># A comment</Paragraph>
-  <Paragraph>def demo():</Paragraph>
-  <Paragraph>    """An example function.</Paragraph>
-  <Paragraph>    """</Paragraph>
-  <Paragraph>    a = 1</Paragraph>
-  <Paragraph>    return a</Paragraph>
-  <Paragraph></Paragraph>
-  <Paragraph>demo()</Paragraph>
-</ProgramListing>
+<Paragraph>
+  <br/>
+  # A comment<br/>
+  def demo():<br/>
+  """An example function.<br/>
+  """<br/>
+  a = 1<br/>
+  return a<br/>
+  <br/>
+  demo()
+</Paragraph>
 ```
 
 *Note that there is no declaration of the language type to support language sensitive syntax highlighting.*
 
 We can also refer to code inline, for example to the `pandas` package.
 
-This renders to OU-XML as:
+This renders to OU-XML using the `<ComputerCode>` tag:
 
 ```xml
 <Paragraph>We can also refer inline, for example to the <ComputerCode>pandas</ComputerCode> package.</Paragraph>

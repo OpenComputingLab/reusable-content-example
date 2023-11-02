@@ -1,0 +1,628 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Item TextType="CompleteItem" SchemaVersion="2.0" id="X_ouseful-demos_b0_p1_zzz" Template="Generic_A4_Unnumbered" Rendering="VLE2 staff (learn3)" DiscussionAlias="Comment" vleglossary="manual">
+  <meta content="OUSEFUL-DEMOS Block 0, Part 1: Introduction"/>
+  <CourseCode>OUSEFUL-DEMOS</CourseCode>
+  <CourseTitle>OUSEFUL-DEMOS</CourseTitle>
+  <ItemID/>
+  <ItemTitle>OUSEFUL-DEMOS Block 0, Part 1: Introduction</ItemTitle>
+  <FrontMatter>
+    <ByLine>Tony Hirst</ByLine>
+    <Imprint>
+        <Standard>
+            <GeneralInfo>
+                <Paragraph>This publication forms part of the Open University module OUSEFUL-DEMOS OUSEFUL-DEMOS. [The complete list of texts which make up this module can be found at the back (where applicable)]. Details of this and other Open University modules can be obtained from the Student Registration and Enquiry Service, The Open University, PO Box 197, Milton Keynes MK7 6BJ, United Kingdom (tel. +44 (0)845 300 60 90; email general-enquiries@open.ac.uk).</Paragraph>
+                <Paragraph>Alternatively, you may visit the Open University website at www.open.ac.uk where you can learn more about the wide range of modules and packs offered at all levels by The Open University.</Paragraph>
+                <Paragraph>To purchase a selection of Open University materials visit www.ouw.co.uk, or contact Open University Worldwide, Walton Hall, Milton Keynes MK7 6AA, United Kingdom for a brochure (tel. +44 (0)1908 858793; fax +44 (0)1908 858787; email ouw-customer-services@open.ac.uk).</Paragraph>
+            </GeneralInfo>
+            <Address>
+                <AddressLine>The Open University,</AddressLine>
+                <AddressLine>Walton Hall, Milton Keynes</AddressLine>
+                <AddressLine>MK7 6AA</AddressLine>
+            </Address>
+            <FirstPublished>
+                <Paragraph>First published YYYY</Paragraph>
+            </FirstPublished>
+            <Copyright>
+                <Paragraph>Unless otherwise stated, copyright © 2023 The Open University, all rights reserved.</Paragraph>
+            </Copyright>
+            <Rights>
+                <Paragraph>All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, transmitted or utilised in any form or by any means, electronic, mechanical, photocopying, recording or otherwise, without written permission from the publisher or a licence from the Copyright Licensing Agency Ltd. Details of such licences (for reprographic reproduction) may be obtained from the Copyright Licensing Agency Ltd, Saffron House, 6-10 Kirby Street, London EC1N 8TS (website www.cla.co.uk).</Paragraph>
+                <Paragraph>Open University materials may also be made available in electronic formats for use by students of the University. All rights, including copyright and related rights and database rights, in electronic materials and their contents are owned by or licensed to The Open University, or otherwise used by The Open University as permitted by applicable law.</Paragraph>
+                <Paragraph>In using electronic materials and their contents you agree that your use will be solely for the purposes of following an Open University course of study or otherwise as licensed by The Open University or its assigns.</Paragraph>
+                <Paragraph>Except as permitted above you undertake not to copy, store in any medium (including electronic storage or use in a website), distribute, transmit or retransmit, broadcast, modify or show in public such electronic materials in whole or in part without the prior written consent of The Open University or in accordance with the Copyright, Designs and Patents Act 1988.</Paragraph>
+            </Rights>
+            <Edited>
+                <Paragraph>Edited and designed by The Open University.</Paragraph>
+            </Edited>
+            <Typeset>
+                <Paragraph>Typeset by The Open University</Paragraph>
+            </Typeset>
+            <Printed>
+                <Paragraph>Printed and bound in the United Kingdom by [name and address of the printer].</Paragraph>
+                <Paragraph/>
+            </Printed>
+            <ISBN>None</ISBN>
+            <Edition>None</Edition>
+        </Standard>
+    </Imprint>
+</FrontMatter>
+  <Unit>
+    <UnitID>Block 0: QQQQ</UnitID>
+    <UnitTitle>Reusable workflow: Introduction</UnitTitle>
+    <ByLine>Tony Hirst</ByLine>
+    <Session id="introduction">
+        <Title>1 Introduction</Title>
+        <Paragraph>OU course materials destined for publication on the Open University VLE via the “Structured Content” OU-XML publishing route (<a href="https://learn3.open.ac.uk/mod/oucontent/view.php?id=185734">OU internal docs</a>) are typically authored as Microsoft Word documents.</Paragraph>
+        <Paragraph>Updating materials using this route can often be a laborious process, with authors editing the MS Word document and then handing over the document the changes to be “tagged” elsewhere.</Paragraph>
+        <Paragraph>The current workflow is not particularly conducive to supporting the reuse of content across modules if the content requires any form of customisation. For example, writing software guides to support educational modules adds authoring, editing and testing overheads to module production. If multiple modules use similar computer environments or software applications, reusing generic or customisable materials provides a way or reducing those overheads.</Paragraph>
+        <Paragraph>However, module teams often require software guides that are customised at several different levels. At an “inline” level, a module team may want the guide to refer to the module by module code or module name, or refer to a particular block of study. At a “paragraph” level, where some form of “localisation” relative to the module may be appropropriate, such as situating the use of a the software environment within a particular block or module with some module specific context. Or at the “section: level, where for example the software environment may have additional, module specific features that require an additional form of guidance, or a cut-down version of the envirinment that does not require sections that are likely to be relevant to other modules.</Paragraph>
+        <Paragraph>Although the MS Word originated workflow has remained largely unchanged for several years, other routes into the Structured Content production <i>are</i> available. One such route is a markdown based workflow which supports the creation of markdown flavoured content and its conversion to OU-XML.</Paragraph>
+        <Paragraph>This report introduces a markdown based publication route that uses a Sphinx-based publishing route to generate valid OU-XML Structured Content documents from markdown source documents.</Paragraph>
+        <Paragraph>An earlier version of the production route has already been used in an initial proof of concept project to produce a customisable software guide to support the use of virtual computing environments (VCEs) across several modules:</Paragraph>
+        <BulletedList>
+            <ListItem>
+                <Paragraph><a href="https://www.open.ac.uk/courses/modules/m348"><i>M348 Applied statistical modelling</i></a>, which provides a classic Jupyter notebook environment running an R kernel;</Paragraph>
+            </ListItem>
+            <ListItem>
+                <Paragraph><a href="https://www.open.ac.uk/courses/modules/tm129"><i>TM129 Technologies in practice (Robotics block)</i></a>, which provides a classic Jupyter notebook environment running an Python kernel and a simple notebook based robot simulation environment;</Paragraph>
+            </ListItem>
+            <ListItem>
+                <Paragraph><a href="https://www.open.ac.uk/courses/modules/tm351"><i>TM351 Data management and analysis</i></a>, which provides a JupyterLab environment running a Python kernel, PostgreSQL and MongoDB database services, and the OpenRefine data-cleaning application.</Paragraph>
+            </ListItem>
+        </BulletedList>
+        <Paragraph>At a technical level, the main aims of that initial project were to explore:</Paragraph>
+        <BulletedList>
+            <ListItem>
+                <Paragraph>a markdown authoring route;</Paragraph>
+            </ListItem>
+            <ListItem>
+                <Paragraph>a viable markdown to OU-XML conversion route;</Paragraph>
+            </ListItem>
+            <ListItem>
+                <Paragraph>examples of direct publication from markdown to various output formats (HTML, PDF).</Paragraph>
+            </ListItem>
+        </BulletedList>
+        <Paragraph>At a content production level, the main aims were to:</Paragraph>
+        <BulletedList>
+            <ListItem>
+                <Paragraph>maximise the amount of directly reusable content;</Paragraph>
+            </ListItem>
+            <ListItem>
+                <Paragraph>explore the use of reusable customisable content;</Paragraph>
+            </ListItem>
+            <ListItem>
+                <Paragraph>explore ways of integrating module specific content.</Paragraph>
+            </ListItem>
+        </BulletedList>
+        <Paragraph>The use of several tools to support quality processes (markdown linting, spellchecking, OU-XML validation) was also explored.</Paragraph>
+        <Paragraph>The source repository for the source content for the generic, customisable virtual computing environment (VCE) can be found here: <a href="https://github.com/innovationOUtside/vce-generic-guide"><ComputerCode>innovationOUtside/vce-generic-guide</ComputerCode></a>.</Paragraph>
+        <Paragraph>The source repository for the source content for the generic, customisable virtual computing envirpmment (VCE) software guide can be found here: <a href="https://github.com/innovationOUtside/vce-generic-guide"><ComputerCode>innovationOUtside/vce-generic-guide</ComputerCode></a>.</Paragraph>
+        <Paragraph>Example OU-XML automatically generated from the same source markdown can be viewed here: <a href="https://opencomputinglab.github.io/reusable-content-example/ouxml/xxx_b0_p1_zzz.xml">generated OU-XML</a></Paragraph>
+        <Paragraph>An HTML version rendered from the same source markdown by a Jupyter Book publication process is available here: <a href="https://opencomputinglab.github.io/reusable-content-example/">https://opencomputinglab.github.io/reusable-content-example/</a></Paragraph>
+        <Paragraph><i><b>Acknowledgements</b>: thanks to Karen Vines for helping iterate the text, Edith Francis for helping iterate the OU-XML, and Mark Hall for the original markdown2ou-xml converter and his insight into using Sphinx XML as a route to OU-XML.</i></Paragraph>
+    </Session>
+    <Session id="markdown-authoring-route">
+        <Title>2 Markdown authoring route</Title>
+        <Paragraph>The reusable content workflow is based on a markdown authoring route.</Paragraph>
+        <Paragraph>Markdown is a simple text based markup language that can be edited in simple text editor. Markdown is typically rendered or previewed as rendered HTML. Markdown editors that support WYSIWYG user interfaces are also available. Various flavours of markdown are available that extend the core markdown language with more expressive semantics.</Paragraph>
+        <Paragraph>A variety of publishing tools and frameworks are available that can render markdown source documents to a wide range of output document formats, including HTML, PDF, ebook and XML formats.</Paragraph>
+        <Paragraph>As well as rendering rich text, markdown publishing extensions can also be used to render diagrams. For example, flowcharts can be rendered from simple text-based <ComputerCode>Mermaid.js</ComputerCode> scripts.</Paragraph>
+        <Figure>
+            <Image src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b0_p1_zzz_fig0.png"/><Caption>Figure 2.1 Publishing workflows from MyST markdown</Caption>
+        </Figure>
+        <InternalSection id="example-markdown-styling">
+            <Heading>Example Markdown Styling</Heading>
+            <Paragraph>Simple markdown styling supports the rendering of <i>emphasis</i> and <b>strong</b> elements through simple markup.</Paragraph>
+            <Paragraph>These are rendered to OU-XML as:</Paragraph>
+            <ProgramListing><Paragraph><br/> &lt;Paragraph&gt;Simple markdown styling supports the rendering of &lt;i&gt;emphasis&lt;/i&gt; and &lt;b&gt;strong&lt;/b&gt; elements through simple markup.&lt;/Paragraph&gt;</Paragraph></ProgramListing>
+            <Paragraph>Simple lists can also be defined. For example, unordered lists:</Paragraph>
+            <BulletedList>
+                <ListItem>
+                    <Paragraph>item one</Paragraph>
+                </ListItem>
+                <ListItem>
+                    <Paragraph>item two</Paragraph>
+                </ListItem>
+            </BulletedList>
+            <Paragraph>as well as ordered lists:</Paragraph>
+            <NumberedList>
+                <ListItem>
+                    <Paragraph>item one</Paragraph>
+                </ListItem>
+                <ListItem>
+                    <Paragraph>item two</Paragraph>
+                </ListItem>
+            </NumberedList>
+            <Paragraph>The unordered list is rendered to OU-XML as:</Paragraph>
+            <ProgramListing><Paragraph><br/>&lt;BulletedList&gt;<br/>  &lt;ListItem&gt;<br/>    &lt;Paragraph&gt;item one&lt;/Paragraph&gt;<br/>  &lt;/ListItem&gt;<br/>  &lt;ListItem&gt;<br/>    &lt;Paragraph&gt;item two&lt;/Paragraph&gt;<br/>  &lt;/ListItem&gt;<br/>&lt;/BulletedList&gt;</Paragraph></ProgramListing>
+            <Paragraph>The following paragraph and the ordered list are then rendered as:</Paragraph>
+            <ProgramListing><Paragraph><br/>&lt;Paragraph&gt;as well as ordered lists:&lt;/Paragraph&gt;<br/>&lt;NumberedList&gt;<br/>  &lt;ListItem&gt;<br/>    &lt;Paragraph&gt;item one&lt;/Paragraph&gt;<br/>  &lt;/ListItem&gt;<br/>  &lt;ListItem&gt;<br/>    &lt;Paragraph&gt;item two&lt;/Paragraph&gt;<br/>  &lt;/ListItem&gt;<br/>&lt;/NumberedList&gt;</Paragraph></ProgramListing>
+            <Paragraph>Simple tables can be described using the markdown table format. The table format supports alignment within columns but the alignment does not carry over to the OU-XML:</Paragraph>
+            <ProgramListing><Paragraph>| Col 1 | Col 2         | Col 3  |</Paragraph><Paragraph>|-------|:-------------:|-------:|</Paragraph><Paragraph>| col 1 |  left-aligned | L      |</Paragraph><Paragraph>| col 2 |    centered   | center |</Paragraph><Paragraph>| col 2 | right-aligned | R      |</Paragraph><Paragraph></Paragraph></ProgramListing>
+            <Table>
+                
+                    
+                    
+                    
+                    <TableHead>Table 1 </TableHead><tbody>
+                        <tr>
+                            <th class="ColumnHeadLeft">
+                                <Paragraph>Col 1</Paragraph>
+                            </th>
+                            <th class="ColumnHeadLeft">
+                                <Paragraph>Col 2</Paragraph>
+                            </th>
+                            <th class="ColumnHeadLeft">
+                                <Paragraph>Col 3</Paragraph>
+                            </th>
+                        </tr>
+                    <tr>
+                            <td>
+                                <Paragraph>col 1</Paragraph>
+                            </td>
+                            <td>
+                                <Paragraph>left-aligned</Paragraph>
+                            </td>
+                            <td>
+                                <Paragraph>L</Paragraph>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Paragraph>col 2</Paragraph>
+                            </td>
+                            <td>
+                                <Paragraph>centered</Paragraph>
+                            </td>
+                            <td>
+                                <Paragraph>center</Paragraph>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Paragraph>col 2</Paragraph>
+                            </td>
+                            <td>
+                                <Paragraph>right-aligned</Paragraph>
+                            </td>
+                            <td>
+                                <Paragraph>R</Paragraph>
+                            </td>
+                        </tr>
+                    </tbody>
+                
+            </Table>
+            <Paragraph>Here’s fragment of the corresponding OU-XML:</Paragraph>
+            <ProgramListing><Paragraph><br/>&lt;Table&gt;<br/>  &lt;TableHead&gt;Table 1 &lt;/TableHead&gt;&lt;tbody&gt;<br/>    &lt;tr&gt;<br/>      &lt;th class="ColumnHeadLeft"&gt;<br/>          &lt;Paragraph&gt;Col 1&lt;/Paragraph&gt;<br/>      &lt;/th&gt;<br/>      &lt;th class="ColumnHeadLeft"&gt;<br/>          &lt;Paragraph&gt;Col 2&lt;/Paragraph&gt;<br/>      &lt;/th&gt;<br/>      &lt;th class="ColumnHeadLeft"&gt;<br/>          &lt;Paragraph&gt;Col 3&lt;/Paragraph&gt;<br/>      &lt;/th&gt;<br/>    &lt;/tr&gt;<br/>    &lt;tr&gt;<br/>      &lt;td&gt;<br/>        &lt;Paragraph&gt;col 1&lt;/Paragraph&gt;<br/>      &lt;/td&gt;<br/>      &lt;td&gt;<br/>        &lt;Paragraph&gt;left-aligned&lt;/Paragraph&gt;<br/>      &lt;/td&gt;<br/>      &lt;td&gt;<br/>        &lt;Paragraph&gt;L&lt;/Paragraph&gt;<br/>      &lt;/td&gt;<br/>    &lt;/tr&gt;<br/>    &lt;tr&gt;<br/>      &lt;td&gt;<br/>        &lt;Paragraph&gt;col 2&lt;/Paragraph&gt;<br/>      &lt;/td&gt;<br/>      &lt;td&gt;<br/>        &lt;Paragraph&gt;centered&lt;/Paragraph&gt;<br/>      &lt;/td&gt;<br/>      &lt;td&gt;<br/>        &lt;Paragraph&gt;center&lt;/Paragraph&gt;<br/>      &lt;/td&gt;<br/>    &lt;/tr&gt;<br/>  &lt;/tbody&gt;<br/>&lt;/Table&gt;</Paragraph></ProgramListing>
+            <Paragraph>Boxes can be defined using MyST markdown admonition blocks:</Paragraph>
+            <ProgramListing><Paragraph>```{admonition} Box Title</Paragraph><Paragraph></Paragraph><Paragraph>Here is the box content.</Paragraph><Paragraph></Paragraph><Paragraph>It can contain a *wide* __range__ of elements.</Paragraph><Paragraph>```</Paragraph></ProgramListing>
+            <Box>
+                <Heading>Box Title</Heading>
+                <Paragraph>Here is the box content.</Paragraph>
+                <Paragraph>It can contain a <i>wide</i> <b>range</b> of elements.</Paragraph>
+            </Box>
+            <ProgramListing><Paragraph><br/>  &lt;Box&gt;<br/>    &lt;Heading&gt;Box Title&lt;/Heading&gt;<br/>    &lt;Paragraph&gt;Here is the box content.&lt;/Paragraph&gt;<br/>    &lt;Paragraph&gt;It can contain a &lt;i&gt;wide&lt;/i&gt; &lt;b&gt;range&lt;/b&gt; of elements.&lt;/Paragraph&gt;<br/>  &lt;/Box&gt;</Paragraph></ProgramListing>
+            <Paragraph>A wide range of richer media elements are also supported by MyST markdown and can be mapped onto appropriate OU-XML elements (see later sections for examples).</Paragraph>
+        </InternalSection>
+        <InternalSection id="markdown-publishing-tools-and-frameworks">
+            <Heading>Markdown Publishing Tools and Frameworks</Heading>
+            <Paragraph>Example publishing tools and frameworks for working with markdown include:</Paragraph>
+            <BulletedList>
+                <ListItem>
+                    <Paragraph><a href="https://pandoc.org/"><ComputerCode>pandoc</ComputerCode></a>: a low level computation tool for converting between different document formats;</Paragraph>
+                </ListItem>
+                <ListItem>
+                    <Paragraph><a href="https://www.sphinx-doc.org/en/master/">Sphinx</a>: originally developed to support the publication of software documentation, but is now widely used for more general forms of publishing;</Paragraph>
+                </ListItem>
+                <ListItem>
+                    <Paragraph><a href="https://jupyterbook.org/en/stable/intro.html">Jupyter Book</a>: publishing system built on top of Sphinx that supports the publication of content generated in whole or part from computational documents, (documents that include executable code whose outputs maybe be included in the output document); source documents include markdown and Jupyter notebooks; uses MyST flavoured markdown.</Paragraph>
+                </ListItem>
+                <ListItem>
+                    <Paragraph><a href="https://quarto.org/docs/authoring/markdown-basics.html">Quarto</a>: scientific document publishing system; source documents include markdown as well as computational documents such as Jupyter notebooks and Quarto flavoured  markdown (<ComputerCode>.qmd</ComputerCode>).</Paragraph>
+                </ListItem>
+            </BulletedList>
+            <Box>
+                <Heading>MyST markdown sandbox</Heading>
+                <Paragraph>You can try out the MyST markdown sandbox editor <a href="https://mystmd.org/sandbox">here</a>.</Paragraph>
+                <Figure>
+                    <Image src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b0_p1_zzz_fig1.png"/>
+                    <Caption>Figure 2.2 Screenshot of MyST sandbox editor with live preview.</Caption>
+                </Figure>
+            </Box>
+            <Paragraph>See <ComputerCode>sandbox</ComputerCode> for guidance on how to launch a preconfigured development environment within which you can try out the workflow described in this document.</Paragraph>
+        </InternalSection>
+    </Session>
+    <Session id="markdown-format">
+        <Title>3 Markdown format</Title>
+        <Paragraph>The MyST markdown format supports a range of mark-up devices that can be mapped naturally onto OU-XML tags. The format can also be extended to support the parsing, rendering and conversion of additional, custom defined tags.</Paragraph>
+        <InternalSection id="from-markdown-to-ou-xml">
+            <Heading>From markdown to OU-XML</Heading>
+            <Paragraph>The range of MyST markdown elements that currently map on to OU-XML tags include:</Paragraph>
+            <InternalSection id="headings">
+                <Heading>Headings</Heading>
+                <Paragraph>Use standard markdown heading levels (one or more <ComputerCode>#</ComputerCode> characters at start a line, followed by whitespace and then the header. The number of <ComputerCode>#</ComputerCode> characters specifies the heading level).</Paragraph>
+                <Paragraph>Each included file represents a session and should start with a first level heading. Interior headings within the file (second level, third level, etc.) are associated with increasingly nested <ComputerCode>&lt;InternalSection&gt;</ComputerCode> tags, with the heading mapped to the <ComputerCode>&lt;Title&gt;</ComputerCode> tag at the start of the section.</Paragraph>
+                <Paragraph>If the <ComputerCode>sphinx.config.myst_heading_anchors</ComputerCode> is set in the <ComputerCode>_config.yml</ComputerCode> file, identifiers are associated with each <ComputerCode>&lt;Session&gt;</ComputerCode> and <ComputerCode>&lt;InternalSection&gt;</ComputerCode> to the specified depth based on decasing the heading, removing punctuation and replace spaces with a <ComputerCode>-</ComputerCode>. Any generated section or subsection numbering is ignored.</Paragraph>
+                <Paragraph>For example, <ComputerCode>## Second level heading</ComputerCode> would map to:</Paragraph>
+                <ProgramListing><Paragraph>&amp;lt;Session id="introduction"&amp;gt;</Paragraph><Paragraph>    &amp;lt;Title&amp;gt;1 Introduction&amp;lt;/Title&amp;gt;</Paragraph><Paragraph>    ...</Paragraph><Paragraph>    &amp;lt;InternalSection id="second-level-heading"&amp;gt;</Paragraph><Paragraph>        &amp;lt;Heading&amp;gt;Second level heading&amp;lt;/Heading&amp;gt;</Paragraph><Paragraph>    ...</Paragraph></ProgramListing>
+                <Paragraph>Note that section headings need to be unique within a <ComputerCode>&lt;Session&gt;</ComputerCode> if they are to be resolved as cross-referenced sections.</Paragraph>
+            </InternalSection>
+            <InternalSection id="cross-references">
+                <Heading>Cross-references</Heading>
+                <Paragraph>Cross-references may be made to section or internal section headers in the same file / session, or to other files / sessions in the same item by means of the session or internal section identifier.</Paragraph>
+            </InternalSection>
+            <InternalSection id="figure-elements">
+                <Heading>Figure elements</Heading>
+                <Paragraph>Figure elements should be defined in markdown as follows:</Paragraph>
+                <ProgramListing><Paragraph></Paragraph><Paragraph>```{figure} assets_path/images_path/image_file.png</Paragraph><Paragraph>:name: unique_image_reference</Paragraph><Paragraph></Paragraph><Paragraph>Caption text</Paragraph><Paragraph></Paragraph><Paragraph>Optional description text for the image. Possibly several sentences.</Paragraph><Paragraph></Paragraph><Paragraph>```</Paragraph></ProgramListing>
+                <Paragraph>This then maps onto the following OU-XML:</Paragraph>
+                <ProgramListing><Paragraph><br/>&lt;Figure&gt;<br/>    &lt;Image src="https://generated.url/path/image_file.png"/&gt;<br/>    &lt;Caption&gt;Figure N.M Caption text&lt;/Caption&gt;<br/>    &lt;Description&gt;<br/>        &lt;Paragraph&gt;Optional description text for the image. Possibly several sentences.&lt;/Paragraph&gt;<br/>    &lt;/Description&gt;<br/>&lt;/Figure&gt;</Paragraph></ProgramListing>
+                <Paragraph>Several settings in the <ComputerCode>_config.txt</ComputerCode> determine how references to the figure are generated:</Paragraph>
+                <ProgramListing><Paragraph>sphinx:</Paragraph><Paragraph>    config:</Paragraph><Paragraph>        numfig: true</Paragraph><Paragraph>        numfig_format: {'figure':'Figure %s'}</Paragraph><Paragraph>        numfig_secnum_depth: 1 #eg 0:1 1:2.1</Paragraph></ProgramListing>
+                <Paragraph>The <ComputerCode>numfig</ComputerCode> parameter determines whether numeric references to figures may be generated; the <ComputerCode>numfig_format</ComputerCode> parameter specifies the format of the numeric reference text when a reference is generate; and the <ComputerCode>numfig_secnum_depth</ComputerCode> identifies the numbering level (incremental figure count across the item (<ComputerCode>0</ComputerCode>) or section number and figure number within section (<ComputerCode>1</ComputerCode>)).</Paragraph>
+                <Paragraph>Links to figures can be described in the text via the unique reference, and either the caption text (<ComputerCode>{ref}`unique_image_reference`)</ComputerCode>) or, if enabled, the generated numeric reference (<ComputerCode>{numref}`g-other_file_in_item.md#unique_image_reference` </ComputerCode>) may be displayed.</Paragraph>
+                <Paragraph>If the reference is to a figure in a separate file, the path to the source filename should also be specified (for example, <ComputerCode>{numref}`unique_image_reference` </ComputerCode> or <ComputerCode>{ref}`other_file_in_item.md#unique_image_reference` </ComputerCode>).</Paragraph>
+                <Paragraph>An optional <ComputerCode>_config.yml</ComputerCode> configuration setting, <ComputerCode>ou.image_path_prefix</ComputerCode>, allows a path to the image directory to be specified.</Paragraph>
+                <ProgramListing><Paragraph>ou:</Paragraph><Paragraph>  image_path_prefix: https://generated.url/path</Paragraph><Paragraph>  # For example:</Paragraph><Paragraph>  # image_path_prefix: https://openuniv.sharepoint.com/sites/mmodules/m348/lmimages/</Paragraph><Paragraph> </Paragraph></ProgramListing>
+            </InternalSection>
+            <InternalSection id="component-numbering">
+                <Heading>Component numbering</Heading>
+                <Paragraph>Automatic numbering may be enabled via the <ComputerCode>_toc.yml</ComputerCode> file.</Paragraph>
+            </InternalSection>
+        </InternalSection>
+        <InternalSection id="extending-the-markup-language">
+            <Heading>Extending the markup language</Heading>
+            <Paragraph>The MyST markdown format and the Sphinx publishing framework are both extensible, which means that it is possible to define additional tags to support the creation of bespoke materials.</Paragraph>
+            <Paragraph>For example, the publishing workflow has been extended to support:</Paragraph>
+            <BulletedList>
+                <ListItem>
+                    <Paragraph>the parsing and rendering of <ComputerCode>mermaid.js</ComputerCode> diagram syntax;</Paragraph>
+                </ListItem>
+                <ListItem>
+                    <Paragraph>the parsing and custom rendering of “activities” with revealable answers.</Paragraph>
+                </ListItem>
+            </BulletedList>
+            <InternalSection id="rendering-mermaid-js-diagrams">
+                <Heading>Rendering <ComputerCode>mermaid.js</ComputerCode> diagrams</Heading>
+                <Paragraph>The <ComputerCode>mermaid,js</ComputerCode> package is a widely used JavaScript that package TO DO</Paragraph>
+            </InternalSection>
+            <InternalSection id="supporting-activity-elements">
+                <Heading>Supporting activity elements</Heading>
+                <Paragraph>The OU-XML structured content format supports the definition of “activities” according to the following structure:</Paragraph>
+            </InternalSection>
+        </InternalSection>
+    </Session>
+    <Session id="embedded-media">
+        <Title>4 Embedded Media</Title>
+        <Paragraph>Embedded media items can be specified in MyST markdown using custom <ComputerCode>{video}</ComputerCode> and <ComputerCode>{audio}</ComputerCode> admonitions and rendered into HTML using the <a href="https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags"><ComputerCode>innovationOUtside/sphinxcontrib-ou-xml-tags</ComputerCode></a> Sphinx extension.</Paragraph>
+        <Paragraph><i>The mapping to appropriate XML tags is under developement; currently it is only partially handled for <ComputerCode>audio</ComputerCode> items and not handled for <ComputerCode>video</ComputerCode> items.</i></Paragraph>
+        <InternalSection id="video-items">
+            <Heading>Video Items</Heading>
+            <Paragraph>Embedded video player using <a href="https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags"><ComputerCode>innovationOUtside/sphinxcontrib-ou-xml-tags</ComputerCode></a>:</Paragraph>
+            <ProgramListing><Paragraph>```{ou-video} resources/test.mp4</Paragraph><Paragraph>A caption for a video file.</Paragraph><Paragraph></Paragraph><Paragraph>A line of description.</Paragraph><Paragraph>And continuation of the line.</Paragraph><Paragraph></Paragraph><Paragraph>More description.</Paragraph><Paragraph>```</Paragraph></ProgramListing>
+            <MediaContent type="video" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b0_p1_zzz_media_test.mp4" height="" width="">
+                <Caption>Figure 4.1 A caption for a video file.</Caption>
+                <Description>
+                    <Paragraph>A line of description.
+                        And continuation of the line.</Paragraph>
+                    <Paragraph>More description.</Paragraph>
+                </Description>
+            </MediaContent>
+            <Paragraph>The block can also be empty of caption and description text. <i>If there is any text in the body of the admonition, the first line is mapped onto an OU-XML <ComputerCode>&lt;Caption&gt;</ComputerCode> element.</i></Paragraph>
+            <Paragraph>The MyST spec also lets you use a video file path in a <ComputerCode>{figure}</ComputerCode> admonition when geberating HTML output, but this is not support for conversion to OU-XML.</Paragraph>
+        </InternalSection>
+        <InternalSection id="audio-items">
+            <Heading>Audio Items</Heading>
+            <Paragraph>Audio player using <a href="https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags"><ComputerCode>innovationOUtside/sphinxcontrib-ou-xml-tags</ComputerCode></a>:</Paragraph>
+            <ProgramListing><Paragraph>```{ou-audio} resources/test.mp3</Paragraph><Paragraph>A caption for an audio file.</Paragraph><Paragraph>```</Paragraph></ProgramListing>
+            <MediaContent type="audio" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b0_p1_zzz_media_test.mp3">
+                <Caption>Figure 4.2 A caption for an audio file.</Caption>
+            </MediaContent>
+            <Paragraph>As with the <ComputerCode>ou-video</ComputerCode> element, we can optionally include a caption, or a caption and description elements, by including text inside the admonition block.</Paragraph>
+            <Paragraph><i>Currently, there is no native MyST admonition for embedding an audio player.</i></Paragraph>
+        </InternalSection>
+    </Session>
+    <Session id="maths">
+        <Title>5 Maths</Title>
+        <Paragraph>Mathematical equations written using LaTeX syntax can be specified inline or as a block level equation.</Paragraph>
+        <Paragraph>For example, the inline equation <InlineEquation><TeX>e=mc^2</TeX></InlineEquation> is specified in markdown using the <ComputerCode>{math}</ComputerCode> role: <ComputerCode>{math}`e=mc^2`</ComputerCode></Paragraph>
+        <Paragraph>We can also use a <ComputerCode>{math}</ComputerCode> directive to define an equation block:</Paragraph>
+        <ProgramListing><Paragraph>```{math}</Paragraph><Paragraph>:label: my-equation</Paragraph><Paragraph>w_{t+1} = (1 + r_{t+1})</Paragraph><Paragraph>s(w_t) + y_{t+1}</Paragraph><Paragraph>```</Paragraph></ProgramListing>
+        
+        <Equation id="my-equation"><TeX>w_{t+1} = (1 + r_{t+1})
+s(w_t) + y_{t+1}</TeX></Equation>
+        <Paragraph>These corresponding OU-XML is then a <ComputerCode>&lt;ProgramListing&gt;</ComputerCode> to show the script that is used to defined the equation, and an <ComputerCode>Equation</ComputerCode> block from which the rendered equation can be generated:</Paragraph>
+        <ProgramListing><Paragraph><br/>&lt;ProgramListing&gt;<br/>    &lt;Paragraph&gt;```{math}&lt;/Paragraph&gt;<br/>    &lt;Paragraph&gt;:label: my-equation&lt;/Paragraph&gt;<br/>    &lt;Paragraph&gt;w_{t+1} = (1 + r_{t+1})&lt;/Paragraph&gt;<br/>    &lt;Paragraph&gt;s(w_t) + y_{t+1}&lt;/Paragraph&gt;<br/>    &lt;Paragraph&gt;```&lt;/Paragraph&gt;<br/>&lt;/ProgramListing&gt;<br/>        <br/>&lt;Equation id="my-equation"&gt;<br/>    &lt;TeX&gt;w_{t+1} = (1 + r_{t+1})<br/>s(w_t) + y_{t+1}&lt;/TeX&gt;<br/>&lt;/Equation&gt;</Paragraph></ProgramListing>
+        <Paragraph>Dollar math syntax may also be used to define block equations:</Paragraph>
+        <ProgramListing><Paragraph>$$</Paragraph><Paragraph>\label{maxwell}</Paragraph><Paragraph>\begin{aligned}</Paragraph><Paragraph>\nabla \times \vec{e}+\frac{\partial \vec{b}}{\partial t}&amp;amp;=0 \\</Paragraph><Paragraph>\nabla \times \vec{h}-\vec{j}&amp;amp;=\vec{s}\_{e}</Paragraph><Paragraph>\end{aligned}</Paragraph><Paragraph>$$</Paragraph></ProgramListing>
+        <Equation><TeX>
+            \label{maxwell}
+            \begin{aligned}
+            \nabla \times \vec{e}+\frac{\partial \vec{b}}{\partial t}&amp;=0 \
+            \nabla \times \vec{h}-\vec{j}&amp;=\vec{s}_{e}
+            \end{aligned}
+            </TeX>
+        </Equation><Paragraph>In OU-XML, we again render the two elements above as a listing and an equation type:</Paragraph>
+        <ProgramListing><Paragraph><br/>&lt;ProgramListing&gt;<br/>    &lt;Paragraph&gt;$$&lt;/Paragraph&gt;<br/>    &lt;Paragraph&gt;\label{maxwell}&lt;/Paragraph&gt;<br/>    &lt;Paragraph&gt;\begin{aligned}&lt;/Paragraph&gt;<br/>    &lt;Paragraph&gt;\nabla \times \vec{e}+\frac{\partial \vec{b}}{\partial t}&amp;amp;amp;=0 \\&lt;/Paragraph&gt;<br/>    &lt;Paragraph&gt;\nabla \times \vec{h}-\vec{j}&amp;amp;amp;=\vec{s}\_{e}&lt;/Paragraph&gt;&lt;Paragraph&gt;\end{aligned}&lt;/Paragraph<br/>    &gt;&lt;Paragraph&gt;$$&lt;/Paragraph&gt;<br/>&lt;/ProgramListing&gt;<br/><br/>&lt;Equation&gt;<br/>    &lt;TeX&gt;<br/>        \label{maxwell}<br/>        \begin{aligned}<br/>        \nabla \times \vec{e}+\frac{\partial \vec{b}}{\partial t}&amp;amp;=0 \<br/>        \nabla \times \vec{h}-\vec{j}&amp;amp;=\vec{s}_{e}<br/>        \end{aligned}<br/>    &lt;/TeX&gt;<br/>&lt;/Equation&gt;</Paragraph></ProgramListing>
+        <Paragraph>The <ComputerCode>$$</ComputerCode> syntax also works as a one-liner. For example, the single line:</Paragraph>
+        <Paragraph><ComputerCode>$$ \label{one-liner} Ax=b $$</ComputerCode></Paragraph>
+        <Paragraph>will ultimately render as the formatted equation:</Paragraph>
+        <Equation><TeX> \label{one-liner} Ax=b </TeX>
+    </Equation></Session>
+    <Session id="code">
+        <Title>6 Code</Title>
+        <Paragraph>We can mark up code blocks in usual markdown style by using a triple backticked block to delimit the code block:</Paragraph>
+        <ProgramListing><Paragraph>```python</Paragraph><Paragraph># A comment</Paragraph><Paragraph>def demo():</Paragraph><Paragraph>    """An example function.</Paragraph><Paragraph>    """</Paragraph><Paragraph>    a = 1</Paragraph><Paragraph>    return a</Paragraph><Paragraph></Paragraph><Paragraph>demo()</Paragraph><Paragraph>```</Paragraph></ProgramListing>
+        <Paragraph><i>In Markdown, the backticked block typically also defines the language so that language sensitive syntax highlighting can be applied appropriately.</i></Paragraph>
+        <Paragraph>This is then rendered as a styled code block:</Paragraph>
+        <ProgramListing><Paragraph><br/># A comment<br/>def demo():<br/>    """An example function.<br/>    """<br/>    a = 1<br/>    return a<br/><br/>demo()</Paragraph></ProgramListing>
+        <Paragraph>This “rendered” block is described in OU-XML as:</Paragraph>
+        <ProgramListing><Paragraph><br/>&lt;Paragraph&gt;<br/>  &lt;br/&gt;<br/>  # A comment&lt;br/&gt;<br/>  def demo():&lt;br/&gt;<br/>  """An example function.&lt;br/&gt;<br/>  """&lt;br/&gt;<br/>  a = 1&lt;br/&gt;<br/>  return a&lt;br/&gt;<br/>  &lt;br/&gt;<br/>  demo()<br/>&lt;/Paragraph&gt;</Paragraph></ProgramListing>
+        <Paragraph><i>Note that there is no declaration of the language type to support language sensitive syntax highlighting.</i></Paragraph>
+        <Paragraph>We can also refer to code inline, for example to the <ComputerCode>pandas</ComputerCode> package.</Paragraph>
+        <Paragraph>This renders to OU-XML using the <ComputerCode>&lt;ComputerCode&gt;</ComputerCode> tag:</Paragraph>
+        <ProgramListing><Paragraph><br/>&lt;Paragraph&gt;We can also refer inline, for example to the &lt;ComputerCode&gt;pandas&lt;/ComputerCode&gt; package.&lt;/Paragraph&gt;</Paragraph></ProgramListing>
+    </Session>
+    <Session id="quotations">
+        <Title>7 Quotations</Title>
+        <Paragraph>We can define quotations in markdown by prefix the quoted line or lines with a <ComputerCode>&gt;</ComputerCode> symbol at the start of the line:</Paragraph>
+        <Paragraph>This works for single line quotes:</Paragraph>
+        <Paragraph><ComputerCode>&gt; Here is a single line quote.</ComputerCode></Paragraph>
+        <Quote><Paragraph>Here is a single line quote.</Paragraph></Quote>
+        <Paragraph>which are rendered in OU-XML as:</Paragraph>
+        <ProgramListing><Paragraph><br/>&lt;Quote&gt;&lt;Paragraph&gt;Here is a single line quote.&lt;/Paragraph&gt;&lt;/Quote&gt;</Paragraph></ProgramListing>
+        <Paragraph>and multi-line quotes:</Paragraph>
+        <ProgramListing><Paragraph>&amp;gt; Here is the first line of the quote...</Paragraph><Paragraph>&amp;gt; ...and here is the second.</Paragraph><Paragraph>&amp;gt;</Paragraph><Paragraph>&amp;gt; And a final line.</Paragraph></ProgramListing>
+        <Paragraph>which are rendered in OU-XML as:</Paragraph>
+        <ProgramListing><Paragraph><br/>&lt;Quote&gt;<br/>    &lt;Paragraph&gt;Here is the first line of the quote…<br/>    …and here is the second.&lt;/Paragraph&gt;<br/>&lt;Paragraph&gt;And a final line.&lt;/Paragraph&gt;<br/>&lt;/Quote&gt;<br/></Paragraph></ProgramListing>
+        <Paragraph>The following is a quote and should be marked up as such:</Paragraph>
+        <Quote><Paragraph>Here is the first line of the quote…
+                …and here is the second.</Paragraph><Paragraph>And a final line.</Paragraph></Quote>
+        <Paragraph>The following is a quote that should be marked up as such, along with a typographically distinguished source reference component:</Paragraph>
+        <Quote><Paragraph>Here is the first line of the quote…
+                …and here is the second.</Paragraph><SourceReference>And a final line source…</SourceReference></Quote>
+        <Paragraph>The source markdown is:</Paragraph>
+        <ProgramListing><Paragraph>&amp;gt; Here is the first line of the quote...</Paragraph><Paragraph>&amp;gt; ...and here is the second.</Paragraph><Paragraph>&amp;gt;</Paragraph><Paragraph>&amp;gt; Source: And a final line source...</Paragraph></ProgramListing>
+        <Paragraph>In OU-XML, we get:</Paragraph>
+        <ProgramListing><Paragraph><br/>&lt;Quote&gt;&lt;Paragraph&gt;Here is the first line of the quote…<br/>                …and here is the second.&lt;/Paragraph&gt;&lt;SourceReference&gt;And a final line source…&lt;/SourceReference&gt;&lt;/Quote&gt;</Paragraph></ProgramListing>
+    </Session>
+    <Session id="example-publishing-from-jupyter-notebook">
+        <Title>8 Example publishing from Jupyter notebook</Title>
+        <Paragraph>As well as authoring content in MyST markdown files, we can also author content in Jupyter notebooks.</Paragraph>
+        <Paragraph>As might be expected, notebook markdown cells support the full range of simple markdown syntax elements such as <i>emphasised</i> and <b>bold font</b> content, as well as lists:</Paragraph>
+        <BulletedList>
+            <ListItem>
+                <Paragraph>item 1</Paragraph>
+            </ListItem>
+            <ListItem>
+                <Paragraph>item 2</Paragraph>
+            </ListItem>
+        </BulletedList>
+        <Paragraph>and quotes:</Paragraph>
+        <Quote><Paragraph>My quotation</Paragraph></Quote>
+        <Paragraph>But we can also use notebooks to generate output content from code.</Paragraph>
+        <Paragraph>For example, we can create a simple data table:</Paragraph>
+        <ProgramListing><Paragraph><br/>import pandas as pd<br/><br/>df = pd.DataFrame({"x": [1, 2, 3], "y":[10,3, 7]})<br/>df</Paragraph></ProgramListing>
+        <MediaContent type="html5" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b0_p1_zzz_html0.zip" height="200" width="600" id="babace98097c4f8db9b7"/>
+        <ProgramListing><Paragraph>.dataframe tbody tr th {</Paragraph><Paragraph>    vertical-align: top;</Paragraph><Paragraph>}</Paragraph><Paragraph></Paragraph><Paragraph>.dataframe thead th {</Paragraph><Paragraph>    text-align: right;</Paragraph><Paragraph>}</Paragraph></ProgramListing>
+        <MediaContent type="html5" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b0_p1_zzz_html1.zip" height="200" width="600" id="b337c515914c42478cf7"/>
+        <Paragraph>And then generate a simple plot from the data:</Paragraph>
+        <ProgramListing><Paragraph><br/>df.plot(x="x", y="y").set_title("My plot");</Paragraph></ProgramListing>
+        <Figure><Image src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b0_p1_zzz_fig4.png"/></Figure>
+        <Paragraph>An output chart image is created directly from the data in the dataframe.</Paragraph>
+        <Paragraph>The image is saved to an image file and then embedded back into the generated HTML in the Jupyter Book HTML publishing processing, but currently the XML generation process does not generate the image file or reference it via a tag in the XML.</Paragraph>
+        <Paragraph>Related discussion: https://github.com/orgs/executablebooks/discussions/1096</Paragraph>
+    </Session>
+    <Session id="authoring-reusable-content">
+        <Title>9 Authoring reusable content</Title>
+        <Paragraph>To start the authoring process, a legacy software guide available as an OU-XML structured content document was rendered to simple markdown.</Paragraph>
+        <Paragraph>Sphinx style configuration and table of contents scripts were created to so that the content could be previewed in an HTML book style format, or rendered back to OU-XML.</Paragraph>
+        <Paragraph>Several features of Sphinx style publishing that support extensibility and reuse were adopted that allowed us to trade-off purely generic content, customisable content, and bespoke content for each module.</Paragraph>
+        <InternalSection id="table-of-contents-configuration-files">
+            <Heading>Table of Contents Configuration Files</Heading>
+            <Paragraph>From a set of content files, one of the easiest ways of defining which content files are to be used to generate a particular output document is to specify the files that are to be included via a table of contents file.</Paragraph>
+            <Paragraph>In current production workflows, it would not be unusual for each module team author to their own software guide. In a markdown workflow, this might include each module team authoring several separate markdown documents, many of which may  duplicate similar instructional intent, and then create their own table of contents files to use their authored documents.</Paragraph>
+            <Paragraph>One obvious way of reusing content across several modules would be for each module to use exactly the same guide, where the same table of contents file pulls from the same source documents.</Paragraph>
+            <Paragraph>Partial customisation might be supported by each module team writing their own introduction, for example, but reusing all the other sections of the guide.  The output document is then defined using a module specific table of contents file that pulls in the module specific content (for example, from the file <ComputerCode>introduction-XY123.md</ComputerCode>) as well as a the generic reusable content files.</Paragraph>
+            <Paragraph>When writing this sort of content, we must try to avoid making any references to a particular module. Where references to a module code are required, one possible approach is to use a generic code (for example <ComputerCode>XY123</ComputerCode>, or <ComputerCode>XXNNN</ComputerCode>) and then tell a student to use apply their particular module code in place of the generic code.</Paragraph>
+            <Paragraph>For example, two modules might reuse content from a set of common files, as well as featuring module specific content, using the following table of contents files:</Paragraph>
+            <ProgramListing><Paragraph>format: jb-book</Paragraph><Paragraph>root: g-vce_cribsheet</Paragraph><Paragraph>chapters:</Paragraph><Paragraph>  - file: g-introduction-m348</Paragraph><Paragraph>  - file: g-compute_home</Paragraph><Paragraph>  - file: g-local_vce_quickstart</Paragraph></ProgramListing>
+            <ProgramListing><Paragraph>format: jb-book</Paragraph><Paragraph>root: g-vce_cribsheet</Paragraph><Paragraph>chapters:</Paragraph><Paragraph>  - file: g-introduction-tm351</Paragraph><Paragraph>  - file: g-compute_home</Paragraph><Paragraph>  - file: g-local_vce_quickstart</Paragraph></ProgramListing>
+        </InternalSection>
+        <InternalSection id="transcluding-embedding-content">
+            <Heading>Transcluding / Embedding content</Heading>
+            <Paragraph>One of the nice features of the Sphinx publishing workflow is that content files can import content from other content files. This allows us to define “partial” files that might include the content of just a single paragraph, for example.</Paragraph>
+            <Paragraph>A module specific file can then be defined that includes module specific text (either imported from a partial content file or explicitly provided inline within the file) as well as generic text imported from a reusable partial content file.</Paragraph>
+            <Paragraph>For example, the following markdown fragment shows how we might customise a module specific introduction file by first loading in generic content from a reusable file, and then appending some module specific content.</Paragraph>
+            <ProgramListing><Paragraph>```{include} ./g-introduction-core.md</Paragraph><Paragraph></Paragraph><Paragraph>Finally, we have a conclusion paragraph that speaks to a particular module.</Paragraph><Paragraph>```</Paragraph></ProgramListing>
+        </InternalSection>
+        <InternalSection id="parameterised-customisable-content">
+            <Heading>Parameterised Customisable Content</Heading>
+            <Paragraph>In many cases, whilst the content is predominantly reusable, there may be a requirement to customise it for use in particular module by referring to the module code or module name.</Paragraph>
+            <Paragraph>In this case, rather than generate a custom file for each module, we can simply parameterise the module code, module name, etc., and then define a module configuration file that sets a generic module name placeholder label, for example, to a required module name.</Paragraph>
+            <Paragraph>For example, the following raw markdown fragment shows how we can use parameterised values at the start of a generic, customisable “cribsheet” document.</Paragraph>
+            <ProgramListing><Paragraph># Virtual Computing Environment Cribsheet ({{module_code}}, {{presentation_code}} Presentation)</Paragraph><Paragraph></Paragraph><Paragraph>## VCE Cribsheet</Paragraph><Paragraph></Paragraph><Paragraph>- Module code: {{module_code}}</Paragraph><Paragraph>- Presentation code: {{presentation_code}}</Paragraph></ProgramListing>
+            <Paragraph>The configuration file allows the definition of variables as well as some limited processing of those variables (for example, casting to upper or lower case) as part of further configuration elements.</Paragraph>
+            <ProgramListing><Paragraph>myst_substitutions:</Paragraph><Paragraph>    MCODE: M348</Paragraph><Paragraph>    NCODE: "348"</Paragraph><Paragraph>    MNAME: "Applied Statistical Modelling"</Paragraph><Paragraph>    PCODE: 23J</Paragraph><Paragraph>    YEAR: "2023"</Paragraph><Paragraph>    jupyter_help_forum: "'Jupyter notebooks' forum"</Paragraph><Paragraph></Paragraph><Paragraph>    # DEFAULT VALUES / RULES</Paragraph><Paragraph>    module_code: "{{'`' + MCODE|upper + '`'}}"</Paragraph><Paragraph>    presentation_code: "{{'`' + PCODE|upper + '`'}}"</Paragraph></ProgramListing>
+        </InternalSection>
+    </Session>
+    <Session id="collaborative-development-authoring-and-publishing">
+        <Title>10 Collaborative Development, Authoring and Publishing</Title>
+        <Paragraph>The original workflow involved the main author providing PDF previews of the material to a second author by email, who returned an annotated and/or email comments.</Paragraph>
+        <Paragraph>OU-XML was also generated and passed to a DPA (Digital Production Assistant) in LDS (Learner and Discovery Services) who checked and fixed the OU-XML, published it as previewable content in the VLE, and provided errata about OU-XML issues to the main author.</Paragraph>
+        <Paragraph>As well as iterating the text in the source markdown documents, the main author was also iterating on the tools used to generate to the OU-XML. <i>This would not have been possible without the support of the DPA turning round documents almost on demand.</i></Paragraph>
+        <Paragraph>Two recurring OU-XML issues were:</Paragraph>
+        <BulletedList>
+            <ListItem>
+                <Paragraph>unknown tags;</Paragraph>
+            </ListItem>
+            <ListItem>
+                <Paragraph>incorrectly formatted or otherwise broken link references in internal reference links.</Paragraph>
+            </ListItem>
+        </BulletedList>
+        <Paragraph>In parsing the markdown to Sphinx XML, various docutils XML tags were generated that were not recognised by the translation tool that converted Sphinx docutils XML to OU-XML.</Paragraph>
+        <Paragraph>Initially, and perhaps rather lazily, the main author passed this incorrect OU-XML to the DPA who then reported back the broken XML issues.</Paragraph>
+        <Paragraph>Several steps were then taken to improve this developmental workflow:</Paragraph>
+        <BulletedList>
+            <ListItem>
+                <Paragraph>the main author (working on an autonomous Mac) installed Microsoft Remote Desktop and via Citrix Secure Access and a Microsoft Authenticator app running providing 2FA from a  personal mobile phone, gained access to an OU configured Microsoft Desktop. This environment could then be used to run Oxygen XML Author application. After installing the OU Publishing extensions to Oxygen XML Author, the environment could then be used to:</Paragraph>
+                <BulletedSubsidiaryList>
+                    <SubListItem>
+                        <Paragraph>validate the generated OU-XML against the OU-XML schema;</Paragraph>
+                    </SubListItem>
+                    <SubListItem>
+                        <Paragraph>run additional quality checks against the generated OU-XML using unenforced Schematron quality rules; <i>these rules display quality improvement recommendations</i></Paragraph>
+                    </SubListItem>
+                    <SubListItem>
+                        <Paragraph>publish the content via a web browser to PDF or VLE previewed HTML.</Paragraph>
+                    </SubListItem>
+                </BulletedSubsidiaryList>
+            </ListItem>
+        </BulletedList>
+        <Box>
+            <Heading>Practical issues associated with using Oxygen XML Author</Heading>
+            <Paragraph>The default web browser in the Microsoft Desktop environment was an old browser that did not work properly when trying to run the OU-XML publisher. Changing Windows preferences to use Chrome fxed the issue. When rendering the OU-XML via the browser accessed web-service, OU authentication was required within each new RDP session, adding further friction to the process.</Paragraph>
+        </Box>
+        <Paragraph>To simplify the process of validating the OU-XML, the XML schema file was located and exported. A simple OU-XML command line validation tool was then developed to allow for local validation of generated OU-XML files without the need to access Oxygen XML Author application. (The tool can be found <a href="https://github.com/innovationOUtside/ou-xml-validator">here</a>.) <i>A simple previewer XSL file also looked to be available for generating preview HTML from OU-XML.</i></Paragraph>
+        <Paragraph>During the development process, the OU-XML schema was updated. This required updating both Oxygen XML Author and the OU-XML generator in line with the updated schema.</Paragraph>
+        <Paragraph>To try to improve the authoring/editing process, the first and second author started to use a public GitHub repository to share content. The second author forked the first author’s repository, worked in their own repository, and then submitted pull requests back to the first author’s repository.</Paragraph>
+    </Session>
+    <Session id="ou-xml-production-workflow-using-jupyter-book">
+        <Title>11 OU-XML production workflow using Jupyter Book</Title>
+        <Paragraph>An increasing number of OU modules that require students to work with executable computer code are starting to use Jupyter notebooks to provide students with an interactive learning environment that blends rich content with embedded executable code and rendered code outputs (Figure 11.1).</Paragraph>
+        <Figure>
+            <Image src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b0_p1_zzz_fig4.png"/>
+            <Caption>Figure 11.1 Screenshot of Jupyter notebook.</Caption>
+        </Figure>
+        <Paragraph>To support as general a workflow as a possible, the workflow adopted builds on the Jupyter Book publishing system. This supports:</Paragraph>
+        <BulletedList>
+            <ListItem>
+                <Paragraph>rich markdown (MyST syntax);</Paragraph>
+            </ListItem>
+            <ListItem>
+                <Paragraph>markdown and/or Jupyter notebook source documents;</Paragraph>
+            </ListItem>
+            <ListItem>
+                <Paragraph>executable content (via <ComputerCode>jupyter-server</ComputerCode>);</Paragraph>
+            </ListItem>
+            <ListItem>
+                <Paragraph>conversion to OU-XML via <ComputerCode>ou-book-theme</ComputerCode>.</Paragraph>
+            </ListItem>
+        </BulletedList>
+        <Paragraph>The workflow proceeds as follows:</Paragraph>
+        <BulletedList>
+            <ListItem>
+                <Paragraph>source content authored in one or more markdown files; a tables of contents file (<ComputerCode>_toc.yml</ComputerCode>) identifies the source files and the order in which they are presented;</Paragraph>
+            </ListItem>
+            <ListItem>
+                <Paragraph>source content converted to output formats including Sphinx-XML by Sphinx;</Paragraph>
+            </ListItem>
+            <ListItem>
+                <Paragraph>Sphinx-XML converted to OU-XML.</Paragraph>
+            </ListItem>
+        </BulletedList>
+        <InternalSection id="defining-the-table-of-contents-toc-yml">
+            <Heading>Defining the table of contents (<ComputerCode>_toc.yml</ComputerCode>)</Heading>
+            <Paragraph>The table of contents file can be used to define the contents of one of more OU-XML documents, where each part in the <ComputerCode>_toc.yml</ComputerCode> file defines a structured content <ComputerCode>&lt;Item&gt;</ComputerCode>.</Paragraph>
+            <ProgramListing><Paragraph>format: jb-book</Paragraph><Paragraph>root: _copyright_notice</Paragraph><Paragraph>parts:</Paragraph><Paragraph>  - caption: First item name</Paragraph><Paragraph>    numbered: true</Paragraph><Paragraph>    chapters:</Paragraph><Paragraph>      - file: introduction</Paragraph><Paragraph>      - file: first_section</Paragraph><Paragraph>      - file: another_section</Paragraph><Paragraph>      - file: conclusion</Paragraph><Paragraph>  - caption: Second item name</Paragraph><Paragraph>    numbered: true</Paragraph><Paragraph>    chapters:</Paragraph><Paragraph>      - file: introduction2</Paragraph><Paragraph>      - file: only_section</Paragraph><Paragraph>      - file: conclusion2</Paragraph></ProgramListing>
+            <Paragraph>If no file suffix is provided for the filename, the build process will look for files with the markdown (<ComputerCode>.md</ComputerCode>) or Jupyter notebook (<ComputerCode>.ipynb</ComputerCode>) file suffix.</Paragraph>
+            <Paragraph>Typically, each file will define a single <ComputerCode>&lt;Session&gt;</ComputerCode> in the corresponding <ComputerCode>&lt;Item&gt;</ComputerCode>. Each file should start with a level 1 heading; lower level headings within each file trigger the creation of an <ComputerCode>&lt;InternalSection&gt;</ComputerCode> at that point. The  <ComputerCode>&lt;InternalSection&gt;</ComputerCode> blocks may be nested in line with ever subordinate heading levels.</Paragraph>
+            <Paragraph>Internal <ComputerCode>&lt;CrossRef&gt;</ComputerCode> links may be generated within each part by referencing the file name and an identifier derived the linked to (sub)heading.</Paragraph>
+        </InternalSection>
+        <InternalSection id="build-process">
+            <Heading>Build process</Heading>
+            <Paragraph>The build process for generating OU-XML from markdown is a two step process.</Paragraph>
+            <Paragraph>The first step is to use Jupyter Book tooling to generate a Sphinx XML version of the Jupyter Book, as defined by the <ComputerCode>_toc.yml</ComputerCode> and <ComputerCode>_config.yml</ComputerCode> files:</Paragraph>
+            <Paragraph><ComputerCode>jb build . --builder custom --custom-builder xml</ComputerCode></Paragraph>
+            <Paragraph>This generates XML files in the default <ComputerCode>_build/xml</ComputerCode> directory.</Paragraph>
+            <Paragraph>The second step is to use the <a href="https://pypi.org/project/ou-book-theme/"><ComputerCode>ou-book-theme</ComputerCode></a> Python package to convert the Sphinx XML to OU-XML (this looks for XML source documents in <ComputerCode>_build/xml</ComputerCode> by default):</Paragraph>
+            <Paragraph><ComputerCode>obt convert-to-ouxml .</ComputerCode></Paragraph>
+            <Paragraph><i>NB I think release version of <ComputerCode>ou-book-theme</ComputerCode> is lagging the modified version I have been working on…</i></Paragraph>
+            <Paragraph>Generated OU-XML content in the <ComputerCode>_build/ouxml</ComputerCode> directory can then be validated against an OU-XML schema by running the command:</Paragraph>
+            <Paragraph><ComputerCode>ou_xml_validator validate  path/to/testme.xml</ComputerCode></Paragraph>
+        </InternalSection>
+    </Session>
+    <Session id="workflow-automation">
+        <Title>12 Workflow Automation</Title>
+        <Paragraph>A GitHub Action associated with this repository can be used to automatically:</Paragraph>
+        <BulletedList>
+            <ListItem>
+                <Paragraph>build and publish an HTML version of this book from the source markdown (HTML book available <a href="https://opencomputinglab.github.io/reusable-content-example/preface.html">here</a>)</Paragraph>
+            </ListItem>
+            <ListItem>
+                <Paragraph>build and publish the OU-XML from the source markdown (OU-XML document available <a href="https://opencomputinglab.github.io/reusable-content-example/ouxml/xxx_b0_p1_zzz.xml">here</a> ; a zip archive file of the OU-XML and associated media assets are available as an automatically generated GitHub Action artefact attached to the <ComputerCode>deploy-book</ComputerCode> action reports <a href="https://github.com/OpenComputingLab/reusable-content-example/actions/workflows/deploy-book.yaml">here</a> )</Paragraph>
+            </ListItem>
+        </BulletedList>
+        <InternalSection id="example-github-action-automation-script">
+            <Heading>Example GitHub Action automation script</Heading>
+            <Paragraph>The following Github Action automation script is used to:</Paragraph>
+            <BulletedList>
+                <ListItem>
+                    <Paragraph>checkout the contents of the repository;</Paragraph>
+                </ListItem>
+                <ListItem>
+                    <Paragraph>install requirements;</Paragraph>
+                </ListItem>
+                <ListItem>
+                    <Paragraph>build an HTML version of using Jupyter Book</Paragraph>
+                </ListItem>
+                <ListItem>
+                    <Paragraph>generate a Sphinx XML version;</Paragraph>
+                </ListItem>
+                <ListItem>
+                    <Paragraph>convert the Sphinx XML to OU-XML;</Paragraph>
+                </ListItem>
+                <ListItem>
+                    <Paragraph>publish the HTML version of the book to GitHub Pages;</Paragraph>
+                </ListItem>
+                <ListItem>
+                    <Paragraph>zip the OU-XML files and publish them as a workflow artifact in the GitHub Actions report for the job;</Paragraph>
+                </ListItem>
+            </BulletedList>
+            <Paragraph>TO DO - valudate the generated OU-XML.</Paragraph>
+            <ProgramListing><Paragraph>name: deploy-book</Paragraph><Paragraph></Paragraph><Paragraph>on:</Paragraph><Paragraph>  release:</Paragraph><Paragraph>    types: [published]</Paragraph><Paragraph>  workflow_dispatch:</Paragraph><Paragraph></Paragraph><Paragraph># This job installs dependencies, builds the book, and pushes it to `gh-pages`</Paragraph><Paragraph>jobs:</Paragraph><Paragraph>  deploy-book:</Paragraph><Paragraph>    runs-on: ubuntu-latest</Paragraph><Paragraph>    steps:</Paragraph><Paragraph>    - uses: actions/checkout@v2</Paragraph><Paragraph></Paragraph><Paragraph>    # Install dependencies</Paragraph><Paragraph>    - name: Set up Python 3.11</Paragraph><Paragraph>      uses: actions/setup-python@v1</Paragraph><Paragraph>      with:</Paragraph><Paragraph>        python-version: 3.11</Paragraph><Paragraph></Paragraph><Paragraph>    - name: Install dependencies</Paragraph><Paragraph>      run: |</Paragraph><Paragraph>        pip install -r requirements.txt</Paragraph><Paragraph>    # Build the book</Paragraph><Paragraph>    - name: Build the book</Paragraph><Paragraph>      run: |</Paragraph><Paragraph>        jupyter-book build .</Paragraph><Paragraph>        touch ./_build/html/.nojekyll</Paragraph><Paragraph>    - uses: actions/setup-node@v3</Paragraph><Paragraph>      with:</Paragraph><Paragraph>        node-version: 18</Paragraph><Paragraph>    - name: Build the OU-XML</Paragraph><Paragraph>      run: |</Paragraph><Paragraph>        jb build --builder custom --custom-builder xml .</Paragraph><Paragraph>        ouseful_obt .</Paragraph><Paragraph>        mkdir -p /var/tmp/dist</Paragraph><Paragraph>        cp -rf _build/ouxml /var/tmp/dist/</Paragraph><Paragraph>        cp -rf _build/ouxml ./_build/html</Paragraph><Paragraph>    # Push the book's HTML to github-pages</Paragraph><Paragraph>    - name: GitHub Pages action</Paragraph><Paragraph>      uses: peaceiris/actions-gh-pages@v3.6.1</Paragraph><Paragraph>      with:</Paragraph><Paragraph>        github_token: ${{ secrets.GITHUB_TOKEN }}</Paragraph><Paragraph>        publish_dir: ./_build/html</Paragraph><Paragraph>    - name: Upload docs bundle</Paragraph><Paragraph>      if: always()</Paragraph><Paragraph>      uses: actions/upload-artifact@v3</Paragraph><Paragraph>      with:</Paragraph><Paragraph>        name: ${{github.event.inputs.module}}_docs_bundle</Paragraph><Paragraph>        path: /var/tmp/dist</Paragraph></ProgramListing>
+        </InternalSection>
+    </Session>
+    <Session id="trying-out-the-environment">
+        <Title>13 Trying out the environment</Title>
+        <Paragraph>You can try out the workflow in preconfigured environment using a <ComputerCode>.devcontainer</ComputerCode> in a VS Code environment running on your own computer, or in GitHub Codespaces.</Paragraph>
+        <InternalSection id="to-do">
+            <Heading>TO DO</Heading>
+            <ProgramListing><Paragraph></Paragraph><Paragraph>```{exercise}</Paragraph><Paragraph>:label: my-exercise</Paragraph><Paragraph></Paragraph><Paragraph>Recall that $n!$ is read as "$n$ factorial" and defined as</Paragraph><Paragraph>$n! = n \times (n - 1) \times \cdots \times 2 \times 1$.</Paragraph><Paragraph></Paragraph><Paragraph>There are functions to compute this in various modules, but let's</Paragraph><Paragraph>write our own version as an exercise.</Paragraph><Paragraph></Paragraph><Paragraph>In particular, write a function `factorial` such that `factorial(n)` returns $n!$</Paragraph><Paragraph>for any positive integer $n$.</Paragraph><Paragraph>```</Paragraph><Paragraph></Paragraph><Paragraph>````{solution} my-exercise</Paragraph><Paragraph>:label: my-solution</Paragraph><Paragraph></Paragraph><Paragraph>Here's one solution.</Paragraph><Paragraph></Paragraph><Paragraph>```{code-block} python</Paragraph><Paragraph>def factorial(n):</Paragraph><Paragraph>    k = 1</Paragraph><Paragraph>    for i in range(n):</Paragraph><Paragraph>        k = k * (i + 1)</Paragraph><Paragraph>    return k</Paragraph><Paragraph></Paragraph><Paragraph>factorial(4)</Paragraph><Paragraph>```</Paragraph><Paragraph>````</Paragraph><Paragraph></Paragraph></ProgramListing>
+            <Paragraph>More</Paragraph>
+        </InternalSection>
+    </Session>
+    <Session id="work-in-progress">
+        <Title>14 Work in Progress</Title>
+        <Paragraph>Examples of markdown markup that hasn’t yet been mapped over to corresponding OU-XML tags…</Paragraph>
+        <InternalSection id="glossary-items">
+            <Heading>Glossary Items</Heading>
+            <Paragraph>We can define a glossary term as:</Paragraph>
+            <ProgramListing><Paragraph>```{glossary}</Paragraph><Paragraph>Glossary term one</Paragraph><Paragraph>  Glossary term one definition is indented</Paragraph><Paragraph>```</Paragraph></ProgramListing>
+            
+            <Paragraph>We can then refer to a <ComputerCode>{term}`Glossary term one` TO DO</ComputerCode> that links to the glossary listing.</Paragraph>
+            
+        </InternalSection>
+        <InternalSection id="youtube-video-items-sphinx-contrib-youtube">
+            <Heading>YouTube Video items (sphinx-contrib.youtube)</Heading>
+            <Paragraph>We can embed video items as:</Paragraph>
+            <ProgramListing><Paragraph>```{youtube} PmxZywVwhP8</Paragraph><Paragraph>```</Paragraph></ProgramListing>
+            <MediaContent type="oembed" src="https://youtu.be/PmxZywVwhP8"/>
+        </InternalSection>
+        <InternalSection id="code-execution">
+            <Heading>Code Execution</Heading>
+            <Paragraph>We should be able to execute code purely within the browser using <ComputerCode>thebe</ComputerCode>.</Paragraph>
+            <Paragraph>We should also be able to execute code as part of a Sphinx publishing process. Currently, rich media code outuputs will be rendered in the HTML output, but only simple <ComputerCode>text_plain</ComputerCode> outputs are rendered into the Sphinx XML and then literally into OU-XML.</Paragraph>
+            
+                
+                    <ProgramListing><Paragraph>import numpy as np</Paragraph><Paragraph>import pandas as pd</Paragraph><Paragraph></Paragraph><Paragraph>np.random.seed(24)</Paragraph><Paragraph>df = pd.DataFrame({'A': np.linspace(1, 10, 10)})</Paragraph><Paragraph>df = pd.concat([df, pd.DataFrame(np.random.randn(10, 4), columns=list('BCDE'))],</Paragraph><Paragraph>               axis=1)</Paragraph><Paragraph>df.iloc[3, 3] = np.nan</Paragraph><Paragraph>df.iloc[0, 2] = np.nan</Paragraph><Paragraph></Paragraph><Paragraph>def color_negative_red(val):</Paragraph><Paragraph>    """</Paragraph><Paragraph>    Takes a scalar and returns a string with</Paragraph><Paragraph>    the css property `'color: red'` for negative</Paragraph><Paragraph>    strings, black otherwise.</Paragraph><Paragraph>    """</Paragraph><Paragraph>    color = 'red' if val &amp;lt; 0 else 'black'</Paragraph><Paragraph>    return 'color: %s' % color</Paragraph><Paragraph></Paragraph><Paragraph>def highlight_max(s):</Paragraph><Paragraph>    '''</Paragraph><Paragraph>    highlight the maximum in a Series yellow.</Paragraph><Paragraph>    '''</Paragraph><Paragraph>    is_max = s == s.max()</Paragraph><Paragraph>    return ['background-color: yellow' if v else '' for v in is_max]</Paragraph><Paragraph></Paragraph><Paragraph>df.style.\</Paragraph><Paragraph>    applymap(color_negative_red).\</Paragraph><Paragraph>    apply(highlight_max).\</Paragraph><Paragraph>    set_table_attributes('style="font-size: 10px"')</Paragraph></ProgramListing>
+                
+                
+                    <ProgramListing><Paragraph>---------------------------------------------------------------------------</Paragraph><Paragraph>ModuleNotFoundError                       Traceback (most recent call last)</Paragraph><Paragraph>Cell In[1], line 1</Paragraph><Paragraph>----&amp;gt; 1 import numpy as np</Paragraph><Paragraph>      2 import pandas as pd</Paragraph><Paragraph>      4 np.random.seed(24)</Paragraph><Paragraph></Paragraph><Paragraph>ModuleNotFoundError: No module named 'numpy'</Paragraph></ProgramListing>
+                
+            
+        </InternalSection>
+    </Session>
+    <BackMatter/>
+  </Unit>
+</Item>
