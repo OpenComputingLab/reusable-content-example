@@ -31,7 +31,7 @@ The following Github Action automation script is used to:
 - publish the HTML version of the book to GitHub Pages;
 - zip the OU-XML files and publish them as a workflow artifact in the GitHub Actions report for the job;
 
-TO DO - valudate the generated OU-XML.
+TO DO - validate the generated OU-XML.
 
 ```yaml
 name: deploy-book

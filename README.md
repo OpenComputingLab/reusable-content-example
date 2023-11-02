@@ -42,15 +42,19 @@ Additional custom cleaning of markdown files (useful following automated convers
 
 Initialise markdown documents as executable MyST markdown documents:
 
-- if only one hernel is available, it will be specified in inital metadata: `jupyter-book myst init *.md`
-- if multiple jernels are available (they will be listed when you run the above comment), you must spoecify which kernel to use; for example: `jupyter-book myst init *.md --kernel python3`
+- if only one kernel is available, it will be specified in initial metadata: `jupyter-book myst init *.md`
+- if multiple kernels are available (they will be listed when you run the above comment), you must specify which kernel to use; for example: `jupyter-book myst init *.md --kernel python3`
 
-If no Jupytext header is required, convert to headerlss MyST md:
+If no Jupytext header is required, convert to headerless MyST md:
 
 `jupytext --to myst *.md`
 
 ### Generating Sphinx XML
 
+Spell-checking:
+
+`spellchecker --files  *.md --dictionaries rce-dictionary.txt  > spellingreport.txt`
+`
 Generate the Sphinx XML version of the Jupyter Book, as defined by the `_toc.yml` and `_config.yml` file:
 
 `jb build . --builder custom --custom-builder xml`
@@ -61,7 +65,7 @@ Convert to OU-XML (tool in `ou-xml-validator` package):
 
 `ouseful_obt .`
 
-We can then valiudate the OU-XML:
+We can then validate the OU-XML:
 
 `ou_xml_validator validate path-to-file/testme.xml`
 

@@ -19,13 +19,21 @@ OU course materials destined for publication on the Open University VLE via the 
 
 Updating materials using this route can often be a laborious process, with authors editing the MS Word document and then handing over the document the changes to be "tagged" elsewhere.
 
-The current workflow is not particularly conducive to supporting the reuse of content across modules if the content requires any form of customisation. For example, writing software guides to support educational modules adds authoring, editing and testing overheads to module production. If multiple modules use similar computer environments or software applications, reusing generic or customisable materials provides a way or reducing those overheads.
+The current workflow is also limited in the extent to which it supports the reuse of content across modules, particularly where the content requires any form of customisation. For example, writing software guides to support educational modules adds authoring, editing and testing overheads to module production. If multiple modules use similar computer environments or software applications, reusing generic or customisable materials provides a way or reducing those overheads. Where fixes are made to generic, or "core", content in one module, this fixes should also available to other modules drawing om the same core content.
 
-However, module teams often require software guides that are customised at several different levels. At an "inline" level, a module team may want the guide to refer to the module by module code or module name, or refer to a particular block of study. At a "paragraph" level, where some form of "localisation" relative to the module may be appropropriate, such as situating the use of a the software environment within a particular block or module with some module specific context. Or at the "section: level, where for example the software environment may have additional, module specific features that require an additional form of guidance, or a cut-down version of the envirinment that does not require sections that are likely to be relevant to other modules.
+In addition, module teams often require software guides that are customised at several different levels. At an "inline" level, a module team may want the guide to refer to the module by module code or module name, or refer to a particular block of study. At a "paragraph" level, where some form of "localisation" relative to the module may be appropropriate, such as situating the use of a the software environment within a particular block or module with some module specific context. Or at the "section: level, where for example the software environment may have additional, module specific features that require an additional form of guidance, or a cut-down version of the environment that does not require sections that are likely to be relevant to other modules.
 
 Although the MS Word originated workflow has remained largely unchanged for several years, other routes into the Structured Content production *are* available. One such route is a markdown based workflow which supports the creation of markdown flavoured content and its conversion to OU-XML.
 
 This report introduces a markdown based publication route that uses a Sphinx-based publishing route to generate valid OU-XML Structured Content documents from markdown source documents.
+
+The source markdown documents from which this VLE presented content was derived are available here: [`OpenComputingLab/reusable-content-example`](https://github.com/OpenComputingLab/reusable-content-example).
+
+An HTML version rendered from the same source documents by a Jupyter Book publication process is available here: [https://opencomputinglab.github.io/reusable-content-example/](https://opencomputinglab.github.io/reusable-content-example/)
+
+Example OU-XML automatically generated from the same source markdown can be viewed here: [generated OU-XML](https://opencomputinglab.github.io/reusable-content-example/ouxml/xxx_b0_p1_zzz.xml)
+
+## A customisable, cross-module software guide with a markdown2OUXML production process
 
 An earlier version of the production route has already been used in an initial proof of concept project to produce a customisable software guide to support the use of virtual computing environments (VCEs) across several modules:
 
@@ -49,10 +57,6 @@ The use of several tools to support quality processes (markdown linting, spellch
 
 The source repository for the source content for the generic, customisable virtual computing environment (VCE) can be found here: [`innovationOUtside/vce-generic-guide`](https://github.com/innovationOUtside/vce-generic-guide).
 
-The source repository for the source content for the generic, customisable virtual computing envirpmment (VCE) software guide can be found here: [`innovationOUtside/vce-generic-guide`](https://github.com/innovationOUtside/vce-generic-guide).
-
-Example OU-XML automatically generated from the same source markdown can be viewed here: [generated OU-XML](https://opencomputinglab.github.io/reusable-content-example/ouxml/xxx_b0_p1_zzz.xml)
-
-An HTML version rendered from the same source markdown by a Jupyter Book publication process is available here: [https://opencomputinglab.github.io/reusable-content-example/](https://opencomputinglab.github.io/reusable-content-example/)
+The source repository for the source content for the generic, customisable virtual computing environment (VCE) software guide can be found here: [`innovationOUtside/vce-generic-guide`](https://github.com/innovationOUtside/vce-generic-guide).
 
 *__Acknowledgements__: thanks to Karen Vines for helping iterate the text, Edith Francis for helping iterate the OU-XML, and Mark Hall for the original markdown2ou-xml converter and his insight into using Sphinx XML as a route to OU-XML.*

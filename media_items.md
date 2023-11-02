@@ -44,7 +44,7 @@ More description.
 
 The block can also be empty of caption and description text. *If there is any text in the body of the admonition, the first line is mapped onto an OU-XML `<Caption>` element.*
 
-The MyST spec also lets you use a video file path in a `{figure}` admonition when geberating HTML output, but this is not support for conversion to OU-XML.
+The MyST spec also lets you use a video file path in a `{figure}` admonition when generating HTML output, but this is not support for conversion to OU-XML.
 
 ## Audio Items
 
