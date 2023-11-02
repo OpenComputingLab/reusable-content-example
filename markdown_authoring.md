@@ -15,7 +15,7 @@ kernelspec:
 
 # Markdown authoring route
 
-The reusable content workflow is based on a markdown authoring route.
+The reusable content workflow is based on a markdown authoring route. Content is authored in markdown format and then converted to the intermediate OU-XML format, or directly to output formats such as HTML. Content in the OU-XML format can be rendered to the VLE or other output formats using the current Structured Content production workflow tools.
 
 Markdown is a simple text based markup language that can be edited in simple text editor. Markdown is typically rendered or previewed as rendered HTML. Markdown editors that support WYSIWYG user interfaces are also available. Various flavours of markdown are available that extend the core markdown language with more expressive semantics.
 
@@ -41,11 +41,39 @@ flowchart LR
   I --> L[OU-PDF]
 ```
 
-## Example Markdown Styling
+*The flowchart above was automatically rendered and embedded from a `mermaid.js` admonition block in the source markdown document.*
+
+````text
+```{mermaid}
+---
+alt:
+caption: Publishing workflows from MyST markdown
+---
+flowchart LR
+  A[Jupyter Notebook] --> C
+  B[MyST Markdown] --> C
+  C(mystmd) --> D{"Sphinx\n+\npandoc"}
+  D --> E[LaTeX]
+  E --> F[PDF]
+  D --> G[Word]
+  D --> H[XML] --> I[OU-XML]
+  D --> J[HTML]
+  I --> K[OU-VLE]
+  I --> L[OU-PDF]
+```
+````
+
+## Example markdown styling
 
 Simple markdown styling supports the rendering of *emphasis* and __strong__ elements through simple markup.
 
-These are rendered to OU-XML as:
+The raw markdown has the form:
+
+```text
+Simple markdown styling supports the rendering of *emphasis* and __strong__ elements through simple markup.
+```
+
+In the mapping to OU-XML, the original markdown would be converted to:
 
 ```xml
  <Paragraph>Simple markdown styling supports the rendering of <i>emphasis</i> and <b>strong</b> elements through simple markup.</Paragraph>
@@ -56,12 +84,14 @@ Simple lists can also be defined. For example, unordered lists:
 - item one
 - item two
 
-as well as ordered lists:
+are written in markdown as:
 
-1. item one
-1. item two
+```text
+- item one
+- item two
+```
 
-The unordered list is rendered to OU-XML as:
+An unordered list is rendered to OU-XML as:
 
 ```xml
 <BulletedList>
@@ -74,7 +104,19 @@ The unordered list is rendered to OU-XML as:
 </BulletedList>
 ```
 
-The following paragraph and the ordered list are then rendered as:
+Ordered lists are also supported:
+
+1. item one
+1. item two
+
+The source of ordered lists just needs to identifying numbering should be used; the actual numbers are generated:
+
+```text
+1. item one
+1. item two
+```
+
+An ordered list is then rendered into OU-XML as:
 
 ```xml
 <Paragraph>as well as ordered lists:</Paragraph>
@@ -88,7 +130,7 @@ The following paragraph and the ordered list are then rendered as:
 </NumberedList>
 ```
 
-Simple tables can be described using the markdown table format. The table format supports alignment within columns but the alignment does not carry over to the OU-XML:
+Simple tables can be described using the markdown table format. The markdown table format supports alignment within columns but the alignment does not carry over to the OU-XML:
 
 ```text
 | Col 1 | Col 2         | Col 3  |
@@ -201,4 +243,4 @@ Screenshot of MyST sandbox editor with live preview.
 
 ````
 
-See `sandbox` for guidance on how to launch a preconfigured development environment within which you can try out the workflow described in this document.
+*I hope to make a `sandbox` available at some point in the near future, in the form of guidance on how to launch a preconfigured development environment within which you can try out the workflow described in this document.*
