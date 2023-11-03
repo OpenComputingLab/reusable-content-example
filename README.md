@@ -49,6 +49,10 @@ If no Jupytext header is required, convert to headerless MyST md:
 
 `jupytext --to myst *.md`
 
+If we have a notebook, execute and render to markdown:
+
+`jupyter nbconvert --to markdown --execute demo-notebook.ipynb`
+
 ### Generating Sphinx XML
 
 Spell-checking:
@@ -68,6 +72,10 @@ Convert to OU-XML (tool in `ou-xml-validator` package):
 We can then validate the OU-XML:
 
 `ou_xml_validator validate path-to-file/testme.xml`
+
+### Jupyterlite
+
+We need `index.html` at the root of an HTML5 zipfile; inside the jupyterlite dir: `zip -r -X "../jupyterlite.zip" .`
 
 ## `.devcontainer` Set-up
 
