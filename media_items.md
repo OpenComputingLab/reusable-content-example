@@ -16,7 +16,7 @@ kernelspec:
 
 Embedded media items can be specified in MyST markdown using custom `{video}` and `{audio}` admonitions and rendered into HTML using the [`innovationOUtside/sphinxcontrib-ou-xml-tags`](https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags) Sphinx extension.
 
-*The mapping to appropriate XML tags is under developement; currently it is only partially handled for `audio` items and not handled for `video` items.*
+*The mapping to appropriate XML tags is under development; currently it is only partially handled for `audio` items and not handled for `video` items.*
 
 ## Video Items
 
@@ -63,3 +63,17 @@ A caption for an audio file.
 As with the `ou-video` element, we can optionally include a caption, or a caption and description elements, by including text inside the admonition block.
 
 *Currently, there is no native MyST admonition for embedding an audio player.*
+
+## Visualising molecules
+
+One of the attractions of this production route is that it can be quite straightforward to create simple markdown admonitions that can use third party Python packages to generate interactive HTML components, and then embed these in the resulting output documents.
+
+he [`3dmol.js`](https://3dmol.csb.pitt.edu/) packages provides an interactive 3D viewer for a wide range of molecules.
+
+We can create a simple Sphinx admonition handler that will accept a molecule query code (see the official docs for more info on this) and then render the molecule with desired styling:
+
+```{ou-mol3d} pdb:1ubq
+:style: '{"sphere":{"radius":"0.5"}}'
+```
+
+*Note that the style information must be presented as a quoted string and take the form of a valid JSON string.*
