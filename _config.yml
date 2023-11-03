@@ -13,6 +13,10 @@ sphinx:
     - sphinxcontrib.youtube
     - sphinxcontrib.video
     - sphinxcontrib.audio
+    - sphinxcontrib.html5
+    - sphinxcontrib.mol3d
+#    - jupyterlite_sphinx
+
   config:
     myst_heading_anchors: 3
     numfig: true
