@@ -20,5 +20,6 @@ parts:
       - file: collaborative-authoring
       - file: production_workflow
       - file: workflow_automation
+      - file: lite-wasm-interactive
       - file: sandbox
       - file: todo
