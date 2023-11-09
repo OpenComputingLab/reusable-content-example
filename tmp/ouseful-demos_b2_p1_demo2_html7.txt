@@ -1,0 +1,1 @@
+df.plot(x="x", y="y").set_title("My plot");
