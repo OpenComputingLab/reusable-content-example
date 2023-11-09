@@ -339,7 +339,7 @@
             <Paragraph>We can then use a markdown admonition such as the following to generate an interactive widget that lets us interactively visualise the molecule:</Paragraph>
             <ProgramListing><Paragraph>```{ou-mol3d} pdb:1ubq<br/>:style: '{"sphere":{"radius":"0.5"}}'<br/>```</Paragraph></ProgramListing>
             <Paragraph>to embed a viewer such as:</Paragraph>
-            <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html0.zip" id="dbacf58e5ae946f887af"/>
+            <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html0.zip" id="b9bffb522f644914b6d8"/>
             <Paragraph><i>Note that the style information must be presented as a quoted string and take the form of a valid JSON string.</i></Paragraph>
         </InternalSection>
     </Session>
@@ -454,7 +454,7 @@ s(w_t) + y_{t+1}</TeX></Equation>
         <ProgramListing><Paragraph>```python<br/># A comment<br/>def demo():<br/>    """An example function.<br/>    """<br/>    a = 1<br/>    return a<br/><br/>demo()<br/>```</Paragraph></ProgramListing>
         <Paragraph><i>In Markdown, the backticked block typically also defines the language so that language sensitive syntax highlighting can be applied appropriately.</i></Paragraph>
         <Paragraph>If we set <ComputerCode>ou.codestyle: true</ComputerCode> in the <ComputerCode>_config.yml</ComputerCode> file, we style the code block using the centrally maintained <a href="https://learn2.open.ac.uk/mod/oucontent/view.php?id=2235581"><ComputerCode>codesnippet</ComputerCode> HTML widget</a>.</Paragraph>
-        <MediaContent type="html5" id="e190a4b610644c70b340" height="100" width="*" src="https://openuniv.sharepoint.com/sites/modules%E2%80%93shared/imd/widgets/CL/codesnippet/cl_codesnippet_v1.0.zip"><Parameters><Parameter name="codetype" value="python"/><Parameter name="theme" value="light"/></Parameters><Attachments><Attachment name="codesnippet" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html1.txt"/></Attachments></MediaContent>
+        <MediaContent type="html5" id="c7e0883253d84d569f4b" height="100" width="*" src="https://openuniv.sharepoint.com/sites/modules%E2%80%93shared/imd/widgets/CL/codesnippet/cl_codesnippet_v1.0.zip"><Parameters><Parameter name="codetype" value="python"/><Parameter name="theme" value="light"/></Parameters><Attachments><Attachment name="codesnippet" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html1.txt"/></Attachments></MediaContent>
         <Paragraph><i>We can also set the theme from the <ComputerCode>_config.yml</ComputerCode> file (<ComputerCode>codesnippet_theme: light | dark </ComputerCode>).</i></Paragraph>
         <Paragraph>The unstyled “rendered” code is described in OU-XML as:</Paragraph>
         <ProgramListing><Paragraph>&lt;Paragraph&gt;<br/>  &lt;br/&gt;<br/>  # A comment&lt;br/&gt;<br/>  def demo():&lt;br/&gt;<br/>  """An example function.&lt;br/&gt;<br/>  """&lt;br/&gt;<br/>  a = 1&lt;br/&gt;<br/>  return a&lt;br/&gt;<br/>  &lt;br/&gt;<br/>  demo()<br/>&lt;/Paragraph&gt;</Paragraph></ProgramListing>
@@ -465,7 +465,7 @@ s(w_t) + y_{t+1}</TeX></Equation>
         <InternalSection id="styled-code">
             <Heading>Styled code</Heading>
             <Paragraph>If we don’t want to style all the code blocks automatically, we can manually apply style using <ComputerCode>prism.js</ComputerCode> to particular blocks via the <ComputerCode>{ou-codestyle}</ComputerCode> admonition block:</Paragraph>
-            <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html2.zip" id="bd440bf93ff346889e7e"/>
+            <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html2.zip" id="b03522ac35594fc6b1fb"/>
             <Paragraph>Pass the language name in to define the language pack styling.</Paragraph>
             <Paragraph>TO DO - add themes?</Paragraph>
         </InternalSection>
@@ -492,7 +492,7 @@ s(w_t) + y_{t+1}</TeX></Equation>
     <Session id="thebe-lite-demo">
         <Title>8 Thebe-lite demo</Title>
         <Paragraph>Example of using thebe-lite to run an interactive widget with a xeus-python kernel:</Paragraph>
-        <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html3.zip" id="c9b5f6f533cb464f8550">
+        <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html3.zip" id="c0864453d6a84bdfb529">
         </MediaContent>
     </Session>
     <Session id="quotations">
@@ -534,12 +534,12 @@ s(w_t) + y_{t+1}</TeX></Equation>
         <Quote><Paragraph>My quotation</Paragraph></Quote>
         <Paragraph>But we can also use notebooks to generate output content from code.</Paragraph>
         <Paragraph>For example, we can create a simple data table:</Paragraph>
-        <MediaContent type="html5" id="cd74e4f34af94159b396" height="100" width="*" src="https://openuniv.sharepoint.com/sites/modules%E2%80%93shared/imd/widgets/CL/codesnippet/cl_codesnippet_v1.0.zip"><Parameters><Parameter name="codetype" value="python"/><Parameter name="theme" value="light"/></Parameters><Attachments><Attachment name="codesnippet" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html4.txt"/></Attachments></MediaContent>
-        <MediaContent type="html5" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html5.zip" id="fc199a636f504188a8ee" height="400" width="600"/>
+        <MediaContent type="html5" id="f81eff75d04f4b279272" height="100" width="*" src="https://openuniv.sharepoint.com/sites/modules%E2%80%93shared/imd/widgets/CL/codesnippet/cl_codesnippet_v1.0.zip"><Parameters><Parameter name="codetype" value="python"/><Parameter name="theme" value="light"/></Parameters><Attachments><Attachment name="codesnippet" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html4.txt"/></Attachments></MediaContent>
+        <MediaContent type="html5" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html5.zip" id="f2bce61c25884cd19b91" height="400" width="600"/>
         <ProgramListing><Paragraph>.dataframe tbody tr th {</Paragraph><Paragraph>    vertical-align: top;</Paragraph><Paragraph>}</Paragraph><Paragraph></Paragraph><Paragraph>.dataframe thead th {</Paragraph><Paragraph>    text-align: right;</Paragraph><Paragraph>}</Paragraph></ProgramListing>
-        <MediaContent type="html5" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html6.zip" id="dbf06aeb7426485bbad3" height="400" width="600"/>
+        <MediaContent type="html5" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html6.zip" id="d79d6a6c3e2144dc98e1" height="400" width="600"/>
         <Paragraph>And then generate a simple plot from the data:</Paragraph>
-        <MediaContent type="html5" id="efca63370d33477fa632" height="100" width="*" src="https://openuniv.sharepoint.com/sites/modules%E2%80%93shared/imd/widgets/CL/codesnippet/cl_codesnippet_v1.0.zip"><Parameters><Parameter name="codetype" value="python"/><Parameter name="theme" value="light"/></Parameters><Attachments><Attachment name="codesnippet" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html7.txt"/></Attachments></MediaContent>
+        <MediaContent type="html5" id="bcb11d81ca6e4aeca741" height="100" width="*" src="https://openuniv.sharepoint.com/sites/modules%E2%80%93shared/imd/widgets/CL/codesnippet/cl_codesnippet_v1.0.zip"><Parameters><Parameter name="codetype" value="python"/><Parameter name="theme" value="light"/></Parameters><Attachments><Attachment name="codesnippet" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html7.txt"/></Attachments></MediaContent>
         <Figure><Image src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_fig3.png"/></Figure>
         <Paragraph>An output chart image is created directly from the data in the dataframe.</Paragraph>
         <Paragraph>The image is saved to an image file and then embedded back into the generated HTML in the Jupyter Book HTML publishing processing, but currently the XML generation process does not generate the image file or reference it via a tag in the XML.</Paragraph>
@@ -718,7 +718,7 @@ s(w_t) + y_{t+1}</TeX></Equation>
     <Session id="jupyterlite-interactive-coding">
         <Title>15 JupyterLite interactive coding</Title>
         <Paragraph>JupyterLite provides an in-browser JupyterLab environment capable of executing code within the browser using WASM based code execution environments for JavaScript, Python and R.</Paragraph>
-        <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/jupyterlite-01.zip" id="fade3e5b470b474d8d75">
+        <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/jupyterlite-01.zip" id="a158d2024e58467ba7e1">
         </MediaContent>
         <Paragraph>This doesn’t quite work yet; if we hack the iframe source and change the path <ComputerCode>index.html</ComputerCode> to <ComputerCode>lab/indexhtml</ComputerCode> it will work (although currently there are no code execution kernels installed).)</Paragraph>
         <Figure><Image src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_fig5.png"/></Figure>
@@ -729,21 +729,21 @@ s(w_t) + y_{t+1}</TeX></Equation>
         <Paragraph>Can we run R interactively in the browser?</Paragraph>
         <Paragraph>To embed an R console, all we need to do is add the following invocation to our markdown:</Paragraph>
         <ProgramListing><Paragraph>```{ou-html5} resources/webr-repl-01.zip<br/>:width: 140<br/>:keep: always<br/>```</Paragraph></ProgramListing>
-        <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/webr-repl-01.zip" id="ee9f64cd57ae402c9d65">
+        <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/webr-repl-01.zip" id="aa61fa2bf02b45c6bece">
         </MediaContent>
         <Paragraph><i>The <ComputerCode>:keep:</ComputerCode> parameter uses the provided filename in the vendored files, rather than assigning a filename.</i></Paragraph>
     </Session>
     <Session id="r-console">
         <Title>17 R console</Title>
         <Paragraph>Can we run an R console in a page?</Paragraph>
-        <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/webr-console-01.zip" id="eb473cf55b3349b8b3bd">
+        <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/webr-console-01.zip" id="f7a0d98ef85a482d8e3c">
         </MediaContent>
         <Paragraph>Did it work?</Paragraph>
     </Session>
     <Session id="shiny-lite-demo">
         <Title>18 Shiny-Lite demo</Title>
         <Paragraph>We can create simple apps from Python code using the Shiny-lite framework and an <ComputerCode>{ou-codestyle}</ComputerCode> admonition with a <ComputerCode>:type: shinylite-py</ComputerCode> setting:</Paragraph>
-        <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html8.zip" id="d598d15580eb4b309c73">
+        <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html8.zip" id="cdc04d16097a439b8a3a">
         </MediaContent>
         <Paragraph>The application is rendered in the page.</Paragraph>
     </Session>
@@ -782,16 +782,16 @@ s(w_t) + y_{t+1}</TeX></Equation>
             <Paragraph>We should also be able to execute code as part of a Sphinx publishing process. Currently, rich media code outputs will be rendered in the HTML output, but only simple <ComputerCode>text_plain</ComputerCode> outputs are rendered into the Sphinx XML and then literally into OU-XML.</Paragraph>
             
                 
-                    <MediaContent type="html5" id="d182ae201bb945238ef5" height="100" width="*" src="https://openuniv.sharepoint.com/sites/modules%E2%80%93shared/imd/widgets/CL/codesnippet/cl_codesnippet_v1.0.zip"><Parameters><Parameter name="codetype" value="python"/><Parameter name="theme" value="light"/></Parameters><Attachments><Attachment name="codesnippet" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html9.txt"/></Attachments></MediaContent>
+                    <MediaContent type="html5" id="eddfcf9f882f41c1b41e" height="100" width="*" src="https://openuniv.sharepoint.com/sites/modules%E2%80%93shared/imd/widgets/CL/codesnippet/cl_codesnippet_v1.0.zip"><Parameters><Parameter name="codetype" value="python"/><Parameter name="theme" value="light"/></Parameters><Attachments><Attachment name="codesnippet" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html9.txt"/></Attachments></MediaContent>
                 
                 
-                    <ProgramListing><Paragraph>/var/folders/10/8lp40z8x2hj_cch9j4rk_cpm0000gs/T/ipykernel_813/2549200461.py:28: FutureWarning: Styler.applymap has been deprecated. Use Styler.map instead.</Paragraph><Paragraph>  applymap(color_negative_red).\</Paragraph></ProgramListing>
-                    <ProgramListing><Paragraph>&amp;lt;pandas.io.formats.style.Styler at 0x29a714e90&amp;gt;</Paragraph></ProgramListing>
+                    <ProgramListing><Paragraph>/var/folders/10/8lp40z8x2hj_cch9j4rk_cpm0000gs/T/ipykernel_14558/2549200461.py:28: FutureWarning: Styler.applymap has been deprecated. Use Styler.map instead.</Paragraph><Paragraph>  applymap(color_negative_red).\</Paragraph></ProgramListing>
+                    <ProgramListing><Paragraph>&amp;lt;pandas.io.formats.style.Styler at 0x12675b650&amp;gt;</Paragraph></ProgramListing>
                 
             
             <Paragraph>Codesnippet widget:</Paragraph>
-            <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html10.zip" id="f843e184573243658c51"/>
-            <MediaContent type="html5" height="400" width="600" src="https://openuniv.sharepoint.com/sites/modules%E2%80%93shared/imd/widgets/CL/codesnippet/cl_codesnippet_v1.0.zip" id="c7617f2a578b49788bfa"><Parameters><Parameter name="codetype" value="python"/><Parameter name="theme" value="dark"/></Parameters><Attachments><Attachment name="codesnippet" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html11.txt"/></Attachments>
+            <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html10.zip" id="ffb06c5489c64d8fb959"/>
+            <MediaContent type="html5" height="400" width="600" src="https://openuniv.sharepoint.com/sites/modules%E2%80%93shared/imd/widgets/CL/codesnippet/cl_codesnippet_v1.0.zip" id="fbb42d2a6bf442b8946d"><Parameters><Parameter name="codetype" value="python"/><Parameter name="theme" value="dark"/></Parameters><Attachments><Attachment name="codesnippet" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html11.txt"/></Attachments>
             </MediaContent>
         </InternalSection>
     </Session>
