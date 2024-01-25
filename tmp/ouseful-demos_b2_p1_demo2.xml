@@ -23,7 +23,7 @@
                 <Paragraph>First published YYYY</Paragraph>
             </FirstPublished>
             <Copyright>
-                <Paragraph>Unless otherwise stated, copyright © 2023 The Open University, all rights reserved.</Paragraph>
+                <Paragraph>Unless otherwise stated, copyright © 2024 The Open University, all rights reserved.</Paragraph>
             </Copyright>
             <Rights>
                 <Paragraph>All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, transmitted or utilised in any form or by any means, electronic, mechanical, photocopying, recording or otherwise, without written permission from the publisher or a licence from the Copyright Licensing Agency Ltd. Details of such licences (for reprographic reproduction) may be obtained from the Copyright Licensing Agency Ltd, Saffron House, 6-10 Kirby Street, London EC1N 8TS (website www.cla.co.uk).</Paragraph>
@@ -53,11 +53,13 @@
     <Session id="introduction">
         <Title>1 Introduction</Title>
         <Paragraph>OU course materials destined for publication on the Open University VLE via the “Structured Content” OU-XML publishing route (<a href="https://learn3.open.ac.uk/mod/oucontent/view.php?id=185734">OU internal docs</a>) are typically authored as Microsoft Word documents.</Paragraph>
-        <Paragraph>However, an increasing number of modules from several Schools across the OU are now publishing Jupyter notebook content directly to students (eg TM351, M348), as well as exploring markdown based authoring workflows (M269, TM352).</Paragraph>
+        <Paragraph>Over the last few years, an increasing number of modules from several Schools across the OU are now publishing Jupyter notebook content directly to students (eg TM351, M348). Other modules have also been exploring markdown based authoring workflows more generally (M269, TM352). Well established routes are also in place for publishing materials from text based LaTeX source documents to required output document formats such as PDF.</Paragraph>
         <Paragraph>Whilst several publishing tools are available for rendering various output document formats from markdown and Jupyter notebooks, most notably Jupyter Book (based on the Sphinx publishing framework) and Quarto, there is currently no comprehensive support for generating OU-XML from Jupyter notebooks or markdown documents. Nor is there general support for converting OU-XML content into markdown or Jupyter notebooks formats. This means that markdown sourced content cannot easily be published via Structured Content workflows.</Paragraph>
-        <Paragraph>Updating materials using the traditional publishing route can often be a laborious process, with authors editing source MS Word documents and then handing over the document for the changes to be “tagged” elsewhere. Alternatively, edits can be made directly to tagged OU-XML content, although many authors are resistant to using the <i>Oxygen Author</i> tool recommended for this work.</Paragraph>
+        <Paragraph>Updating materials using the traditional OU-XML based <i>Structured Content</i> publishing route can often be a laborious process. For example, authors might originate content using source MS Word documents and then hand over the document for the changes to be “tagged” elsewhere.  Although edits may be made directly to tagged OU-XML content, many authors may be resistant to using the <i>Oxygen Author</i> tool recommended for this work.</Paragraph>
         <Paragraph><i>The simpler, yet extensible, structure of markdown documents offers the potential for lossless conversion between OU-XML and markdown. This would allow edits to be made to OU-XML and then rendered back to source markdown or Jupyter notebook documents, and vice versa. Content migration into and out of OU-XML would also be supported.</i></Paragraph>
-        <Paragraph>The current workflow is also limited in the extent to which it supports the reuse of content across modules, particularly where the content requires any form of customisation. For example, writing software guides to support educational modules adds authoring, editing and testing overheads to module production. If multiple modules use similar computer environments or software applications, reusing generic or customisable materials provides a way or reducing those overheads. Where fixes are made to generic, or “core”, content in one module, this fixes should also available to other modules drawing om the same core content.</Paragraph>
+        <Paragraph><i>Note that the aim is not necessarily to replace current workflows with markdown workflows. Rather, the markdown workflow is presented as one possible way of getting content into, and out of, the Structured Content workflow using a simple text based document format. Several other benefits are also demonstrated, such as the ability to extend the base markdown format to include the declaration of rich media objects that can be rendered into VLE based course materials. Whilst the objects that can be embedded in the online materials are not necessarily new, the ease with which they may be defined and included in the materials has been improved. In addition, by originating the embedded objects from declarations in the source document, maintenance and updating of the materials is also simplified.</i></Paragraph>
+        <Paragraph>One further feature of the proposed workflow is that code elements can be included in the source document and executed to generate outputs, such as graphical charts or tables, from specified data inputs. The executed document, along with its embedded code outputs, can them be converted to OU-XML. This means that the means of producing the output asset is a part of the original source document, and that the output is generated by the source document. This reduces the separation between source content and assets and makes updating and maintenance much easier.</Paragraph>
+        <Paragraph>In addition to providing opportunities for more easily including richer and more interactive elements into the online VLE materials, the markdown workflow may also support content reuse across modules. For example, the current workflow is limited in the extent to which content can be customised across modules. as the example of writing software guides demonstrates. Software guides are used in many modules, adding authoring, editing and testing overheads to module production and maintenance. If multiple modules use similar computer environments or software applications, reusing generic or customisable materials provides a way or reducing those overheads. Where fixes are made to generic, or “core”, content in one module, this fixes should also available to other modules drawing om the same core content.</Paragraph>
         <Paragraph>As well as requiring the same, tested guidance for the same tools used across multiple modules, module teams often require software guides that are customised at several different levels. At an “inline” level, a module team may want the guide to refer to the module by module code or module name, or refer to a particular block of study. At a “paragraph” level, where some form of “localisation” relative to the module may be appropriate, such as situating the use of a the software environment within a particular block or module with some module specific context. Or at the “section: level, where for example the software environment may have additional, module specific features that require an additional form of guidance, or a cut-down version of the environment that does not require sections that are likely to be relevant to other modules.</Paragraph>
         <Paragraph>The MS Word originated workflow has remained largely unchanged for several years. Other routes into the Structured Content production have been explored previously, and are being explored still. But it is also possible to find our other ways into OU-XML. One such route is a markdown based workflow which supports the creation of markdown flavoured content and its conversion to OU-XML.</Paragraph>
         <Paragraph>This report introduces a markdown based publication route that uses a Sphinx-based publishing route to generate valid OU-XML Structured Content documents from markdown source documents. A return path, from OU-XML back to markdown, is also described.</Paragraph>
@@ -219,6 +221,7 @@
                 <Paragraph>Here is the box content.</Paragraph>
                 <Paragraph>It can contain a <i>wide</i> <b>range</b> of elements.</Paragraph>
             </Box>
+            <Paragraph>The generated OU-XML takes the form:</Paragraph>
             <ProgramListing><Paragraph>  &lt;Box&gt;<br/>    &lt;Heading&gt;Box Title&lt;/Heading&gt;<br/>    &lt;Paragraph&gt;Here is the box content.&lt;/Paragraph&gt;<br/>    &lt;Paragraph&gt;It can contain a &lt;i&gt;wide&lt;/i&gt; &lt;b&gt;range&lt;/b&gt; of elements.&lt;/Paragraph&gt;<br/>  &lt;/Box&gt;</Paragraph></ProgramListing>
             <Paragraph>A wide range of richer media elements are also supported by MyST markdown and can be mapped onto appropriate OU-XML elements (see later sections for examples).</Paragraph>
         </InternalSection>
@@ -291,15 +294,19 @@
         <InternalSection id="extending-the-markup-language">
             <Heading>Extending the markup language</Heading>
             <Paragraph>The MyST markdown format and the Sphinx publishing framework are both extensible, which means that it is possible to define additional tags to support the creation of bespoke materials.</Paragraph>
-            <Paragraph>For example, the publishing workflow has been extended to support:</Paragraph>
+            <Paragraph>For example, the publishing workflow has been extended to include support for:</Paragraph>
             <BulletedList>
                 <ListItem>
                     <Paragraph>the parsing and rendering of <ComputerCode>mermaid.js</ComputerCode> diagram syntax;</Paragraph>
                 </ListItem>
                 <ListItem>
-                    <Paragraph>the parsing and custom rendering of “activities” with revealable answers.</Paragraph>
+                    <Paragraph>the parsing and custom rendering of “activities” with revealable answers;</Paragraph>
+                </ListItem>
+                <ListItem>
+                    <Paragraph>the embedding of video, audio, and zipped HTML5 assets</Paragraph>
                 </ListItem>
             </BulletedList>
+            <Paragraph>Appropriate conversions take place when a markdown document is converted toi OU-XML. In addition, OU-XML documents can be converted back to appropriately structured markdown documents.</Paragraph>
         </InternalSection>
     </Session>
     <Session id="embedded-media">
@@ -338,9 +345,10 @@
             <Paragraph>We can create a simple Sphinx admonition handler that will accept a molecule query code (see the official docs for more info on this) and then render the molecule with desired styling.</Paragraph>
             <Paragraph>We can then use a markdown admonition such as the following to generate an interactive widget that lets us interactively visualise the molecule:</Paragraph>
             <ProgramListing><Paragraph>```{ou-mol3d} pdb:1ubq<br/>:style: '{"sphere":{"radius":"0.5"}}'<br/>```</Paragraph></ProgramListing>
-            <Paragraph>to embed a viewer such as:</Paragraph>
-            <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html0.zip" id="b9bffb522f644914b6d8"/>
+            <Paragraph>to embed an interactive JavaScript powered viewer such as the following:</Paragraph>
+            <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html0.zip" id="bdd2c917d8a3429cb6b9"/>
             <Paragraph><i>Note that the style information must be presented as a quoted string and take the form of a valid JSON string.</i></Paragraph>
+            <Paragraph><i>It would perhaps be usedul to try to follow the model of embedded audio and video players and also support captions, additional description text, etc. It may also make sense to automatically number this sort of embedded asset as a figure, or perhaps create an “Interactive Figure” type and associated numbering scheme?</i></Paragraph>
         </InternalSection>
     </Session>
     <Session id="activities-and-exercises">
@@ -454,7 +462,7 @@ s(w_t) + y_{t+1}</TeX></Equation>
         <ProgramListing><Paragraph>```python<br/># A comment<br/>def demo():<br/>    """An example function.<br/>    """<br/>    a = 1<br/>    return a<br/><br/>demo()<br/>```</Paragraph></ProgramListing>
         <Paragraph><i>In Markdown, the backticked block typically also defines the language so that language sensitive syntax highlighting can be applied appropriately.</i></Paragraph>
         <Paragraph>If we set <ComputerCode>ou.codestyle: true</ComputerCode> in the <ComputerCode>_config.yml</ComputerCode> file, we style the code block using the centrally maintained <a href="https://learn2.open.ac.uk/mod/oucontent/view.php?id=2235581"><ComputerCode>codesnippet</ComputerCode> HTML widget</a>.</Paragraph>
-        <MediaContent type="html5" id="c7e0883253d84d569f4b" height="100" width="*" src="https://openuniv.sharepoint.com/sites/modules%E2%80%93shared/imd/widgets/CL/codesnippet/cl_codesnippet_v1.0.zip"><Parameters><Parameter name="codetype" value="python"/><Parameter name="theme" value="light"/></Parameters><Attachments><Attachment name="codesnippet" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html1.txt"/></Attachments></MediaContent>
+        <MediaContent type="html5" id="b995e9633f8e47549984" height="100" width="*" src="https://openuniv.sharepoint.com/sites/modules%E2%80%93shared/imd/widgets/CL/codesnippet/cl_codesnippet_v1.0.zip"><Parameters><Parameter name="codetype" value="python"/><Parameter name="theme" value="light"/></Parameters><Attachments><Attachment name="codesnippet" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html1.txt"/></Attachments></MediaContent>
         <Paragraph><i>We can also set the theme from the <ComputerCode>_config.yml</ComputerCode> file (<ComputerCode>codesnippet_theme: light | dark </ComputerCode>).</i></Paragraph>
         <Paragraph>The unstyled “rendered” code is described in OU-XML as:</Paragraph>
         <ProgramListing><Paragraph>&lt;Paragraph&gt;<br/>  &lt;br/&gt;<br/>  # A comment&lt;br/&gt;<br/>  def demo():&lt;br/&gt;<br/>  """An example function.&lt;br/&gt;<br/>  """&lt;br/&gt;<br/>  a = 1&lt;br/&gt;<br/>  return a&lt;br/&gt;<br/>  &lt;br/&gt;<br/>  demo()<br/>&lt;/Paragraph&gt;</Paragraph></ProgramListing>
@@ -465,7 +473,7 @@ s(w_t) + y_{t+1}</TeX></Equation>
         <InternalSection id="styled-code">
             <Heading>Styled code</Heading>
             <Paragraph>If we don’t want to style all the code blocks automatically, we can manually apply style using <ComputerCode>prism.js</ComputerCode> to particular blocks via the <ComputerCode>{ou-codestyle}</ComputerCode> admonition block:</Paragraph>
-            <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html2.zip" id="b03522ac35594fc6b1fb"/>
+            <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html2.zip" id="b0c93186f12c49f0bed2"/>
             <Paragraph>Pass the language name in to define the language pack styling.</Paragraph>
             <Paragraph>TO DO - add themes?</Paragraph>
         </InternalSection>
@@ -484,16 +492,29 @@ s(w_t) + y_{t+1}</TeX></Equation>
                     <Paragraph>use the markdown as the basis for the conversion to OU=XML</Paragraph>
                 </ListItem>
             </BulletedList>
-            <Paragraph>So I’m think of a dir structure such as :</Paragraph>
+            <Paragraph>So I’m thinking of a directory structure such as:</Paragraph>
             <ProgramListing><Paragraph>_toc.yml<br/>_config.yml<br/>src/<br/>  - example.md<br/>  - example2.ipynb<br/>intermediate/<br/>  # generated via jupytext<br/>  - example.ipynb<br/>  - example2.ipynb<br/>executed/<br/>  # generated via nbconvert<br/>  - example.md<br/>  - example2.md</Paragraph></ProgramListing>
             <Paragraph>The same top-level <ComputerCode>_toc.yml</ComputerCode> file should be useable against each directory if we need to use it, even if we manually have to copy it in to the content directories and run tools directly within those directories etc.</Paragraph>
         </InternalSection>
     </Session>
     <Session id="thebe-lite-demo">
         <Title>8 Thebe-lite demo</Title>
-        <Paragraph>Example of using thebe-lite to run an interactive widget with a xeus-python kernel:</Paragraph>
-        <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html3.zip" id="c0864453d6a84bdfb529">
+        <Paragraph>We can use <a href="https://mystmd.org/thebe/quickstart-lite">thebe-lite</a> to make code executable within a page.</Paragraph>
+        <Figure>
+            <Image src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_fig3.png"/>
+            <Caption>Figure 8.1 Screenshot or Thebe-Lite widget.</Caption>
+        </Figure>
+        <Paragraph>Embed the executable code widget using an admonition of the form:</Paragraph>
+        <ProgramListing><Paragraph>```{ou-codestyle} python<br/>:type: thebelite<br/># We can install packages<br/>%pip install matplotlib<br/><br/># Print a message<br/>print("hello")<br/><br/>#Return an object as the final line<br/>message = "Hello"<br/><br/>message<br/>```</Paragraph></ProgramListing>
+        <Paragraph>When activated, the code is editable and executable. If the last line returns an object, the object is displayed.</Paragraph>
+        <Paragraph>Example of using thebe-lite to run an interactive widget with a <ComputerCode>xeus-python</ComputerCode> JupyterLite kernel:</Paragraph>
+        <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html3.zip" id="b8b51e722ec2474ab15e">
         </MediaContent>
+        <Paragraph>The widget may need resizing to display the output. The <i>Resize</i> button provides a manual way of doing this. Ideally, we would resize the window by observing an event [<a href="https://github.com/executablebooks/thebe/blob/main/apps/docs/events.rst">docs</a>] that shows the output area has been updated or the run command has finished.</Paragraph>
+        <InternalSection id="issues">
+            <Heading>ISSUES</Heading>
+            <Paragraph>Thebe-lite is intended to be deplyed at the top level of a page. When activated, it makes all code cells executable. TO be used in this way requires modifications to be made to the VLE course content page template. Instead, the demo loads the code and thebe-lite application into an iframe using an HTML5.zip bundle. This means that if multiple code items are included in the same page, <i>separate</i> instances of thebe-lite are loaded in and there is no communication bewteen them. If thebe-lite were loaded in at the top level of the page, code executed in one block would affect the Pyhton state available to code blocks elsehwere in the same page.</Paragraph>
+        </InternalSection>
     </Session>
     <Session id="quotations">
         <Title>9 Quotations</Title>
@@ -533,17 +554,58 @@ s(w_t) + y_{t+1}</TeX></Equation>
         <Paragraph>and quotes:</Paragraph>
         <Quote><Paragraph>My quotation</Paragraph></Quote>
         <Paragraph>But we can also use notebooks to generate output content from code.</Paragraph>
+        <Paragraph>For example, generating print output from a cell:</Paragraph>
+        <UnknownTag>comment</UnknownTag>
+        <Paragraph>hello</Paragraph>
+        <UnknownTag>comment</UnknownTag>
         <Paragraph>For example, we can create a simple data table:</Paragraph>
-        <MediaContent type="html5" id="f81eff75d04f4b279272" height="100" width="*" src="https://openuniv.sharepoint.com/sites/modules%E2%80%93shared/imd/widgets/CL/codesnippet/cl_codesnippet_v1.0.zip"><Parameters><Parameter name="codetype" value="python"/><Parameter name="theme" value="light"/></Parameters><Attachments><Attachment name="codesnippet" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html4.txt"/></Attachments></MediaContent>
-        <MediaContent type="html5" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html5.zip" id="f2bce61c25884cd19b91" height="400" width="600"/>
+        <MediaContent type="html5" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html4.zip" id="b32ab503d3ff48f5993a" height="400" width="600"/>
         <ProgramListing><Paragraph>.dataframe tbody tr th {</Paragraph><Paragraph>    vertical-align: top;</Paragraph><Paragraph>}</Paragraph><Paragraph></Paragraph><Paragraph>.dataframe thead th {</Paragraph><Paragraph>    text-align: right;</Paragraph><Paragraph>}</Paragraph></ProgramListing>
-        <MediaContent type="html5" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html6.zip" id="d79d6a6c3e2144dc98e1" height="400" width="600"/>
+        <MediaContent type="html5" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html5.zip" id="ad2eda8603da44838256" height="400" width="600"/>
+        <UnknownTag>comment</UnknownTag>
         <Paragraph>And then generate a simple plot from the data:</Paragraph>
-        <MediaContent type="html5" id="bcb11d81ca6e4aeca741" height="100" width="*" src="https://openuniv.sharepoint.com/sites/modules%E2%80%93shared/imd/widgets/CL/codesnippet/cl_codesnippet_v1.0.zip"><Parameters><Parameter name="codetype" value="python"/><Parameter name="theme" value="light"/></Parameters><Attachments><Attachment name="codesnippet" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html7.txt"/></Attachments></MediaContent>
-        <Figure><Image src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_fig3.png"/></Figure>
+        <UnknownTag>comment</UnknownTag>
+        <Image src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_fig4.png"/>
         <Paragraph>An output chart image is created directly from the data in the dataframe.</Paragraph>
         <Paragraph>The image is saved to an image file and then embedded back into the generated HTML in the Jupyter Book HTML publishing processing, but currently the XML generation process does not generate the image file or reference it via a tag in the XML.</Paragraph>
         <Paragraph>Related discussion: https://github.com/orgs/executablebooks/discussions/1096</Paragraph>
+        <Paragraph>How about embedding an interactive?</Paragraph>
+        <MediaContent type="html5" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html6.zip" id="f35945e17e4b4c129abd" height="400" width="600"/>
+        <Paragraph>var loadScriptAsync = function(uri){
+            return new Promise((resolve, reject) =&gt; {
+            //this is to ignore the existence of requirejs amd
+            var savedexports, savedmodule;
+            if (typeof exports !== ‘undefined’) savedexports = exports;
+            else exports = {}
+            if (typeof module !== ‘undefined’) savedmodule = module;
+            else module = {}</Paragraph>
+        <ProgramListing><Paragraph>var tag = document.createElement('script');</Paragraph><Paragraph>tag.src = uri;</Paragraph><Paragraph>tag.async = true;</Paragraph><Paragraph>tag.onload = () =&amp;gt; {</Paragraph><Paragraph>    exports = savedexports;</Paragraph><Paragraph>    module = savedmodule;</Paragraph><Paragraph>    resolve();</Paragraph><Paragraph>};</Paragraph></ProgramListing>
+        <Paragraph>var firstScriptTag = document.getElementsByTagName(‘script’)[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+            });
+            };</Paragraph>
+        <Paragraph>if(typeof $3Dmolpromise === ‘undefined’) {
+            $3Dmolpromise = null;
+            $3Dmolpromise = loadScriptAsync(‘https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.0.4/3Dmol-min.js’);
+            }</Paragraph>
+        <Paragraph>var viewer_16990349875242932 = null;
+            var warn = document.getElementById(“3dmolwarning_16990349875242932”);
+            if(warn) {
+            warn.parentNode.removeChild(warn);
+            }
+            $3Dmolpromise.then(function() {
+            viewer_16990349875242932 = $3Dmol.createViewer(document.getElementById(“3dmolviewer_16990349875242932”),{backgroundColor:”white”});
+            $3Dmol.download(“pdb:1ubq”, viewer_16990349875242932, {}, function() {
+            viewer_16990349875242932.zoomTo();
+            viewer_16990349875242932.setStyle({“sphere”: {“radius”: “0.5”}});
+            viewer_16990349875242932.setBackgroundColor(“0x0eeeee”);
+            viewer_16990349875242932.render();
+            })
+            });
+            <MediaContent type="html5" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html7.zip" id="eabfad474b994aebbc3f" height="400" width="600"/></Paragraph>
+        <UnknownTag>comment</UnknownTag>
+        <Paragraph>&lt;py3Dmol.view at 0x105926310&gt;</Paragraph>
+        <UnknownTag>comment</UnknownTag>
     </Session>
     <Session id="authoring-reusable-content">
         <Title>11 Authoring reusable content</Title>
@@ -623,7 +685,7 @@ s(w_t) + y_{t+1}</TeX></Equation>
         <Title>13 OU-XML production workflow using Jupyter Book</Title>
         <Paragraph>An increasing number of OU modules that require students to work with executable computer code are starting to use Jupyter notebooks to provide students with an interactive learning environment that blends rich content with embedded executable code and rendered code outputs (Figure 13.1).</Paragraph>
         <Figure>
-            <Image src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_fig4.png"/>
+            <Image src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_fig5.png"/>
             <Caption>Figure 13.1 Screenshot of Jupyter notebook.</Caption>
         </Figure>
         <Paragraph>To support as general a workflow as a possible, the workflow adopted builds on the Jupyter Book publishing system. This supports:</Paragraph>
@@ -718,34 +780,71 @@ s(w_t) + y_{t+1}</TeX></Equation>
     <Session id="jupyterlite-interactive-coding">
         <Title>15 JupyterLite interactive coding</Title>
         <Paragraph>JupyterLite provides an in-browser JupyterLab environment capable of executing code within the browser using WASM based code execution environments for JavaScript, Python and R.</Paragraph>
-        <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/jupyterlite-01.zip" id="a158d2024e58467ba7e1">
+        <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/jupyterlite-01.zip" id="b2392d2a5148406499eb">
         </MediaContent>
         <Paragraph>This doesn’t quite work yet; if we hack the iframe source and change the path <ComputerCode>index.html</ComputerCode> to <ComputerCode>lab/indexhtml</ComputerCode> it will work (although currently there are no code execution kernels installed).)</Paragraph>
-        <Figure><Image src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_fig5.png"/></Figure>
+        <Figure><Image src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_fig6.png"/></Figure>
         <Paragraph>JupyterLite also supports a notebook view and a console. which opens up various interesting possibilities. There is also an extension that allows files to be opened into JupyterLab from the desktop when using the Chrome browser, although this extension is not currently installed.</Paragraph>
     </Session>
     <Session id="wasm-r-interactive">
         <Title>16 WASM-R interactive</Title>
-        <Paragraph>Can we run R interactively in the browser?</Paragraph>
-        <Paragraph>To embed an R console, all we need to do is add the following invocation to our markdown:</Paragraph>
+        <Paragraph>Can we run R interactively in the browser from a file, displaying any graphical input that is generated as well as text output and console messages?</Paragraph>
+        <Paragraph>The <a href="https://webr.r-wasm.org/latest/"><ComputerCode>webR</ComputerCode> REPL app</a> is a demo application that follows a standard IDE layout to achieve just this.</Paragraph>
+        <Figure>
+            <Image src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_fig7.png"/>
+            <Caption>Figure 16.1 Screenshot or WebR REPL.</Caption>
+            <Description>
+                <Paragraph>A four panel layout is shown: top left is a file editor with a named file, and file save and run buttons; botton left is a text output area and concole; top right is a file browser with options to create and delete files, upload and download files; and bottom right is a graphical display area. A sinple program to generate a ggplot chart is shown in the top left code editor, and the corresponding ggplot chart output in the bottom right graphical display area.</Paragraph>
+            </Description>
+        </Figure>
+        <Paragraph>To insert the <ComputerCode>webR</ComputerCode> REPL app into a VLE page, all we need to do is add the following invocation to our markdown:</Paragraph>
         <ProgramListing><Paragraph>```{ou-html5} resources/webr-repl-01.zip<br/>:width: 140<br/>:keep: always<br/>```</Paragraph></ProgramListing>
-        <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/webr-repl-01.zip" id="aa61fa2bf02b45c6bece">
+        <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/webr-repl-01.zip" id="a378c8d65baf4cd9a393">
         </MediaContent>
         <Paragraph><i>The <ComputerCode>:keep:</ComputerCode> parameter uses the provided filename in the vendored files, rather than assigning a filename.</i></Paragraph>
+        <Paragraph>ISSUES:</Paragraph>
+        <BulletedList>
+            <ListItem>
+                <Paragraph>whilst files can be saved during a session, they do not appear to be saved to browser storage?</Paragraph>
+            </ListItem>
+            <ListItem>
+                <Paragraph>the form factor is not ideal…:</Paragraph>
+                <BulletedSubsidiaryList>
+                    <SubListItem>
+                        <Paragraph>is there a way to launch the iframe as full screen view?</Paragraph>
+                    </SubListItem>
+                    <SubListItem>
+                        <Paragraph>It would be useful if the REPL could be detached from the page and “popped out” into its own floating, resizable widget.</Paragraph>
+                    </SubListItem>
+                    <SubListItem>
+                        <Paragraph>Alternatively, we could use a level of separation and just link to a REPL environment on separate URL and launch it in a new window, then encourage students to work with it side by side with the VLE instructional material window;</Paragraph>
+                    </SubListItem>
+                </BulletedSubsidiaryList>
+            </ListItem>
+            <ListItem>
+                <Paragraph>a simpler view with just an a file edit window, console and graphical display might be more convenient.</Paragraph>
+            </ListItem>
+        </BulletedList>
     </Session>
     <Session id="r-console">
         <Title>17 R console</Title>
         <Paragraph>Can we run an R console in a page?</Paragraph>
-        <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/webr-console-01.zip" id="f7a0d98ef85a482d8e3c">
+        <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/webr-console-01.zip" id="ae992625094b47fd99bc">
         </MediaContent>
         <Paragraph>Did it work?</Paragraph>
     </Session>
     <Session id="shiny-lite-demo">
         <Title>18 Shiny-Lite demo</Title>
-        <Paragraph>We can create simple apps from Python code using the Shiny-lite framework and an <ComputerCode>{ou-codestyle}</ComputerCode> admonition with a <ComputerCode>:type: shinylite-py</ComputerCode> setting:</Paragraph>
-        <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html8.zip" id="cdc04d16097a439b8a3a">
+        <Paragraph>The Shiny framework, originally developed for R, provides tooling for publishing interactive apps powered by backend Python or R code. The <a href="https://shiny.posit.co/py/docs/shinylive.html"><i>Shinylive</i></a> provide allows the code to be executed via a WASM backend (Python or R).</Paragraph>
+        <Paragraph>This suggests a workflow for creating simple apps from Python (or R) code using the <i>Shinylive</i> framework. For example, we can imagine using an <ComputerCode>{ou-codestyle}</ComputerCode> admonition with a <ComputerCode>:type: shinylite-py</ComputerCode> setting that allows code included in markdown source documents to be used as the application code in a <i>ShinyLive</i> application (misnamed as <i>ShinyLite</i> below).</Paragraph>
+        <Paragraph>For example, we could define a Shiny app as straightforwardly as including something like the following admonition in our markdown source document:</Paragraph>
+        <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html8.zip" id="c47304b08fb0499987b8">
         </MediaContent>
-        <Paragraph>The application is rendered in the page.</Paragraph>
+        <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html9.zip" id="bcc3ae947889482ab308">
+        </MediaContent>
+        <Paragraph>The application should then be rendered directly into the page.</Paragraph>
+        <Paragraph><b>DEMO STATUS: BROKEN</b></Paragraph>
+        <Paragraph><i>In the set up I am using, everything is vendored. At least one of the current issues is the value to download the .wasm file due to an incorrect MIME-type (<ComputerCode>.wasm</ComputerCode> should be served as <ComputerCode>application/wasm</ComputerCode>). I also recall having MIME-type issues with <ComputerCode>.mjs</ComputerCode>, which should be served as <ComputerCode>text/javascript</ComputerCode>.</i></Paragraph>
     </Session>
     <Session id="trying-out-the-environment">
         <Title>19 Trying out the environment</Title>
@@ -782,17 +881,22 @@ s(w_t) + y_{t+1}</TeX></Equation>
             <Paragraph>We should also be able to execute code as part of a Sphinx publishing process. Currently, rich media code outputs will be rendered in the HTML output, but only simple <ComputerCode>text_plain</ComputerCode> outputs are rendered into the Sphinx XML and then literally into OU-XML.</Paragraph>
             
                 
-                    <MediaContent type="html5" id="eddfcf9f882f41c1b41e" height="100" width="*" src="https://openuniv.sharepoint.com/sites/modules%E2%80%93shared/imd/widgets/CL/codesnippet/cl_codesnippet_v1.0.zip"><Parameters><Parameter name="codetype" value="python"/><Parameter name="theme" value="light"/></Parameters><Attachments><Attachment name="codesnippet" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html9.txt"/></Attachments></MediaContent>
+                    <MediaContent type="html5" id="b67c722026ed4d02abfe" height="100" width="*" src="https://openuniv.sharepoint.com/sites/modules%E2%80%93shared/imd/widgets/CL/codesnippet/cl_codesnippet_v1.0.zip"><Parameters><Parameter name="codetype" value="python"/><Parameter name="theme" value="light"/></Parameters><Attachments><Attachment name="codesnippet" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html10.txt"/></Attachments></MediaContent>
                 
                 
-                    <ProgramListing><Paragraph>/var/folders/10/8lp40z8x2hj_cch9j4rk_cpm0000gs/T/ipykernel_14558/2549200461.py:28: FutureWarning: Styler.applymap has been deprecated. Use Styler.map instead.</Paragraph><Paragraph>  applymap(color_negative_red).\</Paragraph></ProgramListing>
-                    <ProgramListing><Paragraph>&amp;lt;pandas.io.formats.style.Styler at 0x12675b650&amp;gt;</Paragraph></ProgramListing>
+                    <ProgramListing><Paragraph>/var/folders/10/8lp40z8x2hj_cch9j4rk_cpm0000gs/T/ipykernel_64853/2549200461.py:28: FutureWarning: Styler.applymap has been deprecated. Use Styler.map instead.</Paragraph><Paragraph>  applymap(color_negative_red).\</Paragraph></ProgramListing>
+                    <ProgramListing><Paragraph>&amp;lt;pandas.io.formats.style.Styler at 0x107ddf050&amp;gt;</Paragraph></ProgramListing>
                 
             
             <Paragraph>Codesnippet widget:</Paragraph>
-            <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html10.zip" id="ffb06c5489c64d8fb959"/>
-            <MediaContent type="html5" height="400" width="600" src="https://openuniv.sharepoint.com/sites/modules%E2%80%93shared/imd/widgets/CL/codesnippet/cl_codesnippet_v1.0.zip" id="fbb42d2a6bf442b8946d"><Parameters><Parameter name="codetype" value="python"/><Parameter name="theme" value="dark"/></Parameters><Attachments><Attachment name="codesnippet" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html11.txt"/></Attachments>
+            <MediaContent type="html5" height="400" width="600" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html11.zip" id="f5070252cae240f3af8b"/>
+            <MediaContent type="html5" height="400" width="600" src="https://openuniv.sharepoint.com/sites/modules%E2%80%93shared/imd/widgets/CL/codesnippet/cl_codesnippet_v1.0.zip" id="b1ffc663ede242eaa51f"><Parameters><Parameter name="codetype" value="python"/><Parameter name="theme" value="dark"/></Parameters><Attachments><Attachment name="codesnippet" src="https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/ouseful-demos_b2_p1_demo2_html12.txt"/></Attachments>
             </MediaContent>
+        </InternalSection>
+        <InternalSection id="pyodide-terminal">
+            <Heading><ComputerCode>pyodide</ComputerCode> terminal</Heading>
+            <Paragraph>Can we embed a pyodide terminal?</Paragraph>
+            <Paragraph>Did it work?</Paragraph>
         </InternalSection>
     </Session>
     <BackMatter>
