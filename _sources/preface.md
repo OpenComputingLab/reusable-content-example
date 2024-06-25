@@ -15,6 +15,6 @@ kernelspec:
 
 # Preface
 
-Notes on a markdown based workflow for generating OU VLE content published from and intermediary OU-XML document format using off the shelf Sphinx publishing tools with a simple custom extension. A case study for generating a customisable, generic software guide for several OU modules from a set of common source documents and then rendering them to OU-XML is also described.
+Notes on a workflow for generating OU-XML from markdown and Jupyter notebook source documents using off-the-shelf Sphinx publishing tools with custom extensions. This allows content authored in markdown and Jupyter notebooks to be published via Structured Content publishing tools. Round-tripping between OU-XML and markdown is also explored allowing OU-XML to be converted back to markdown, ideally in a reversible way. An earlier case study of generating a customisable software guide for several OU modules from a set of common markdown source documents converted to OU-XML and then rendered to the VLE is also described.
 
 --Tony Hirst (tony.hirst@open.ac.uk), July-Nov, 2023

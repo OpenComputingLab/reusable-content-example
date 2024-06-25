@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>2. Markdown authoring route &#8212; Reusable Content Demonstration</title>
   
@@ -15,55 +14,53 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/ou-book-theme.css?digest=e2356d549ad34df00aeb97b1e33ec7c85da0ce8b" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/ou-book-theme.css?v=e29dfff8" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/ou_activities.css?v=85f76a2a" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="_static/scripts/ou-book-theme.js?digest=70cd4f36c5f75a004a4184ab875fcbdab8e13f88"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/scripts/ou-book-theme.js?v=4fcee40e"></script>
+    <script src="_static/ou_activities.js?v=6ea7ccc3"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'markdown_authoring';</script>
@@ -80,28 +77,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -123,12 +115,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -143,6 +143,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="preface.html">
@@ -155,7 +156,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">Reusable Content Demonstration</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -171,16 +183,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Markdown authoring route</a></li>
 <li class="toctree-l1"><a class="reference internal" href="md_format.html">3. Markdown format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="media_items.html">4. Embedded Media</a></li>
-<li class="toctree-l1"><a class="reference internal" href="maths.html">5. Maths</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code.html">6. Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quotations.html">7. Quotations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="demo-notebook.html">8. Example publishing from Jupyter notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="authoring_reusable_content.html">9. Authoring reusable content</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">10. Collaborative Development, Authoring and Publishing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="production_workflow.html">11. OU-XML production workflow using Jupyter Book</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workflow_automation.html">12. Workflow Automation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sandbox.html">13. Trying out the environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="todo.html">14. Work in Progress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activities-exercises.html">5. Activities and exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maths.html">6. Maths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html">7. Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quotations.html">8. Quotations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo-notebook.html">9. Example publishing from Jupyter notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authoring_reusable_content.html">10. Authoring reusable content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collaborative-authoring.html">11. Collaborative Development, Authoring and Publishing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="production_workflow.html">12. OU-XML production workflow using Jupyter Book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_automation.html">13. Workflow Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sandbox.html">14. Trying out the environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">15. Work in Progress</a></li>
 </ul>
 
     </div>
@@ -196,7 +209,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -205,14 +218,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -287,6 +300,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -297,6 +311,7 @@ document.write(`
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -304,9 +319,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -327,7 +342,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-markdown-styling">2.1. Example Markdown Styling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-markdown-styling">2.1. Example markdown styling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-publishing-tools-and-frameworks">2.2. Markdown Publishing Tools and Frameworks</a></li>
 </ul>
             </nav>
@@ -338,11 +353,11 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section id="markdown-authoring-route">
-<h1><span class="section-number">2. </span>Markdown authoring route<a class="headerlink" href="#markdown-authoring-route" title="Permalink to this heading">#</a></h1>
-<p>The reusable content workflow is based on a markdown authoring route.</p>
+<h1><span class="section-number">2. </span>Markdown authoring route<a class="headerlink" href="#markdown-authoring-route" title="Link to this heading">#</a></h1>
+<p>The reusable content workflow is based on a markdown authoring route. Content is authored in markdown format and then converted to the intermediate OU-XML format, or directly to output formats such as HTML. Content in the OU-XML format can be rendered to the VLE or other output formats using the current Structured Content production workflow tools.</p>
 <p>Markdown is a simple text based markup language that can be edited in simple text editor. Markdown is typically rendered or previewed as rendered HTML. Markdown editors that support WYSIWYG user interfaces are also available. Various flavours of markdown are available that extend the core markdown language with more expressive semantics.</p>
 <p>A variety of publishing tools and frameworks are available that can render markdown source documents to a wide range of output document formats, including HTML, PDF, ebook and XML formats.</p>
 <p>As well as rendering rich text, markdown publishing extensions can also be used to render diagrams. For example, flowcharts can be rendered from simple text-based <code class="docutils literal notranslate"><span class="pre">Mermaid.js</span></code> scripts.</p>
@@ -360,13 +375,37 @@ document.write(`
   I --&gt; K[OU-VLE]
   I --&gt; L[OU-PDF]
         </div><figcaption>
-<p><span class="caption-number">Figure 2.1 </span><span class="caption-text">Publishing workflows from MyST markdown</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Figure 2.1 </span><span class="caption-text">Publishing workflows from MyST markdown</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+<p><em>The flowchart above was automatically rendered and embedded from a <code class="docutils literal notranslate"><span class="pre">mermaid.js</span></code> admonition block in the source markdown document.</em></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{mermaid}
+---
+alt:
+caption: Publishing workflows from MyST markdown
+---
+flowchart LR
+  A[Jupyter Notebook] --&gt; C
+  B[MyST Markdown] --&gt; C
+  C(mystmd) --&gt; D{&quot;Sphinx\n+\npandoc&quot;}
+  D --&gt; E[LaTeX]
+  E --&gt; F[PDF]
+  D --&gt; G[Word]
+  D --&gt; H[XML] --&gt; I[OU-XML]
+  D --&gt; J[HTML]
+  I --&gt; K[OU-VLE]
+  I --&gt; L[OU-PDF]
+```
+</pre></div>
+</div>
 <section id="example-markdown-styling">
-<h2><span class="section-number">2.1. </span>Example Markdown Styling<a class="headerlink" href="#example-markdown-styling" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.1. </span>Example markdown styling<a class="headerlink" href="#example-markdown-styling" title="Link to this heading">#</a></h2>
 <p>Simple markdown styling supports the rendering of <em>emphasis</em> and <strong>strong</strong> elements through simple markup.</p>
-<p>These are rendered to OU-XML as:</p>
+<p>The raw markdown has the form:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Simple markdown styling supports the rendering of *emphasis* and __strong__ elements through simple markup.
+</pre></div>
+</div>
+<p>In the mapping to OU-XML, the original markdown would be converted to:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">&lt;Paragraph&gt;</span>Simple<span class="w"> </span>markdown<span class="w"> </span>styling<span class="w"> </span>supports<span class="w"> </span>the<span class="w"> </span>rendering<span class="w"> </span>of<span class="w"> </span><span class="nt">&lt;i&gt;</span>emphasis<span class="nt">&lt;/i&gt;</span><span class="w"> </span>and<span class="w"> </span><span class="nt">&lt;b&gt;</span>strong<span class="nt">&lt;/b&gt;</span><span class="w"> </span>elements<span class="w"> </span>through<span class="w"> </span>simple<span class="w"> </span>markup.<span class="nt">&lt;/Paragraph&gt;</span>
 </pre></div>
 </div>
@@ -375,12 +414,12 @@ document.write(`
 <li><p>item one</p></li>
 <li><p>item two</p></li>
 </ul>
-<p>as well as ordered lists:</p>
-<ol class="arabic simple">
-<li><p>item one</p></li>
-<li><p>item two</p></li>
-</ol>
-<p>The unordered list is rendered to OU-XML as:</p>
+<p>are written in markdown as:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>- item one
+- item two
+</pre></div>
+</div>
+<p>An unordered list is rendered to OU-XML as:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;BulletedList&gt;</span>
 <span class="w">  </span><span class="nt">&lt;ListItem&gt;</span>
 <span class="w">    </span><span class="nt">&lt;Paragraph&gt;</span>item<span class="w"> </span>one<span class="nt">&lt;/Paragraph&gt;</span>
@@ -391,7 +430,17 @@ document.write(`
 <span class="nt">&lt;/BulletedList&gt;</span>
 </pre></div>
 </div>
-<p>The following paragraph and the ordered list are then rendered as:</p>
+<p>Ordered lists are also supported:</p>
+<ol class="arabic simple">
+<li><p>item one</p></li>
+<li><p>item two</p></li>
+</ol>
+<p>The source of ordered lists just needs to identifying numbering should be used; the actual numbers are generated:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1. item one
+1. item two
+</pre></div>
+</div>
+<p>An ordered list is then rendered into OU-XML as:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Paragraph&gt;</span>as<span class="w"> </span>well<span class="w"> </span>as<span class="w"> </span>ordered<span class="w"> </span>lists:<span class="nt">&lt;/Paragraph&gt;</span>
 <span class="nt">&lt;NumberedList&gt;</span>
 <span class="w">  </span><span class="nt">&lt;ListItem&gt;</span>
@@ -403,7 +452,7 @@ document.write(`
 <span class="nt">&lt;/NumberedList&gt;</span>
 </pre></div>
 </div>
-<p>Simple tables can be described using the markdown table format. The table format supports alignment within columns but the alignment does not carry over to the OU-XML:</p>
+<p>Simple tables can be described using the markdown table format. The markdown table format supports alignment within columns but the alignment does not carry over to the OU-XML:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>| Col 1 | Col 2         | Col 3  |
 |-------|:-------------:|-------:|
 | col 1 |  left-aligned | L      |
@@ -411,7 +460,7 @@ document.write(`
 | col 2 | right-aligned | R      |
 </pre></div>
 </div>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Col 1</p></th>
 <th class="head text-center"><p>Col 2</p></th>
@@ -433,6 +482,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p>Here’s fragment of the corresponding OU-XML:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Table&gt;</span>
 <span class="w">  </span><span class="nt">&lt;TableHead&gt;</span>Table<span class="w"> </span>1<span class="w"> </span><span class="nt">&lt;/TableHead&gt;&lt;tbody&gt;</span>
@@ -497,7 +547,7 @@ It can contain a *wide* __range__ of elements.
 <p>A wide range of richer media elements are also supported by MyST markdown and can be mapped onto appropriate OU-XML elements (see later sections for examples).</p>
 </section>
 <section id="markdown-publishing-tools-and-frameworks">
-<h2><span class="section-number">2.2. </span>Markdown Publishing Tools and Frameworks<a class="headerlink" href="#markdown-publishing-tools-and-frameworks" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.2. </span>Markdown Publishing Tools and Frameworks<a class="headerlink" href="#markdown-publishing-tools-and-frameworks" title="Link to this heading">#</a></h2>
 <p>Example publishing tools and frameworks for working with markdown include:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pandoc.org/"><code class="docutils literal notranslate"><span class="pre">pandoc</span></code></a>: a low level computation tool for converting between different document formats;</p></li>
@@ -511,11 +561,11 @@ It can contain a *wide* __range__ of elements.
 <figure class="align-default" id="myst-preview">
 <a class="reference internal image-reference" href="_images/myst_preview.png"><img alt="screenshot of MyST sandbox editor" src="_images/myst_preview.png" style="width: 600px;" /></a>
 <figcaption>
-<p><span class="caption-number">Figure 2.2 </span><span class="caption-text">Screenshot of MyST sandbox editor with live preview.</span><a class="headerlink" href="#myst-preview" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Figure 2.2 </span><span class="caption-text">Screenshot of MyST sandbox editor with live preview.</span><a class="headerlink" href="#myst-preview" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
-<p>See <code class="docutils literal notranslate"><span class="pre">sandbox</span></code> for guidance on how to launch a preconfigured development environment within which you can try out the workflow described in this document.</p>
+<p><em>I hope to make a <code class="docutils literal notranslate"><span class="pre">sandbox</span></code> available at some point in the near future, in the form of guidance on how to launch a preconfigured development environment within which you can try out the workflow described in this document.</em></p>
 </section>
 </section>
 
@@ -546,8 +596,8 @@ It can contain a *wide* __range__ of elements.
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="introduction.html"
@@ -576,13 +626,14 @@ It can contain a *wide* __range__ of elements.
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-markdown-styling">2.1. Example Markdown Styling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-markdown-styling">2.1. Example markdown styling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-publishing-tools-and-frameworks">2.2. Markdown Publishing Tools and Frameworks</a></li>
 </ul>
   </nav></div>
@@ -605,9 +656,10 @@ By Tony Hirst
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -631,8 +683,8 @@ By Tony Hirst
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>

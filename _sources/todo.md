@@ -63,7 +63,7 @@ Some text
 
 We should be able to execute code purely within the browser using `thebe`.
 
-We should also be able to execute code as part of a Sphinx publishing process. Currently, rich media code outuputs will be rendered in the HTML output, but only simple `text_plain` outputs are rendered into the Sphinx XML and then literally into OU-XML.
+We should also be able to execute code as part of a Sphinx publishing process. Currently, rich media code outputs will be rendered in the HTML output, but only simple `text_plain` outputs are rendered into the Sphinx XML and then literally into OU-XML.
 
 ```{code-cell} ipython3
 :tags: [hide-input]

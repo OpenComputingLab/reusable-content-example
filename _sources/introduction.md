@@ -17,15 +17,39 @@ kernelspec:
 
 OU course materials destined for publication on the Open University VLE via the "Structured Content" OU-XML publishing route ([OU internal docs](https://learn3.open.ac.uk/mod/oucontent/view.php?id=185734)) are typically authored as Microsoft Word documents.
 
-Updating materials using this route can often be a laborious process, with authors editing the MS Word document and then handing over the document the changes to be "tagged" elsewhere.
+Over the last few years, an increasing number of modules from several Schools across the OU are now publishing Jupyter notebook content directly to students (eg TM351, M348). Other modules have also been exploring markdown based authoring workflows more generally (M269, TM352). Well established routes are also in place for publishing materials from text based LaTeX source documents to required output document formats such as PDF.
 
-The current workflow is not particularly conducive to supporting the reuse of content across modules if the content requires any form of customisation. For example, writing software guides to support educational modules adds authoring, editing and testing overheads to module production. If multiple modules use similar computer environments or software applications, reusing generic or customisable materials provides a way or reducing those overheads.
+Whilst several publishing tools are available for rendering various output document formats from markdown and Jupyter notebooks, most notably Jupyter Book (based on the Sphinx publishing framework) and Quarto, there is currently no comprehensive support for generating OU-XML from Jupyter notebooks or markdown documents. Nor is there general support for converting OU-XML content into markdown or Jupyter notebooks formats. This means that markdown sourced content cannot easily be published via Structured Content workflows.
 
-However, module teams often require software guides that are customised at several different levels. At an "inline" level, a module team may want the guide to refer to the module by module code or module name, or refer to a particular block of study. At a "paragraph" level, where some form of "localisation" relative to the module may be appropropriate, such as situating the use of a the software environment within a particular block or module with some module specific context. Or at the "section: level, where for example the software environment may have additional, module specific features that require an additional form of guidance, or a cut-down version of the envirinment that does not require sections that are likely to be relevant to other modules.
+Updating materials using the traditional OU-XML based *Structured Content* publishing route can often be a laborious process. For example, authors might originate content using source MS Word documents and then hand over the document for the changes to be "tagged" elsewhere.  Although edits may be made directly to tagged OU-XML content, many authors may be resistant to using the *Oxygen Author* tool recommended for this work.
 
-Although the MS Word originated workflow has remained largely unchanged for several years, other routes into the Structured Content production *are* available. One such route is a markdown based workflow which supports the creation of markdown flavoured content and its conversion to OU-XML.
+*The simpler, yet extensible, structure of markdown documents offers the potential for lossless conversion between OU-XML and markdown. This would allow edits to be made to OU-XML and then rendered back to source markdown or Jupyter notebook documents, and vice versa. Content migration into and out of OU-XML would also be supported.*
 
-This report introduces a markdown based publication route that uses a Sphinx-based publishing route to generate valid OU-XML Structured Content documents from markdown source documents.
+*Note that the aim is not necessarily to replace current workflows with markdown workflows. Rather, the markdown workflow is presented as one possible way of getting content into, and out of, the Structured Content workflow using a simple text based document format. Several other benefits are also demonstrated, such as the ability to extend the base markdown format to include the declaration of rich media objects that can be rendered into VLE based course materials. Whilst the objects that can be embedded in the online materials are not necessarily new, the ease with which they may be defined and included in the materials has been improved. In addition, by originating the embedded objects from declarations in the source document, maintenance and updating of the materials is also simplified.*
+
+One further feature of the proposed workflow is that code elements can be included in the source document and executed to generate outputs, such as graphical charts or tables, from specified data inputs. The executed document, along with its embedded code outputs, can them be converted to OU-XML. This means that the means of producing the output asset is a part of the original source document, and that the output is generated by the source document. This reduces the separation between source content and assets and makes updating and maintenance much easier.
+
+In addition to providing opportunities for more easily including richer and more interactive elements into the online VLE materials, the markdown workflow may also support content reuse across modules. For example, the current workflow is limited in the extent to which content can be customised across modules. as the example of writing software guides demonstrates. Software guides are used in many modules, adding authoring, editing and testing overheads to module production and maintenance. If multiple modules use similar computer environments or software applications, reusing generic or customisable materials provides a way or reducing those overheads. Where fixes are made to generic, or "core", content in one module, this fixes should also available to other modules drawing om the same core content.
+
+As well as requiring the same, tested guidance for the same tools used across multiple modules, module teams often require software guides that are customised at several different levels. At an "inline" level, a module team may want the guide to refer to the module by module code or module name, or refer to a particular block of study. At a "paragraph" level, where some form of "localisation" relative to the module may be appropriate, such as situating the use of a the software environment within a particular block or module with some module specific context. Or at the "section: level, where for example the software environment may have additional, module specific features that require an additional form of guidance, or a cut-down version of the environment that does not require sections that are likely to be relevant to other modules.
+
+The MS Word originated workflow has remained largely unchanged for several years. Other routes into the Structured Content production have been explored previously, and are being explored still. But it is also possible to find our other ways into OU-XML. One such route is a markdown based workflow which supports the creation of markdown flavoured content and its conversion to OU-XML.
+
+This report introduces a markdown based publication route that uses a Sphinx-based publishing route to generate valid OU-XML Structured Content documents from markdown source documents. A return path, from OU-XML back to markdown, is also described.
+
+The source markdown documents from which this VLE presented content was derived via an automatically generated intermediate OU-XML representation are available here: [`OpenComputingLab/reusable-content-example`](https://github.com/OpenComputingLab/reusable-content-example).
+
+An HTML version rendered from the same source documents described above by an off-the-shelf Jupyter Book (Sphinx) publication process is available here: [https://opencomputinglab.github.io/reusable-content-example/](https://opencomputinglab.github.io/reusable-content-example/)
+
+Example OU-XML automatically generated from the same source markdown can be viewed here: [generated OU-XML](https://opencomputinglab.github.io/reusable-content-example/ouxml/xxx_b0_p1_zzz.xml)
+
+Note that the VLE version, the demo raw OU-XML version, the GitHub Pages hosted HTML version, and the version of the source docs in the repo may all be slightly different as I test different things in different places. (I really do need to learn how to write tests!)
+
+Tooling used in producing the OU-XML and extending the MyST markdown are variously described in [`innovationOUtside/sphinxcontrib-ou-xml-tags`](https://github.com/innovationOUtside/sphinxcontrib-ou-xml-tags) and [`innovationOUtside/ou-xml-validator`](https://github.com/innovationOUtside/ou-xml-validator). Once again, the code in the repo may not be the latest version. At some point I will publish the packages to PyPi and start to release versions that I'm reasonably sure are in a working state.
+
+*An old example of rich media publishing using Jupyter Book from a couple of years ago can be found at [https://opencomputinglab.github.io/SubjectMatterNotebooks/](https://opencomputinglab.github.io/SubjectMatterNotebooks/intro.html). It gives examples of other sorts of things we might be able to straightforwardly publish with appropriate tooling into the VLE via OU-XML.*
+
+## A customisable, cross-module software guide with a markdown2OUXML production process
 
 An earlier version of the production route has already been used in an initial proof of concept project to produce a customisable software guide to support the use of virtual computing environments (VCEs) across several modules:
 
@@ -49,10 +73,6 @@ The use of several tools to support quality processes (markdown linting, spellch
 
 The source repository for the source content for the generic, customisable virtual computing environment (VCE) can be found here: [`innovationOUtside/vce-generic-guide`](https://github.com/innovationOUtside/vce-generic-guide).
 
-The source repository for the source content for the generic, customisable virtual computing envirpmment (VCE) software guide can be found here: [`innovationOUtside/vce-generic-guide`](https://github.com/innovationOUtside/vce-generic-guide).
-
-Example OU-XML automatically generated from the same source markdown can be viewed here: [generated OU-XML](https://opencomputinglab.github.io/reusable-content-example/ouxml/xxx_b0_p1_zzz.xml)
-
-An HTML version rendered from the same source markdown by a Jupyter Book publication process is available here: [https://opencomputinglab.github.io/reusable-content-example/](https://opencomputinglab.github.io/reusable-content-example/)
+The source repository for the source content for the generic, customisable virtual computing environment (VCE) software guide can be found here: [`innovationOUtside/vce-generic-guide`](https://github.com/innovationOUtside/vce-generic-guide).
 
 *__Acknowledgements__: thanks to Karen Vines for helping iterate the text, Edith Francis for helping iterate the OU-XML, and Mark Hall for the original markdown2ou-xml converter and his insight into using Sphinx XML as a route to OU-XML.*
