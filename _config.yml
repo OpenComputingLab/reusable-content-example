@@ -7,7 +7,7 @@ only_build_toc_files: true
 
 sphinx:
   extra_extensions:
-#    - ou_book_theme
+    - ou_book_theme
     - sphinxcontrib.mermaid
     - sphinx_exercise
     - sphinxcontrib.youtube
@@ -17,7 +17,7 @@ sphinx:
     - sphinxcontrib.ou-mol3d
     - sphinxcontrib.ou-codestyle
     - sphinxcontrib.ou-activities
-    - jupyterlite_sphinx
+#    - jupyterlite_sphinx
 
   config:
     myst_heading_anchors: 3
@@ -38,7 +38,7 @@ repository:
 
 launch_buttons:
   notebook_interface: "jupyterlab" # The interface interactive links will activate ["classic", "jupyterlab"]
-  thebe: true
+  thebe: false
 
 
 ou:
