@@ -13,10 +13,28 @@ and quotes:
 
 But we can also use notebooks to generate output content from code.
 
+
+For example, generating print output from a cell:
+
+
+
+```{code-cell} python
+
+print("hello")
+```
+
++++ {"tags": ["code-cell-output"]}
+
+hello
+
++++
+
 For example, we can create a simple data table:
 
 
-```python
+
+```{code-cell} python
+
 import pandas as pd
 
 df = pd.DataFrame({"x": [1, 2, 3], "y":[10,3, 7]})
@@ -70,15 +88,25 @@ df
 
 
 
+
++++ {"tags": ['activity'] }
+
 And then generate a simple plot from the data:
 
++++
 
-```python
+
+```{code-cell} python
+:tags: ['activity']
 df.plot(x="x", y="y").set_title("My plot");
 ```
+
+
     
-![png](demo-notebook_files/demo-notebook_3_0.png)
-    
+```{image} demo-notebook_files/demo-notebook_6_0.png
+```
+
+
 
 An output chart image is created directly from the data in the dataframe.
 

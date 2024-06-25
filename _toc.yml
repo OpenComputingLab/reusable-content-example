@@ -12,6 +12,7 @@ parts:
       - file: markdown_authoring
       - file: md_format
       - file: media_items
+      - file: activities-exercises
       - file: maths
       - file: code
       - file: quotations

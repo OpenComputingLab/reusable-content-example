@@ -7,15 +7,17 @@ only_build_toc_files: true
 
 sphinx:
   extra_extensions:
-    - ou_book_theme
+#    - ou_book_theme
     - sphinxcontrib.mermaid
     - sphinx_exercise
     - sphinxcontrib.youtube
-    - sphinxcontrib.video
-    - sphinxcontrib.audio
-    - sphinxcontrib.html5
-    - sphinxcontrib.mol3d
-#    - jupyterlite_sphinx
+    - sphinxcontrib.ou-video
+    - sphinxcontrib.ou-audio
+    - sphinxcontrib.ou-html5
+    - sphinxcontrib.ou-mol3d
+    - sphinxcontrib.ou-codestyle
+    - sphinxcontrib.ou-activities
+    - jupyterlite_sphinx
 
   config:
     myst_heading_anchors: 3
@@ -29,16 +31,30 @@ parse:
     - amsmath
     - dollarmath
 
+repository:
+  url                       : https://github.com/ouseful-demos/learn-to-code-jupyterlite  # Online location of your book
+  path_to_book              : src  # Optional path to your book, relative to the repository root
+  branch                    : main
+
+launch_buttons:
+  notebook_interface: "jupyterlab" # The interface interactive links will activate ["classic", "jupyterlab"]
+  thebe: true
+
+
 ou:
   module_code: OUSEFUL-DEMOS
   module_title: OUSEFUL-DEMOS
-  block: 0
-  presentation: ZZZ
+  block: 2
+  presentation: Demo2
   first_published: YYYY
   isbn:
   edition:
-  block_title: QQQQ
+  block_title: Demo2
   image_path_prefix: https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/
-  audio_path_prefix: https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/
+  media_path_prefix: https://raw.githubusercontent.com/OpenComputingLab/reusable-content-example/main/tmp/
   #image_path_prefix: https://openuniv.sharepoint.com/sites/modules–shared/test_render_site/Shared%20Documents/
-  #audio_path_prefix: https://openuniv.sharepoint.com/sites/modules–shared/test_render_site/Shared%20Documents/
+  #media_path_prefix: https://openuniv.sharepoint.com/sites/modules–shared/test_render_site/Shared%20Documents/
+  codestyle: true
+  codelang:
+  codesnippet_theme: light # light | dark
+  validate: true # validate generated OU-XML in toolchain
