@@ -108,15 +108,10 @@ Automatic numbering may be enabled via the `_toc.yml` file.
 
 The MyST markdown format and the Sphinx publishing framework are both extensible, which means that it is possible to define additional tags to support the creation of bespoke materials.
 
-For example, the publishing workflow has been extended to support:
+For example, the publishing workflow has been extended to include support for:
 
 - the parsing and rendering of `mermaid.js` diagram syntax;
-- the parsing and custom rendering of "activities" with revealable answers.
+- the parsing and custom rendering of "activities" with revealable answers;
+- the embedding of video, audio, and zipped HTML5 assets
 
-### Rendering `mermaid.js` diagrams
-
-The `mermaid,js` package is a widely used JavaScript that package TO DO
-
-### Supporting activity elements
-
-The OU-XML structured content format supports the definition of "activities" according to the following structure:
+Appropriate conversions take place when a markdown document is converted toi OU-XML. In addition, OU-XML documents can be converted back to appropriately structured markdown documents.
