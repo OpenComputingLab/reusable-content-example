@@ -53,6 +53,12 @@ If we have a notebook, execute and render to markdown:
 
 `jupyter nbconvert --to markdown --execute demo-notebook.ipynb`
 
+Then use the markdown format for conversion to OU-XML.
+
+### Bundling HTML5.zip Packages
+
+The HTML5.zip packages MUST include an `index.html` file at the root level.
+
 ### Generating Sphinx XML
 
 Spell-checking:
@@ -62,6 +68,8 @@ Spell-checking:
 Generate the Sphinx XML version of the Jupyter Book, as defined by the `_toc.yml` and `_config.yml` file:
 
 `jb build . --builder custom --custom-builder xml`
+
+In `jb build` use the `--all` to force a rebuild of everything.
 
 ### Convert to OU-XML
 
@@ -73,9 +81,19 @@ We can then validate the OU-XML:
 
 `ou_xml_validator validate path-to-file/testme.xml`
 
-### Jupyterlite
+### JupyterLite
 
-We need `index.html` at the root of an HTML5 zipfile; inside the jupyterlite dir: `zip -r -X "../jupyterlite.zip" .`
+We need `index.html` at the root of an HTML5 zipfile; inside the `jupyterlite` dir: `zip -r -X "../jupyterlite.zip" .`
+
+```bash
+mkdir jupyterlite
+cd jupyterlite
+jupyter lite init 
+cd _output  
+jupyter lite build --output-dir ../../resources/jupyterlite-01
+cd resources/jupyterlite-01
+zip -r -X "../jupyterlite-01.zip" .
+```
 
 ## `.devcontainer` Set-up
 
