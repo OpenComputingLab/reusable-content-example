@@ -78,11 +78,9 @@ The first step is to use Jupyter Book tooling to generate a Sphinx XML version o
 
 This generates XML files in the default `_build/xml` directory.
 
-The second step is to use the [`ou-book-theme`](https://pypi.org/project/ou-book-theme/) Python package to convert the Sphinx XML to OU-XML (this looks for XML source documents in `_build/xml` by default):
+The second step is to use `ouseful_obt` from [`ou-xml-validator` package](https://github.com/innovationOUtside/ou-xml-validator/):
 
-`obt convert-to-ouxml .`
-
-*NB I think release version of `ou-book-theme` is lagging the modified version I have been working on...*
+`ouseful_obt .`
 
 Generated OU-XML content in the `_build/ouxml` directory can then be validated against an OU-XML schema by running the command:
 
