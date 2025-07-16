@@ -1,7 +1,9 @@
 {
     "name": "Reusable content demo",
-    "image": "outm351dev/ou-doc-builder",
-
+    //"image": "outm351dev/ou-doc-builder",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
     "customizations": {
         "vscode": {
             "extensions": [

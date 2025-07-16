@@ -33,6 +33,8 @@ Glossary term one
   Glossary term one definition is indented
 ```
 
+In OU-XML, the `(term, definition)` pairs are appended to backmatter.
+
 We can then refer to a ``{term}`Glossary term one` TO DO`` that links to the glossary listing.
 
 ```{glossary}
@@ -99,3 +101,35 @@ df.style.\
     apply(highlight_max).\
     set_table_attributes('style="font-size: 10px"')
 ```
+
+Codesnippet widget:
+
+```{ou-codestyle} python
+# some code
+
+def test():
+  """A function."""
+  print("hello")
+```
+
+```{ou-codestyle} python
+:viewer: codesnippet
+:theme: dark
+# some code2
+
+def test():
+  """A function."""
+  print("hello")
+```
+
+
+## `pyodide` terminal
+
+Can we embed a pyodide terminal?
+
+```{pyodide-terminal}
+```
+
+
+
+Did it work?

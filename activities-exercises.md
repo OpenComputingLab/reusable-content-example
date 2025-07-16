@@ -1,12 +1,12 @@
 # Activities and exercises
 
-OU-XML supports a range of styled activity types, including *activities*, *exercises*, *SAQ*s and *ITQ*s.
+OU-XML supports a range of styled activity types, including *activities*, *exercises*, *SAQ*s (self-assessment questions*) and *ITQ*s.
 
 ## Activities
 
-Activities have two parts - the activity, and the activity answer.
+Activities have two parts - the activity description, and the activity answer.
 
-In `ou0book-theme`, activities are defined as:
+Activities are defined as:
 
 ````text
 ```{ou-activity} Activity 1
@@ -48,7 +48,7 @@ And *more* bits of answer.
 
 ````
 
-Ideally we should also have an identifier, not least so we can provide a cross-reference link to the activity.
+Ideally we should also have an identifier associated woth the activity, not least so we can provide a cross-reference link to the activity.
 
 
 ## Exercises

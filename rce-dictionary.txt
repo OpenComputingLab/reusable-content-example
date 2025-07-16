@@ -1,3 +1,4 @@
+3D
 backticked
 center
 centered
@@ -6,18 +7,28 @@ customisable
 Customisable
 decasing
 Hirst
+HTML5
 Jupyter
 JupyterLab
+JupyterLite
+Jupytext
+jupytext_version
+kernelspec
+md:myst
 MyST
+myst
 OpenRefine
 OU
 OU-XML
+PyPi
 preconfigured
 recognised
+REPL
 Schematron
 VCE
 VCEs
 VLE
+WASM
 whitespace
 XSL
 

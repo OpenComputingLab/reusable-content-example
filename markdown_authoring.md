@@ -23,11 +23,13 @@ A variety of publishing tools and frameworks are available that can render markd
 
 As well as rendering rich text, markdown publishing extensions can also be used to render diagrams. For example, flowcharts can be rendered from simple text-based `Mermaid.js` scripts.
 
-```{mermaid}
----
+**MERMAID CURRENTLY BROKEN**
+
+?```{mermaid}
+?---
 alt:
 caption: Publishing workflows from MyST markdown
----
+?---
 flowchart LR
   A[Jupyter Notebook] --> C
   B[MyST Markdown] --> C
@@ -39,7 +41,7 @@ flowchart LR
   D --> J[HTML]
   I --> K[OU-VLE]
   I --> L[OU-PDF]
-```
+?```
 
 *The flowchart above was automatically rendered and embedded from a `mermaid.js` admonition block in the source markdown document.*
 
@@ -137,7 +139,7 @@ Simple tables can be described using the markdown table format. The markdown tab
 |-------|:-------------:|-------:|
 | col 1 |  left-aligned | L      |
 | col 2 |    centered   | center |
-| col 2 | right-aligned | R      |
+| col 3 | right-aligned | R      |
 
 ```
 
@@ -145,7 +147,7 @@ Simple tables can be described using the markdown table format. The markdown tab
 | ----- | :-----------: | -----: |
 | col 1 | left-aligned  |      L |
 | col 2 |   centered    | center |
-| col 2 | right-aligned |      R |
+| col 3 | right-aligned |      R |
 
 Here's fragment of the corresponding OU-XML:
 
@@ -207,6 +209,8 @@ Here is the box content.
 It can contain a *wide* __range__ of elements.
 ```
 
+The generated OU-XML takes the form:
+
 ```xml
   <Box>
     <Heading>Box Title</Heading>
@@ -226,6 +230,8 @@ Example publishing tools and frameworks for working with markdown include:
 - [Sphinx](https://www.sphinx-doc.org/en/master/): originally developed to support the publication of software documentation, but is now widely used for more general forms of publishing;
 
 - [Jupyter Book](https://jupyterbook.org/en/stable/intro.html): publishing system built on top of Sphinx that supports the publication of content generated in whole or part from computational documents, (documents that include executable code whose outputs maybe be included in the output document); source documents include markdown and Jupyter notebooks; uses MyST flavoured markdown.
+
+- [MyST Markdown tools](https://mystmd.org/guide): publishing framework using command-line tools for rendering various output document formats from MyST source files.
 
 - [Quarto](https://quarto.org/docs/authoring/markdown-basics.html): scientific document publishing system; source documents include markdown as well as computational documents such as Jupyter notebooks and Quarto flavoured  markdown (`.qmd`).
 

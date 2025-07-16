@@ -25,7 +25,7 @@ To improve the quality of output documents, we can use the a quality enhanced bu
 
 Using [`tbroadley/spellchecker-cli`](https://github.com/tbroadley/spellchecker-cli):
 
-`spellchecker --files  *.md --language en-GB --dictionaries rce-dictionary.txt`
+`e--language en-GB --dictionaries rce-dictionary.txt`
 
 Formatting using [`mdformat`](https://github.com/executablebooks/mdformat):
 

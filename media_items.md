@@ -68,7 +68,7 @@ As with the `ou-video` element, we can optionally include a caption, or a captio
 
 One of the attractions of this production route is that it can be quite straightforward to create simple markdown admonitions that can use third party Python packages to generate interactive HTML components, and then embed these in the resulting output documents.
 
-he [`3dmol.js`](https://3dmol.csb.pitt.edu/) packages provides an interactive 3D viewer for a wide range of molecules.
+The [`3dmol.js`](https://3dmol.csb.pitt.edu/) packages provides an interactive 3D viewer for a wide range of molecules.
 
 We can create a simple Sphinx admonition handler that will accept a molecule query code (see the official docs for more info on this) and then render the molecule with desired styling.
 

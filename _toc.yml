@@ -15,11 +15,17 @@ parts:
       - file: activities-exercises
       - file: maths
       - file: code
+      - file: wasm-thebelite-interactive
+      - file: jupyterlite-sphinx
       - file: quotations
       - file: demo-notebook
       - file: authoring_reusable_content
       - file: collaborative-authoring
       - file: production_workflow
       - file: workflow_automation
+      - file: wasm-jupyterlite-interactive
+      - file: wasm-r-ide-interactive
+      - file: wasm-r-console-interactive
+      - file: wasm-shinylite-py-interactive
       - file: sandbox
       - file: todo
